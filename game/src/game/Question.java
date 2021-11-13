@@ -6,6 +6,8 @@ public class Question {
 		System.setOut(null);
 		//ololo
 		// TODO Auto-generated constructor stub
+		//lkllk
+		//klklkk
 	}
 
 }
