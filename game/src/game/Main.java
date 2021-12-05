@@ -7,7 +7,7 @@ public class Main {
 		// TODO Auto-generated method stub
 		
 		//Question question1 = new Question(0);
-		Question question2 = new Question(1);
+		Question question2 = new Question(2);
 		
 		
 		//Mono gia thn polh sparti mexri stigmhs 8a ginei kai gia tis alles 2 poleis to idio pragma me allous pinakes

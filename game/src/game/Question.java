@@ -25,7 +25,7 @@ public class Question implements ActionListener {
 	                     	 
 	String[] questions3 = {   "1. Who was the daughter of the Minoan king?",
 	                     	  "2. The ruins of a number of multi-functional architectural complexes have been excavated on the island. What is the best known of these 'palaces'?",
-	                     	  "3. Which of the following has been proposed as a contributing, or correlating, factor in the decline of the Minoan civilisation?",
+	                     	  "3. Which was a sacred symbol for the Minoans?",
 	                     	  "4. Who was the gurdian of the labyrinth?",
 	                     };
 	
@@ -48,7 +48,7 @@ public class Question implements ActionListener {
 	String[][] options3 = {
 							{"Ermioni","Iphigeneia","Cassandra","Ariadne"},
 			                {"Colosseum","Delphi","Knossos","Parthenon"},
-			                {/*needs to be changed */"Eruption of volcanic island Thera (modern day Santorini)","Conquest by Alexander the Great.","Invasion and occupation by Mycenaeans","Decline in use of bronze in favour of iron"},
+			                {"sacred horns","the axe","the bull","the sea"},
 			                {"Hydra","Minotayros","the lion of Nemea","Ades"}
 			
 			
@@ -57,7 +57,7 @@ public class Question implements ActionListener {
 	char[] answers = {
 			            'C',
 			            'A',
-			            'B'/*not the correct answer*/,
+			            'A',
 			            'C',
 	                    'C',
 			            'A',
@@ -97,9 +97,9 @@ public class Question implements ActionListener {
 	
 	JTextField number_right = new JTextField();
 	JTextField percentage = new JTextField();
-	ImageIcon delos = new ImageIcon("delos.png");
-	ImageIcon wrong = new ImageIcon("wrong-removebg-preview.png");
-	ImageIcon right = new ImageIcon("right-removebg-preview.png");
+	ImageIcon delos = new ImageIcon("game/src/game/delos.png");
+	ImageIcon wrong = new ImageIcon("game/src/game/wrong-removebg-preview.png");
+	ImageIcon right = new ImageIcon("game/src/game/right-removebg-preview.png");
 	int x;
 	
 	
