@@ -3,56 +3,107 @@ package game;
 import java.awt.event.*;
 import java.awt.image.ImageObserver;
 import java.awt.image.ImageProducer;
+import java.util.ArrayList;
 import java.awt.*;
 import javax.swing.*;
 
 
 public class Question implements ActionListener {
 	
-	String[] questions1 = {
-			                  "1. Who was the king of Mycenae?",
-						      "2. Who killed his mother in Mycenae era ? ",
-			                  "3. Mycenaeans did leave behind a written language. What is it called?"/* don't know the answer*/,
-	                     	  "4. What animal guarded the famous gate into Mycenae?",
-                          };
+	 static ArrayList <String>  question1 = new ArrayList<String>();  
+	  static {
+ 	  question1.add("1. Who was the king of Mycenae?");  
+ 	  question1.add("2. Who killed his mother in Mycenae era ?");  
+ 	  question1.add("3. Mycenaeans did leave behind a written language. What is it called?");  
+ 	  question1.add("4. What animal guarded the famous gate into Mycenae?");  
+	  }
+	  
+	  static ArrayList <String>  question2 = new ArrayList<String>();
+	  static {
+		  question2.add("1. For what thing is known the Cycladitic civilization?");
+		  question2.add( "2. How did the Cyclades form?");
+		  question2.add("3. Where were te Cyclades located?");
+		  question2.add("4. Wo was born there?");
+	  }
+	  
+	  static ArrayList <String>  question3 = new ArrayList<String>();
+	  static {
+		  question3.add("1. Who was the daughter of the Minoan king?");
+		  question3.add("2. The ruins of a number of multi-functional architectural complexes have been excavated on the island. What is the best known of these 'palaces'?");
+		  question3.add("3. Which was a sacred symbol for the Minoans?");
+		  question3.add("4. Who was the gurdian of the labyrinth?");
+	  }
 	                     	  
-	String[] questions2 = {
-							  "1. For what thing is known the Cycladitic civilization?",
-	                     	  "2. How did the Cyclades form?",
-	                     	  "3. Where were te Cyclades located?",
-	                     	  "4. In Delos were born...?",
-						};
-	                     	 
-	String[] questions3 = {   "1. Who was the daughter of the Minoan king?",
-	                     	  "2. The ruins of a number of multi-functional architectural complexes have been excavated on the island. What is the best known of these 'palaces'?",
-	                     	  "3. Which was a sacred symbol for the Minoans?",
-	                     	  "4. Who was the gurdian of the labyrinth?",
-	                     };
+	 
+	  static ArrayList <String> options1 = new ArrayList<String>();
+	  
+	  static {
+		  options1.add("Periklis");
+		  options1.add("King Alexander");
+		  options1.add("Agamemnon");
+		  options1.add("Leonidas");
+		  options1.add("Orestis");
+		  options1.add("Achilleas");
+		  options1.add("Patroklos");
+		  options1.add("Diomidis");
+	      options1.add("Linear B");
+		  options1.add("Hieroglyphics");
+		  options1.add("Linear A");
+		  options1.add("Demotic");
+		  options1.add("Tiger");
+		  options1.add("Bull");
+		  options1.add("Lion");
+		  options1.add("Peageon");
+	  }
+	 
+static ArrayList <String> options2 = new ArrayList<String>();
+	  
+	  static {
+		  options2.add("War");
+		  options2.add("Monuments");
+		  options2.add("Art");
+		  options2.add("Kings");
+		  options2.add("Erruption");
+		  options2.add("Earthquake");
+		  options2.add("Collision");
+		  options2.add("Big Bang");
+	      options2.add("Attiki");
+		  options2.add("Aegean");
+		  options2.add("Peloponissos");
+		  options2.add("Ionian Sea");
+		  options2.add("Appolo and Artemis");
+		  options2.add("Athena");
+		  options2.add("Zeus");
+		  options2.add("Aphrodite");
+	  }
 	
-	String[][] options1 =  {
-			                {"Periklis","King Alexander","Agamemnon","Leonidas"},
-			                {"Orestis","Achilleas","Patroklos","Diomidis" },
-			                {"Linear B","Hieroglyphics","Linear A","Demotic"},
-			                {"Tiger","Panther","Lion","Dog"},
-			                
-	                       };
+	  
+static ArrayList <String> options3 = new ArrayList<String>();
+	  
+	  static {
+		  options3.add("Ermioni");
+		  options3.add("Iphigeneia");
+		  options3.add("Cassandra");
+		  options3.add("Ariadne");
+		  options3.add("Colosseum");
+		  options3.add("Delphi");
+		  options3.add("Knossos");
+		  options3.add("Parhenon");
+	      options3.add("Sacred Horns");
+		  options3.add("The Axe");
+		  options3.add("The Bull");
+		  options3.add("The Sea");
+		  options3.add("Hydra");
+		  options3.add("Minotauros");
+		  options3.add("The Lion of Nemea");
+		  options3.add("Ades");
+	  }
+	  
 	
-	String[][] options2 =  {
-							{"War","Monuments","Art","Kings"},
-			                {"Erruption","Earthquake","Collision","Big Bang"},
-			                {"Attiki","Aegean","Peleponissos","Ionian sea"},
-			                {"Apollo and Artemis","Athena","Zeus","Aphrodite"},
-			                
-						   };
 	
-	String[][] options3 = {
-							{"Ermioni","Iphigeneia","Cassandra","Ariadne"},
-			                {"Colosseum","Delphi","Knossos","Parthenon"},
-			                {"sacred horns","the axe","the bull","the sea"},
-			                {"Hydra","Minotayros","the lion of Nemea","Ades"}
-			
-			
-	                      };
+	
+	
+	
 	
 	char[] answers = {
 			            'C',
@@ -80,7 +131,7 @@ public class Question implements ActionListener {
 	int xi=1;
 	int t=1;
 	int x;
-	
+	int tt = 0;
 	JFrame frame = new JFrame();
 	JTextField textfield = new JTextField();
 	JTextArea textarea = new JTextArea();
@@ -250,11 +301,12 @@ public class Question implements ActionListener {
 		}else {
 			
 			textfield.setText("Question"+(index+1));
-			textarea.setText(questions1[index]);
-			buttonA.setText(options1[index][0]);
-			buttonB.setText(options1[index][1]);
-			buttonC.setText(options1[index][2]);
-			buttonD.setText(options1[index][3]);
+			textarea.setText(question1.get(index));
+			buttonA.setText(options1.get(tt));
+			buttonB.setText(options1.get(tt+1));
+			buttonC.setText(options1.get(tt+2));
+			buttonD.setText(options1.get(tt+3));
+			
 			
 		}
 		
@@ -265,11 +317,11 @@ public class Question implements ActionListener {
 			}else {
 				
 				textfield.setText("Question"+(index+1));
-				textarea.setText(questions2[index]);
-				buttonA.setText(options2[index][0]);
-				buttonB.setText(options2[index][1]);
-				buttonC.setText(options2[index][2]);
-				buttonD.setText(options2[index][3]);
+				textarea.setText(question2.get(index));
+				buttonA.setText(options2.get(tt));
+				buttonB.setText(options2.get(tt+1));
+				buttonC.setText(options2.get(tt+2));
+				buttonD.setText(options2.get(tt+3));
 		    }
 	}else if (c==3) {
 			
@@ -278,11 +330,11 @@ public class Question implements ActionListener {
 			}else {
 				
 				textfield.setText("Question"+(index+1));
-				textarea.setText(questions3[index]);
-				buttonA.setText(options3[index][0]);
-				buttonB.setText(options3[index][1]);
-				buttonC.setText(options3[index][2]);
-				buttonD.setText(options3[index][3]);
+				textarea.setText(question3.get(index));
+				buttonA.setText(options3.get(tt));
+				buttonB.setText(options3.get(tt+1));
+				buttonC.setText(options3.get(tt+2));
+				buttonD.setText(options3.get(tt+3));
 			}
 		}
 	}
@@ -374,7 +426,9 @@ public class Question implements ActionListener {
 		
 		displayAnswer();
 		if (e.getSource()==nextButton) {
+			tt = tt+4;
 			nextPage();
+			
 		}
 		
 	}

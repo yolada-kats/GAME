@@ -1,6 +1,8 @@
 
 package game;
 
+import java.util.ArrayList;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -16,6 +18,9 @@ public class Main {
 	       String[] q = {"He was the king of Sparta","He invented the laws in Sparta","The Spartans became known as brave and","The Spartans did not like","Women in ancient Sparta attached great importance to physical"};
 	       Findtheword sparta = new Findtheword(word,q);
 
+	
+	       
+	
 	}
 
 }
