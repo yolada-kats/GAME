@@ -78,6 +78,8 @@ public class Question implements ActionListener {
 	int total_questions = 4;
 	int result;
 	int xi=1;
+	int t=1;
+	int x;
 	
 	JFrame frame = new JFrame();
 	JTextField textfield = new JTextField();
@@ -97,11 +99,10 @@ public class Question implements ActionListener {
 	
 	JTextField number_right = new JTextField();
 	JTextField percentage = new JTextField();
-	ImageIcon delos = new ImageIcon("game/src/game/delos.png");
-	ImageIcon wrong = new ImageIcon("game/src/game/wrong-removebg-preview.png");
-	ImageIcon right = new ImageIcon("game/src/game/right-removebg-preview.png");
-	int x;
 	
+	ImageIcon delos = new ImageIcon("game/src/game/delos.png");
+	ImageIcon right = new ImageIcon("game/src/game/right-removebg-preview.png");
+	ImageIcon wrong = new ImageIcon("game/src/game/wrong-removebg-preview.png");
 	
 	public Question(int x) {
 		this.x = x;
@@ -114,7 +115,13 @@ public class Question implements ActionListener {
 		frame.setResizable(false);
 		
 		background.setBounds(0, 0, 960, 600);
-		background.setIcon(delos);
+		if (x==1) {
+			//background.setIcon();
+		}else if (x==2) {
+			background.setIcon(delos);
+		}else if (x==3) {
+			//background.setIcon();
+		}
 		background.setVisible(true);
 		
 		textfield.setBounds(0,0,800,50);
@@ -235,7 +242,7 @@ public class Question implements ActionListener {
 	
 	public  void nextQuestion(int c) {
 		
-	if (c==0) {
+	if (c==1) {
 			
 		
 		if(index>=total_questions) {
@@ -251,7 +258,7 @@ public class Question implements ActionListener {
 			
 		}
 		
-	}else if (c==1) {
+	}else if (c==2) {
 			
 			if(index>=total_questions) {
 				results();
@@ -264,7 +271,7 @@ public class Question implements ActionListener {
 				buttonC.setText(options2[index][2]);
 				buttonD.setText(options2[index][3]);
 		    }
-	}else if (c==2) {
+	}else if (c==3) {
 			
 			if(index>=total_questions) {
 				results();
@@ -288,7 +295,7 @@ public class Question implements ActionListener {
 		buttonC.setEnabled(false);
 		buttonD.setEnabled(false);
 
-	  if(x==1) {
+	  if(x==2) {
 		if (e.getSource()==buttonA) {
 			answer= 'A';
 			if (answer == answers[xi+3]) {
@@ -313,7 +320,7 @@ public class Question implements ActionListener {
 				correct_guesses++;
 			}
 		}
-	  }else if (x == 0) {
+	  }else if (x == 1) {
 			if (e.getSource()==buttonA) {
 				answer= 'A';
 				if (answer == answers[xi-1]) {
@@ -338,7 +345,7 @@ public class Question implements ActionListener {
 					correct_guesses++;
 				}
 			}
-	  }else if (x == 2) {
+	  }else if (x == 3) {
 			if (e.getSource()==buttonA) {
 				answer= 'A';
 				if (answer == answers[xi+7]) {
@@ -384,7 +391,7 @@ public class Question implements ActionListener {
 		answer_IconC.setIcon(wrong);
 		answer_IconD.setIcon(wrong);
 
-		if (x == 0) {
+		if (x == 1) {
 			if (answers[xi-1] == 'A') {
 				answer_IconA.setIcon(right);
 			}else if (answers[xi-1] == 'B') {
@@ -394,7 +401,7 @@ public class Question implements ActionListener {
 			}else if (answers[xi-1] == 'D') {
 				answer_IconD.setIcon(right);
 			}
-		}else if (x == 1) {
+		}else if (x == 2) {
 			if (answers[xi+3] == 'A') {
 				answer_IconA.setIcon(right);
 			}else if (answers[xi+3] == 'B') {
@@ -404,7 +411,7 @@ public class Question implements ActionListener {
 			}else if (answers[xi+3] == 'D') {
 				answer_IconD.setIcon(right);
 			}
-		}else if (x == 2) {
+		}else if (x == 3) {
 			if (answers[xi+7] == 'A') {
 				answer_IconA.setIcon(right);
 			}else if (answers[xi+7] == 'B') {
