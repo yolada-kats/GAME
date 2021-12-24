@@ -23,7 +23,7 @@ public class Question implements ActionListener {
 		  question2.add("1. For what thing is known the Cycladitic civilization?");
 		  question2.add( "2. How did the Cyclades form?");
 		  question2.add("3. Where were te Cyclades located?");
-		  question2.add("4. Wo was born there?");
+		  question2.add("4. Who was born there?");
 	  }
 	  
 	  static ArrayList <String>  question3 = new ArrayList<String>();
@@ -141,6 +141,8 @@ static ArrayList <String> options3 = new ArrayList<String>();
 	JButton buttonB = new JButton();
 	JButton buttonC = new JButton();
 	JButton buttonD = new JButton();
+	
+	JButton map = new JButton();
 	//next button
 	JButton nextButton = new JButton();
 	JLabel answer_IconA = new JLabel();
@@ -150,8 +152,10 @@ static ArrayList <String> options3 = new ArrayList<String>();
 	
 	JTextField number_right = new JTextField();
 	JTextField percentage = new JTextField();
-	
-	ImageIcon delos = new ImageIcon("game/src/game/delos.png");
+
+	ImageIcon delos = new ImageIcon("game/src/game/4.jpg");
+	ImageIcon crete = new ImageIcon("game/src/game/crete.jpg");
+	ImageIcon mycenae = new ImageIcon("game/src/game/mycenae.jpg");
 	ImageIcon right = new ImageIcon("game/src/game/right-removebg-preview.png");
 	ImageIcon wrong = new ImageIcon("game/src/game/wrong-removebg-preview.png");
 	
@@ -160,22 +164,23 @@ static ArrayList <String> options3 = new ArrayList<String>();
 		
 		//te background settings
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(800,580);
-		frame.getContentPane().setBackground(new Color(255,255,153));
+		frame.setSize(608,800);
+		frame.getContentPane().setBackground(new Color(238,236,194));
 		frame.setLayout(null);
 		frame.setResizable(false);
 		
 		background.setBounds(0, 0, 960, 600);
 		if (x==1) {
-			//background.setIcon();
+			background.setIcon(mycenae);
 		}else if (x==2) {
 			background.setIcon(delos);
 		}else if (x==3) {
-			//background.setIcon();
+			
+			background.setIcon(crete);
 		}
 		background.setVisible(true);
 		
-		textfield.setBounds(0,0,800,50);
+		textfield.setBounds(0,0,620,50);
 		textfield.setBackground(new Color(238,236,194));
 		textfield.setForeground(new Color(0,0,0));
 		textfield.setFont(new Font(" CASTELLAR",Font.BOLD,30));
@@ -197,7 +202,7 @@ static ArrayList <String> options3 = new ArrayList<String>();
 		textarea.setEditable(false);
 		
 		
-		buttonA.setBounds(250,150,300,50);
+		buttonA.setBounds(150,150,300,50);
 		buttonA.setFont(new Font("Times New Roman",Font.BOLD,30));
 		//buttonA.setFont(new Font("MV BOLI",Font.BOLD,35));
 		buttonA.setFocusable(false);
@@ -210,7 +215,7 @@ static ArrayList <String> options3 = new ArrayList<String>();
 		
 		//buttonA.setText("A");
 		
-		buttonB.setBounds(250,245,300,50);
+		buttonB.setBounds(150,245,300,50);
 		buttonB.setFont(new Font("Times New Roman",Font.BOLD,30));
 		//buttonB.setFont(new Font("MV BOLI",Font.BOLD,35));
 		buttonB.setFocusable(false);
@@ -222,7 +227,7 @@ static ArrayList <String> options3 = new ArrayList<String>();
 		buttonB.setContentAreaFilled(false);
 		buttonB.setBorderPainted(false);
 		
-		buttonC.setBounds(250,345,300,50);
+		buttonC.setBounds(150,345,300,50);
 		//buttonC.setFont(new Font("MV BOLI",Font.BOLD,35));
 		buttonC.setFont(new Font("Times New Roman",Font.BOLD,30));
 		buttonC.setFocusable(false);
@@ -234,25 +239,37 @@ static ArrayList <String> options3 = new ArrayList<String>();
 		buttonC.setContentAreaFilled(false);
 		buttonC.setBorderPainted(false);
 		
-		buttonD.setBounds(250,455,300,50);
+		buttonD.setBounds(150,455,300,50);
 		//buttonD.setFont(new Font("MV BOLI",Font.BOLD,35));
 		buttonD.setFont(new Font("Times New Roman",Font.BOLD,30));
 		buttonD.setFocusable(false);
 		buttonD.addActionListener(this);
 		
+		
 		buttonD.setOpaque(false);
 		buttonD.setContentAreaFilled(false);
 		buttonD.setBorderPainted(false);
 		
-		answer_IconA.setBounds(150, 150, 100, 70);
-		answer_IconB.setBounds(150, 245, 100, 70);
-		answer_IconC.setBounds(150, 345, 100, 70);
-		answer_IconD.setBounds(150, 455, 100, 70);
+		answer_IconA.setBounds(50, 160, 100, 70);
+		answer_IconB.setBounds(50, 245, 100, 70);
+		answer_IconC.setBounds(50, 345, 100, 70);
+		answer_IconD.setBounds(50, 455, 100, 70);
 		
 		//the button for the next question 
 		ImageIcon next_arrow = new ImageIcon("download-removebg-preview (1).png");
+		map.setBounds(0,100,150,50);
+		map.addActionListener(this);
+		map.setFont(new Font("Times New Roman",Font.BOLD,25));
+		map.setFocusable(false);
+		map.setText("MAP");
+		map.setIcon(next_arrow);
+		map.setHorizontalTextPosition(JButton.LEFT);
+		map.setIconTextGap(20);
+		map.setBackground(new Color(238,236,194));
+		map.setForeground(Color.black);
+		map.setBorder(BorderFactory.createBevelBorder(1));
 		
-		nextButton.setBounds(650,100,150,50);
+		nextButton.setBounds(470,100,150,50);
 		nextButton.addActionListener(this);
 		nextButton.setFont(new Font("Times New Roman",Font.BOLD,25));
 		nextButton.setFocusable(false);
@@ -264,7 +281,7 @@ static ArrayList <String> options3 = new ArrayList<String>();
 		nextButton.setForeground(Color.black);
 		nextButton.setBorder(BorderFactory.createBevelBorder(1));
 		
-		number_right.setBounds(200, 130, 400, 400);
+		number_right.setBounds(100, 183, 400, 400);
 		number_right.setBackground(new Color(238,236,194));
 		number_right.setForeground(new Color(0,0,0));
 		number_right.setFont(new Font("Ink Free",Font.BOLD,50));
@@ -273,6 +290,7 @@ static ArrayList <String> options3 = new ArrayList<String>();
 		number_right.setEditable(false);
 
 		frame.add(nextButton);
+		frame.add(map);
 		frame.add(buttonA);
 		frame.add(buttonB);
 		frame.add(buttonC);
@@ -352,7 +370,7 @@ static ArrayList <String> options3 = new ArrayList<String>();
 			answer= 'A';
 			if (answer == answers[xi+3]) {
 				correct_guesses++;
-			}
+			} 
 		}
 		if (e.getSource()==buttonB) {
 			answer= 'B';
@@ -430,6 +448,9 @@ static ArrayList <String> options3 = new ArrayList<String>();
 			nextPage();
 			
 		}
+		if (e.getSource()==map) {
+			Menu men = new Menu(0);
+		}
 		
 	}
 	
@@ -501,6 +522,7 @@ static ArrayList <String> options3 = new ArrayList<String>();
 		buttonC.setEnabled(false);
 		buttonD.setEnabled(false);
 		
+		//nextButton.setAction();
 		result = correct_guesses*20;
 		
 		textfield.setText("RESULTS!");
