@@ -169,7 +169,7 @@ static ArrayList <String> options3 = new ArrayList<String>();
 		frame.setLayout(null);
 		frame.setResizable(false);
 		
-		background.setBounds(0, 0, 960, 600);
+		background.setBounds(0, 0, 608, 800);
 		if (x==1) {
 			background.setIcon(mycenae);
 		}else if (x==2) {
