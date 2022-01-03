@@ -10,7 +10,6 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		JFrame frame = new JFrame();
-		
 		Map map = new Map(frame, 0);
 		//Question question1 = new Question(1,frame);
 		

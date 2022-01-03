@@ -208,11 +208,12 @@ static ArrayList <String> options3 = new ArrayList<String>();
 		//buttonA.setFont(new Font("MV BOLI",Font.BOLD,35));
 		buttonA.setFocusable(false);
 		buttonA.addActionListener(this);
+		buttonA.setEnabled(true);
 		//buttonA.setIcon(column);
 		
-		buttonA.setOpaque(false);
+		/*buttonA.setOpaque(false);
 		buttonA.setContentAreaFilled(false);
-		buttonA.setBorderPainted(false);
+		buttonA.setBorderPainted(false);*/
 		
 		//buttonA.setText("A");
 		
@@ -221,35 +222,38 @@ static ArrayList <String> options3 = new ArrayList<String>();
 		//buttonB.setFont(new Font("MV BOLI",Font.BOLD,35));
 		buttonB.setFocusable(false);
 		buttonB.addActionListener(this);
+		buttonB.setEnabled(true);
 		//buttonB.setText("B");
 		
 		
-		buttonB.setOpaque(false);
+		/*buttonB.setOpaque(false);
 		buttonB.setContentAreaFilled(false);
-		buttonB.setBorderPainted(false);
+		buttonB.setBorderPainted(false);*/
 		
 		buttonC.setBounds(150,345,300,50);
 		//buttonC.setFont(new Font("MV BOLI",Font.BOLD,35));
 		buttonC.setFont(new Font("Times New Roman",Font.BOLD,30));
 		buttonC.setFocusable(false);
 		buttonC.addActionListener(this);
+		buttonC.setEnabled(true);
 		//buttonC.setText("C");
 		
 		
-		buttonC.setOpaque(false);
+		/*buttonC.setOpaque(false);
 		buttonC.setContentAreaFilled(false);
-		buttonC.setBorderPainted(false);
+		buttonC.setBorderPainted(false);*/
 		
 		buttonD.setBounds(150,455,300,50);
 		//buttonD.setFont(new Font("MV BOLI",Font.BOLD,35));
 		buttonD.setFont(new Font("Times New Roman",Font.BOLD,30));
 		buttonD.setFocusable(false);
 		buttonD.addActionListener(this);
+		buttonD.setEnabled(true);
 		
 		
-		buttonD.setOpaque(false);
+		/*buttonD.setOpaque(false);
 		buttonD.setContentAreaFilled(false);
-		buttonD.setBorderPainted(false);
+		buttonD.setBorderPainted(false);*/
 		
 		answer_IconA.setBounds(50, 160, 100, 70);
 		answer_IconB.setBounds(50, 245, 100, 70);
@@ -449,7 +453,6 @@ static ArrayList <String> options3 = new ArrayList<String>();
 			nextPage();
 			
 		}
-		//
 		if (e.getSource()==map) {
 			nextButton.setVisible(false);
 			textfield.setVisible(false);
@@ -549,6 +552,10 @@ static ArrayList <String> options3 = new ArrayList<String>();
 		
 		frame.add(number_right);
 		frame.add(percentage);
+		frame.remove(buttonA);
+		frame.remove(buttonB);
+		frame.remove(buttonC);
+		frame.remove(buttonD);
 		//we have to add a timer or a button to go back on the map(preferable a button)
 	}
 
