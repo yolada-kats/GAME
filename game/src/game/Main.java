@@ -9,13 +9,15 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		JFrame frame = new JFrame();
 		
-		Question question1 = new Question(1);
+		Map map = new Map(frame, 0);
+		//Question question1 = new Question(1,frame);
 		
 		
 		//Menu men = new Menu(0);
-		Question question2 = new Question(2);
-		Question question3 = new Question(3);
+		//Question question2 = new Question(2,frame);
+		//Question question3 = new Question(3,frame);
 		
 		
 		//Mono gia thn polh sparti mexri stigmhs 8a ginei kai gia tis alles 2 poleis to idio pragma me allous pinakes

@@ -132,7 +132,7 @@ static ArrayList <String> options3 = new ArrayList<String>();
 	int t=1;
 	int x;
 	int tt = 0;
-	JFrame frame = new JFrame();
+	JFrame frame;
 	JTextField textfield = new JTextField();
 	JTextArea textarea = new JTextArea();
 	//background label
@@ -159,10 +159,11 @@ static ArrayList <String> options3 = new ArrayList<String>();
 	ImageIcon right = new ImageIcon("game/src/game/right-removebg-preview.png");
 	ImageIcon wrong = new ImageIcon("game/src/game/wrong-removebg-preview.png");
 	
-	public Question(int x) {
+	public Question(int x, JFrame frame) {
 		this.x = x;
-		
+		this.frame = frame;
 		//te background settings
+		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(608,800);
 		frame.getContentPane().setBackground(new Color(238,236,194));
@@ -448,8 +449,20 @@ static ArrayList <String> options3 = new ArrayList<String>();
 			nextPage();
 			
 		}
+		
 		if (e.getSource()==map) {
-			Menu men = new Menu(0);
+			nextButton.setVisible(false);
+			textfield.setVisible(false);
+			textarea.setVisible(false);
+			map.setVisible(false);
+			percentage.setVisible(false);
+			number_right.setVisible(false);
+			background.setVisible(false);
+			answer_IconA.setVisible(false);
+			answer_IconB.setVisible(false);
+			answer_IconC.setVisible(false);
+			answer_IconD.setVisible(false);
+			Map men = new Map(frame , result);
 		}
 		
 	}

@@ -12,7 +12,7 @@ public class Menu  implements ActionListener {
 	char answer;
 	
 	JTextField textfield = new JTextField();
-	 JFrame frame = new JFrame();
+	 JFrame frame;
 
 	JLabel background = new JLabel();
 	JButton buttonA = new JButton();
@@ -23,7 +23,8 @@ public class Menu  implements ActionListener {
 	JLabel answer_IconC = new JLabel();
 	
 	ImageIcon menuback = new ImageIcon("game/src/game/SANTA.PNG");
-	public Menu(int ind) {
+	public Menu(int ind, JFrame frame) {
+		this.frame = frame;
 		this.ind=ind;
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -123,7 +124,7 @@ public class Menu  implements ActionListener {
 		}
 		if (e.getSource()==buttonB) {
 			answer= 'B';
-			//Map star = new Map();
+			Map star = new Map(frame, 0);
 			
 		}
 		if (e.getSource()==buttonC) {

@@ -1,3 +1,4 @@
+package game;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -101,7 +102,7 @@ public class Map extends JFrame {
 	 	ActionListener b4 = new ActionListener() {
 	 		public void actionPerformed(ActionEvent e) {
 	 		 	   panel.setVisible(false);
-	 		 	   Question creta = new Question(3,frame);
+	 		 	   Question creta = new Question(3, frame);
 	 		 	   cities.add("Crete");
 	 		 	   count++;
 	 		}
@@ -109,7 +110,7 @@ public class Map extends JFrame {
 	 	ActionListener b5 = new ActionListener() {
 	 		public void actionPerformed(ActionEvent e) {
 	 		 	   panel.setVisible(false);
-	 		 	   Question mecynes = new Question(1,frame);
+	 		 	   Question mecynes = new Question(1, frame);
 	 		 	   cities.add("Mecynae");
 	 		 	   count++;
 	 		}
@@ -117,7 +118,7 @@ public class Map extends JFrame {
 	 	ActionListener b6 = new ActionListener() {
 	 		public void actionPerformed(ActionEvent e) {
 	 		 	   panel.setVisible(false);
-	 		 	   Question dilo = new Question(2,frame);
+	 		 	   Question dilo = new Question(2, frame);
 	 		 	   cities.add("Dilos");
 	 		 	   count++;
 	 		}
