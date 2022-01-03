@@ -176,7 +176,6 @@ static ArrayList <String> options3 = new ArrayList<String>();
 		}else if (x==2) {
 			background.setIcon(delos);
 		}else if (x==3) {
-			
 			background.setIcon(crete);
 		}
 		background.setVisible(true);
@@ -317,8 +316,6 @@ static ArrayList <String> options3 = new ArrayList<String>();
 	public  void nextQuestion(int c) {
 		
 	if (c==1) {
-			
-		
 		if(index>=total_questions) {
 			results();
 		}else {
@@ -328,13 +325,10 @@ static ArrayList <String> options3 = new ArrayList<String>();
 			buttonA.setText(options1.get(tt));
 			buttonB.setText(options1.get(tt+1));
 			buttonC.setText(options1.get(tt+2));
-			buttonD.setText(options1.get(tt+3));
-			
-			
+			buttonD.setText(options1.get(tt+3));	
 		}
 		
 	}else if (c==2) {
-			
 			if(index>=total_questions) {
 				results();
 			}else {
@@ -346,8 +340,8 @@ static ArrayList <String> options3 = new ArrayList<String>();
 				buttonC.setText(options2.get(tt+2));
 				buttonD.setText(options2.get(tt+3));
 		    }
-	}else if (c==3) {
 			
+	}else if (c==3) {
 			if(index>=total_questions) {
 				results();
 			}else {
