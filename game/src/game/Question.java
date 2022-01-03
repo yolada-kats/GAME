@@ -449,7 +449,7 @@ static ArrayList <String> options3 = new ArrayList<String>();
 			nextPage();
 			
 		}
-		
+		//
 		if (e.getSource()==map) {
 			nextButton.setVisible(false);
 			textfield.setVisible(false);
