@@ -150,6 +150,8 @@ static ArrayList <String> options3 = new ArrayList<String>();
 	JLabel answer_IconC = new JLabel();
 	JLabel answer_IconD = new JLabel();
 	
+	//test!!!
+	ImageIcon answer_scroll = new ImageIcon("answer_scroll-removebg-preview.png");
 	JTextField number_right = new JTextField();
 	JTextField percentage = new JTextField();
 
@@ -285,6 +287,7 @@ static ArrayList <String> options3 = new ArrayList<String>();
 		nextButton.setForeground(Color.black);
 		nextButton.setBorder(BorderFactory.createBevelBorder(1));
 		
+		//number_right.setIcon(answer_scroll);
 		number_right.setBounds(100, 183, 400, 400);
 		number_right.setBackground(new Color(238,236,194));
 		number_right.setForeground(new Color(0,0,0));
@@ -292,6 +295,7 @@ static ArrayList <String> options3 = new ArrayList<String>();
 		number_right.setBorder(BorderFactory.createBevelBorder(1));
 		number_right.setHorizontalAlignment(JTextField.CENTER);
 		number_right.setEditable(false);
+		
 
 		frame.add(nextButton);
 		frame.add(map);
@@ -364,32 +368,32 @@ static ArrayList <String> options3 = new ArrayList<String>();
 		buttonC.setEnabled(false);
 		buttonD.setEnabled(false);
 
-	  if(x==2) {
-		if (e.getSource()==buttonA) {
-			answer= 'A';
-			if (answer == answers[xi+3]) {
-				correct_guesses++;
-			} 
-		}
-		if (e.getSource()==buttonB) {
-			answer= 'B';
-			if (answer == answers[xi+3]) {
-				correct_guesses++;
+		if(x==2) {
+			if (e.getSource()==buttonA) {
+				answer= 'A';
+				if (answer == answers[xi+3]) {
+					correct_guesses++;
+				} 
 			}
-		}
-		if (e.getSource()==buttonC) {
-			answer= 'C';
-			if (answer == answers[xi+3]) {
-				correct_guesses++;
+			if (e.getSource()==buttonB) {
+				answer= 'B';
+				if (answer == answers[xi+3]) {
+					correct_guesses++;
+				}
 			}
-	     }
-		if (e.getSource()==buttonD) {
-			answer= 'D';
-			if (answer == answers[xi+3]) {
-				correct_guesses++;
+			if (e.getSource()==buttonC) {
+				answer= 'C';
+				if (answer == answers[xi+3]) {
+					correct_guesses++;
+				}
 			}
-		}
-	  }else if (x == 1) {
+			if (e.getSource()==buttonD) {
+				answer= 'D';
+				if (answer == answers[xi+3]) {
+					correct_guesses++;
+				}
+			}
+		}else if (x == 1) {
 			if (e.getSource()==buttonA) {
 				answer= 'A';
 				if (answer == answers[xi-1]) {
@@ -414,7 +418,7 @@ static ArrayList <String> options3 = new ArrayList<String>();
 					correct_guesses++;
 				}
 			}
-	  }else if (x == 3) {
+		}else if (x == 3) {
 			if (e.getSource()==buttonA) {
 				answer= 'A';
 				if (answer == answers[xi+7]) {
@@ -438,8 +442,8 @@ static ArrayList <String> options3 = new ArrayList<String>();
 				if (answer == answers[xi+7]) {
 					correct_guesses++;
 				}
-			}
-	}
+			}	
+		}
 		
 		displayAnswer();
 		if (e.getSource()==nextButton) {
@@ -459,6 +463,10 @@ static ArrayList <String> options3 = new ArrayList<String>();
 			answer_IconB.setVisible(false);
 			answer_IconC.setVisible(false);
 			answer_IconD.setVisible(false);
+			frame.remove(buttonA);
+			frame.remove(buttonB);
+			frame.remove(buttonC);
+			frame.remove(buttonD);
 			Map men = new Map(frame , result);
 		}
 		
@@ -550,7 +558,6 @@ static ArrayList <String> options3 = new ArrayList<String>();
 		frame.remove(buttonB);
 		frame.remove(buttonC);
 		frame.remove(buttonD);
-		//we have to add a timer or a button to go back on the map(preferable a button)
 	}
 
 }
