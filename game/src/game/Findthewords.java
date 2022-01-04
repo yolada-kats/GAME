@@ -78,10 +78,10 @@ import javax.swing.JPanel;
 		
 		public void actionPerformed(ActionEvent e) {			
 			if(e.getSource() == nextlevel) {
-				score1.setVisible(false);
-				score_panel.setVisible(false);
-				button_panel.setVisible(false);
-				nextlevel.setVisible(false); 
+				frame.remove(question_panel);
+				frame.remove(score_panel);;
+				frame.remove(button_panel);
+				frame.remove(nextlevel); 
 				Map next = new Map(frame,score-10);
 			}	  
 			if(e.getSource() == next) {
