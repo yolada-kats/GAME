@@ -18,7 +18,6 @@ public class Menu  implements ActionListener {
 	JButton buttonA = new JButton();
 	JButton buttonB = new JButton();
 	JButton buttonC = new JButton();
-	JLabel answer_IconA = new JLabel();
 	JLabel answer_IconB = new JLabel();
 	JLabel answer_IconC = new JLabel();
 	
@@ -94,10 +93,9 @@ public class Menu  implements ActionListener {
 		frame.add(buttonA);
 		frame.add(buttonB);
 		frame.add(buttonC);
-		frame.add(answer_IconA);
-		frame.add(answer_IconB);
-		frame.add(answer_IconC);
+	
 		frame.add(textfield);
+		
 		frame.setVisible(true);
 		frame.add(background);
 		
@@ -124,6 +122,11 @@ public class Menu  implements ActionListener {
 		}
 		if (e.getSource()==buttonB) {
 			answer= 'B';
+			frame.remove(buttonA);
+			frame.remove(buttonB);
+			frame.remove(textfield);
+			frame.remove(buttonC);
+			frame.remove(background);
 			Map star = new Map(frame, 0);
 			
 		}
