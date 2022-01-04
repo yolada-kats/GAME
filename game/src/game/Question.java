@@ -131,6 +131,7 @@ static ArrayList <String> options3 = new ArrayList<String>();
 	int result;
 	int xi=1;
 	int t=1;
+	//the x shows in which city we are located
 	int x;
 	int tt = 0;
 	JFrame frame;
@@ -184,10 +185,9 @@ static ArrayList <String> options3 = new ArrayList<String>();
 		background.setVisible(true);
 		
 		textfield.setBounds(0,0,620,50);
-		textfield.setBackground(new Color(238,236,194));
+		textfield.setBackground(new Color(233, 232, 210));
 		textfield.setForeground(new Color(0,0,0));
 		textfield.setFont(new Font(" CASTELLAR",Font.BOLD,30));
-		//textfield.setFont(new Font("Ink Free",Font.BOLD,30));
 		textfield.setBorder(BorderFactory.createBevelBorder(1));
 		textfield.setHorizontalAlignment(JTextField.CENTER);
 		textfield.setEditable(false);
@@ -197,7 +197,7 @@ static ArrayList <String> options3 = new ArrayList<String>();
 		textarea.setBounds(0,50,800,50);
 		textarea.setLineWrap(true);
 		textarea.setWrapStyleWord(true);
-		textarea.setBackground(new Color(238,236,194));
+		textarea.setBackground(new Color(233, 232, 210));
 		textarea.setForeground(new Color(0,0,0));
 		textarea.setFont(new Font("Times New Roman",Font.BOLD,20));
 		//textarea.setFont(new Font("MV BOLI",Font.BOLD,25));
@@ -205,64 +205,59 @@ static ArrayList <String> options3 = new ArrayList<String>();
 		textarea.setEditable(false);
 		
 		
-		buttonA.setBounds(150,150,300,50);
+		buttonA.setBounds(150,195,320,50);
 		buttonA.setFont(new Font("Times New Roman",Font.BOLD,30));
-		//buttonA.setFont(new Font("MV BOLI",Font.BOLD,35));
 		buttonA.setFocusable(false);
 		buttonA.addActionListener(this);
 		buttonA.setEnabled(true);
-		//buttonA.setIcon(column);
-		
+		buttonA.setBackground(new Color(233, 232, 210));
+		buttonA.setBorder(BorderFactory.createLineBorder(new Color(129, 129,119), 2, true));
 		/*buttonA.setOpaque(false);
 		buttonA.setContentAreaFilled(false);
 		buttonA.setBorderPainted(false);*/
 		
-		//buttonA.setText("A");
 		
-		buttonB.setBounds(150,245,300,50);
+		buttonB.setBounds(150,295,320,50);
 		buttonB.setFont(new Font("Times New Roman",Font.BOLD,30));
-		//buttonB.setFont(new Font("MV BOLI",Font.BOLD,35));
 		buttonB.setFocusable(false);
 		buttonB.addActionListener(this);
-		buttonB.setEnabled(true);
-		//buttonB.setText("B");
-		
-		
+		buttonB.setEnabled(true);	
+		buttonB.setBackground(new Color(233, 232, 210));
+		buttonB.setBorder(BorderFactory.createBevelBorder(1));
+		buttonB.setBorder(BorderFactory.createLineBorder(new Color(129, 129,119), 2, true));
 		/*buttonB.setOpaque(false);
 		buttonB.setContentAreaFilled(false);
 		buttonB.setBorderPainted(false);*/
 		
-		buttonC.setBounds(150,345,300,50);
-		//buttonC.setFont(new Font("MV BOLI",Font.BOLD,35));
+		buttonC.setBounds(150,395,320,50);
 		buttonC.setFont(new Font("Times New Roman",Font.BOLD,30));
 		buttonC.setFocusable(false);
 		buttonC.addActionListener(this);
-		buttonC.setEnabled(true);
-		//buttonC.setText("C");
-		
-		
+		buttonC.setEnabled(true);	
+		buttonC.setBackground(new Color(233, 232, 210));
+		buttonC.setBorder(BorderFactory.createBevelBorder(1));
+		buttonC.setBorder(BorderFactory.createLineBorder(new Color(129, 129,119), 2, true));
 		/*buttonC.setOpaque(false);
 		buttonC.setContentAreaFilled(false);
 		buttonC.setBorderPainted(false);*/
 		
-		buttonD.setBounds(150,455,300,50);
-		//buttonD.setFont(new Font("MV BOLI",Font.BOLD,35));
+		buttonD.setBounds(150,495,320,50);
 		buttonD.setFont(new Font("Times New Roman",Font.BOLD,30));
 		buttonD.setFocusable(false);
 		buttonD.addActionListener(this);
 		buttonD.setEnabled(true);
-		
-		
+		buttonD.setBackground(new Color(233, 232, 210));
+		buttonD.setBorder(BorderFactory.createBevelBorder(1));
+		buttonD.setBorder(BorderFactory.createLineBorder(new Color(129, 129,119), 2, true));
 		/*buttonD.setOpaque(false);
 		buttonD.setContentAreaFilled(false);
 		buttonD.setBorderPainted(false);*/
 		
-		answer_IconA.setBounds(50, 160, 100, 70);
-		answer_IconB.setBounds(50, 245, 100, 70);
-		answer_IconC.setBounds(50, 345, 100, 70);
-		answer_IconD.setBounds(50, 455, 100, 70);
-		
-		//the button for the next question 
+		answer_IconA.setBounds(50, 180, 120, 70);
+		answer_IconB.setBounds(50, 280, 120, 70);
+		answer_IconC.setBounds(50, 380, 120, 70);
+		answer_IconD.setBounds(50, 480, 120, 70);
+		 
 		ImageIcon next_arrow = new ImageIcon("download-removebg-preview (1).png");
 		map.setBounds(0,100,150,50);
 		map.addActionListener(this);
@@ -272,7 +267,7 @@ static ArrayList <String> options3 = new ArrayList<String>();
 		map.setIcon(next_arrow);
 		map.setHorizontalTextPosition(JButton.LEFT);
 		map.setIconTextGap(20);
-		map.setBackground(new Color(238,236,194));
+		map.setBackground(new Color(233, 232, 210));
 		map.setForeground(Color.black);
 		map.setBorder(BorderFactory.createBevelBorder(1));
 		
@@ -284,7 +279,7 @@ static ArrayList <String> options3 = new ArrayList<String>();
 		nextButton.setIcon(next_arrow);
 		nextButton.setHorizontalTextPosition(JButton.LEFT);
 		nextButton.setIconTextGap(20);
-		nextButton.setBackground(new Color(238,236,194));
+		nextButton.setBackground(new Color(233, 232, 210));
 		nextButton.setForeground(Color.black);
 		nextButton.setBorder(BorderFactory.createBevelBorder(1));
 		
