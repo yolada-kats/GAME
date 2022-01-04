@@ -1,3 +1,4 @@
+package game;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
@@ -42,7 +43,8 @@ import javax.swing.JPanel;
 	        private int tries=0;
 			JLabel score1 = new JLabel();
 			JPanel score_panel = new JPanel();
-
+//hbfsfs
+			//anksnvsn
 		public Findthewords(JFrame frame, int position) {
 			this.frame=frame;
 			frame.getContentPane().setBackground(new Color(255,236,204));
