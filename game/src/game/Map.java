@@ -39,7 +39,7 @@ public class Map extends JFrame {
 		pic = new JLabel();
 		pic.setBounds(0,0,608, 800);
 		pic.setVisible(true);
-    	pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("./Map2.png")));
+    	pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("./map3.jpg")));
     	panel.add(pic, Integer.valueOf(0));	
     	totalscore.setText(" Score:"+ total_score);
     	totalscore.setBackground((new java.awt.Color(255,236,204)));
