@@ -540,7 +540,7 @@ static ArrayList <String> options3 = new ArrayList<String>();
 		buttonD.setEnabled(false);
 		
 		//nextButton.setAction();
-		result = correct_guesses*20;
+		result = correct_guesses*10;
 		
 		textfield.setText("RESULTS!");
 		textarea.setText("");
