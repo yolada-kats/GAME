@@ -118,6 +118,7 @@ static ArrayList <String> options3 = new ArrayList<String>();
 			            'C',
 			            'A',
 			            'B',
+			            ' '
 	                 };
 
 	
@@ -150,7 +151,7 @@ static ArrayList <String> options3 = new ArrayList<String>();
 	JLabel answer_IconC = new JLabel();
 	JLabel answer_IconD = new JLabel();
 	
-	//test!!!
+	
 	ImageIcon answer_scroll = new ImageIcon("answer_scroll-removebg-preview.png");
 	JTextField number_right = new JTextField();
 	JTextField percentage = new JTextField();
