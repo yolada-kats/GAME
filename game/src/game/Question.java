@@ -162,7 +162,8 @@ static ArrayList <String> options3 = new ArrayList<String>();
 	ImageIcon mycenae = new ImageIcon("game/src/game/mycenae.jpg");
 	ImageIcon right = new ImageIcon("game/src/game/right-removebg-preview.png");
 	ImageIcon wrong = new ImageIcon("game/src/game/wrong-removebg-preview.png");
-	
+	//color that changes, for buttons and textareas 
+	Color color;
 	public Question(int x, JFrame frame) {
 		this.x = x;
 		this.frame = frame;
@@ -177,18 +178,21 @@ static ArrayList <String> options3 = new ArrayList<String>();
 		background.setBounds(0, 0, 608, 800);
 		if (x==1) {
 			background.setIcon(mycenae);
+			 color = new Color(255,225,185);
 		}else if (x==2) {
 			background.setIcon(delos);
+			color = new Color(229,254,255);
 		}else if (x==3) {
 			background.setIcon(crete);
+			color = new Color(212,241,255);
 		}
 		background.setVisible(true);
 		
 		textfield.setBounds(0,0,620,50);
-		textfield.setBackground(new Color(233, 232, 210));
+		textfield.setBackground(color);
 		textfield.setForeground(new Color(0,0,0));
 		textfield.setFont(new Font(" CASTELLAR",Font.BOLD,30));
-		textfield.setBorder(BorderFactory.createBevelBorder(1));
+		textfield.setBorder(BorderFactory.createLineBorder(Color.black));
 		textfield.setHorizontalAlignment(JTextField.CENTER);
 		textfield.setEditable(false);
 		frame.add(textfield);
@@ -197,11 +201,10 @@ static ArrayList <String> options3 = new ArrayList<String>();
 		textarea.setBounds(0,50,800,50);
 		textarea.setLineWrap(true);
 		textarea.setWrapStyleWord(true);
-		textarea.setBackground(new Color(233, 232, 210));
+		textarea.setBackground(color);
 		textarea.setForeground(new Color(0,0,0));
 		textarea.setFont(new Font("Times New Roman",Font.BOLD,20));
-		//textarea.setFont(new Font("MV BOLI",Font.BOLD,25));
-		textarea.setBorder(BorderFactory.createBevelBorder(1));
+		textarea.setBorder(BorderFactory.createLineBorder(Color.black));
 		textarea.setEditable(false);
 		
 		
@@ -267,9 +270,9 @@ static ArrayList <String> options3 = new ArrayList<String>();
 		map.setIcon(next_arrow);
 		map.setHorizontalTextPosition(JButton.LEFT);
 		map.setIconTextGap(20);
-		map.setBackground(new Color(233, 232, 210));
+		map.setBackground(color);
 		map.setForeground(Color.black);
-		map.setBorder(BorderFactory.createBevelBorder(1));
+		map.setBorder(BorderFactory.createLineBorder(Color.black));
 		
 		nextButton.setBounds(470,100,150,50);
 		nextButton.addActionListener(this);
@@ -279,9 +282,9 @@ static ArrayList <String> options3 = new ArrayList<String>();
 		nextButton.setIcon(next_arrow);
 		nextButton.setHorizontalTextPosition(JButton.LEFT);
 		nextButton.setIconTextGap(20);
-		nextButton.setBackground(new Color(233, 232, 210));
+		nextButton.setBackground(color);
 		nextButton.setForeground(Color.black);
-		nextButton.setBorder(BorderFactory.createBevelBorder(1));
+		nextButton.setBorder(BorderFactory.createLineBorder(Color.black));
 		
 		//number_right.setIcon(answer_scroll);
 		number_right.setBounds(100, 183, 400, 400);
