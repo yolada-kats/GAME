@@ -1,4 +1,4 @@
-package fill_the_gap;
+package game;
 import java.util.*;
 
 public class fill_the_gap {

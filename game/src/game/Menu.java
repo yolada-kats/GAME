@@ -14,7 +14,9 @@ public class Menu  implements ActionListener {
 	JTextField textfield = new JTextField();
 	 JFrame frame;
 
-	JLabel background = new JLabel();
+	JLabel background1 = new JLabel();
+	JLabel background2 = new JLabel();
+	JLabel background3 = new JLabel();
 	JButton buttonA = new JButton();
 	JButton buttonB = new JButton();
 	JButton buttonC = new JButton();
@@ -22,22 +24,34 @@ public class Menu  implements ActionListener {
 	JLabel answer_IconC = new JLabel();
 	
 	ImageIcon menuback = new ImageIcon("game/src/game/SANTA.PNG");
+	ImageIcon scroll = new ImageIcon("game/src/game/scroll.png");
+	ImageIcon sky = new ImageIcon("game/src/game/menuBackground.jpg");
+	
 	public Menu(int ind, JFrame frame) {
 		this.frame = frame;
 		this.ind=ind;
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(608,800);
-		frame.getContentPane().setBackground(new Color(72,61,139));
+		frame.getContentPane().setBackground(new Color(201,240,245));
 		frame.setLayout(null);
 		frame.setResizable(false);
-		background.setBounds(0, 0, 960,600);
-		background.setIcon(menuback);
-		background.setVisible(true);
+		frame.setLocationRelativeTo(null);
+		
+		background1.setBounds(0, 320, 150,424);
+		//background1.setIcon(menuback);
+		background1.setVisible(true);
+		
+		/*background2.setBounds(110, 120, 400, 440);
+		background2.setIcon(scroll);
+		background2.setVisible(true);*/
+		
+		background3.setBounds(0, 0, 600, 800);
+		background3.setIcon(sky);
+		background3.setVisible(true);
 		
 		textfield.setBounds(0,45,620,50);
 		textfield.setBackground(new Color(135,206,250));
-		
 		textfield.setForeground(new Color(135,206,250));
 		textfield.setFont(new Font("Sunrise",Font.BOLD,60));
 		//textfield.setFont(new Font("Ink Free",Font.BOLD,30));
@@ -48,12 +62,13 @@ public class Menu  implements ActionListener {
 		frame.add(textfield);
 		frame.setVisible(true);
 	
+		
 		buttonA.setBounds(150,200,300,50);
-		buttonA.setFont(new Font("Sunrise",Font.BOLD,30));
+		buttonA.setFont(new Font("Dialog", Font.ITALIC, 30));
 		//buttonA.setFont(new Font("MV BOLI",Font.BOLD,35));
 		buttonA.setFocusable(false);
 		buttonA.addActionListener(this);
-		buttonA.setForeground(new Color(175,175,255));
+		buttonA.setForeground(new Color(0,0,0));
 		//buttonA.setIcon(column);
 		
 		buttonA.setOpaque(false);
@@ -63,11 +78,11 @@ public class Menu  implements ActionListener {
 		//buttonA.setText("A");
 		
 		buttonB.setBounds(150,300,300,50);
-		buttonB.setFont(new Font("Sunrise",Font.BOLD,30));
+		buttonB.setFont(new Font("Dialog", Font.ITALIC, 30));
 		//buttonB.setFont(new Font("MV BOLI",Font.BOLD,35));
 		buttonB.setFocusable(false);
 		buttonB.addActionListener(this);
-		buttonB.setForeground(new Color(175,175,255));
+		buttonB.setForeground(new Color(0,0,0));
 		//buttonB.setText("B");
 		
 		
@@ -77,10 +92,10 @@ public class Menu  implements ActionListener {
 		
 		buttonC.setBounds(150,400,300,50);
 		//buttonC.setFont(new Font("MV BOLI",Font.BOLD,35));
-		buttonC.setFont(new Font("Sunrise",Font.BOLD,30));
+		buttonC.setFont(new Font("Dialog", Font.ITALIC, 30));
 		buttonC.setFocusable(false);
 		buttonC.addActionListener(this);
-		buttonC.setForeground(new Color(175,175,255));
+		buttonC.setForeground(new Color(0,0,0));
 		//buttonC.setText("C");
 		
 		
@@ -97,8 +112,9 @@ public class Menu  implements ActionListener {
 		frame.add(textfield);
 		
 		frame.setVisible(true);
-		frame.add(background);
-		
+		frame.add(background1);
+		frame.add(background2);
+		frame.add(background3);
 		buttons(ind);
 	}
 	
@@ -126,7 +142,9 @@ public class Menu  implements ActionListener {
 			frame.remove(buttonB);
 			frame.remove(textfield);
 			frame.remove(buttonC);
-			frame.remove(background);
+			frame.remove(background1);
+			frame.remove(background2);
+			frame.remove(background3);
 			Map star = new Map(frame, 0);
 			
 		}

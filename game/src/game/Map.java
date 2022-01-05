@@ -39,12 +39,12 @@ public class Map extends JFrame {
 		pic = new JLabel();
 		pic.setBounds(0,0,608, 800);
 		pic.setVisible(true);
-    	pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("./Map2.png")));
+    	pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("./map3.jpg")));
     	panel.add(pic, Integer.valueOf(0));	
     	totalscore.setText(" Score:"+ total_score);
     	totalscore.setBackground((new java.awt.Color(255,236,204)));
 	    totalscore.setFont(new java.awt.Font("Times New Roman", Font.BOLD, 17));
-	    totalscore.setBounds(510, 715, 90, 40);
+	    totalscore.setBounds(510,0, 90, 40);
 	    panel.add(totalscore,Integer.valueOf(1));
 	    totalscore.setOpaque(true);
 	 	totalscore.setForeground(new java.awt.Color(51,0,51));   
@@ -115,7 +115,7 @@ public class Map extends JFrame {
 			}
 	 	};	
 	    JButton exit = new JButton("Exit");
-	    exit.setBounds(510, 675, 90, 40);
+	    exit.setBounds(510,40, 90, 40);
 	    exit.setVisible(true);
 	    exit.setBackground(new java.awt.Color(23,0,29));
 	    exit.setForeground(Color.white);
