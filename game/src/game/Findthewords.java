@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -38,7 +39,9 @@ import javax.swing.JPanel;
 	        int score=0;
 			JLabel score1 = new JLabel();
 			JPanel score_panel = new JPanel();
-        
+			int color1;
+			int color2;
+			int color3;
 		public Findthewords(JFrame frame, int position) {
 			this.frame= frame;
 			frame.getContentPane().setBackground(new Color(255,236,204));
@@ -51,7 +54,10 @@ import javax.swing.JPanel;
 				question1.add("He invented the laws in Sparta");
 				question1.add("The Spartans became known for their");
 	        	question1.add("The famous phrase Leonidas said was molon");
-	        	pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("./sparta.jpg")));
+	        	pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("./sparta.jpeg")));
+	        	color1 = 196;
+	        	color2 = 218;
+	        	color3 = 241;
 			} else if (position == 2) {  //level ithaca
 				list1.add("ODYSSEAS");
 				list1.add("PENELOPE");
@@ -61,7 +67,10 @@ import javax.swing.JPanel;
 		        question1.add("She was Odyssea's wife");
 		        question1.add("He was Odyssea's dog");
 		        question1.add("He was the writter of Odyssea");
-		        pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("./ithaca.jpg")));
+		        pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("./ithaca.jpeg")));
+	        	color1 = 232;
+	        	color2 = 179;
+	        	color3 = 179;
 			} else if (position == 3) {   //level vergina
 				list1.add("ALEXANDER");
 				list1.add("FILLIPOS");
@@ -72,16 +81,19 @@ import javax.swing.JPanel;
 		        question1.add("The country that the Great Alexander arrived");
 		        question1.add("The historical capital of the ancient kingdom of Macedon");
 		        pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("./vergina.png")));
+	        	color1 = 241;
+	        	color2 = 229;
+	        	color3 = 108;
 			}
 			createframe();
 		}
 		
 		public void actionPerformed(ActionEvent e) {			
 			if(e.getSource() == nextlevel) {
-				frame.remove(question_panel);
-				frame.remove(score_panel);;
-				frame.remove(button_panel);
-				frame.remove(nextlevel); 
+				score1.setVisible(false);
+				score_panel.setVisible(false);
+				button_panel.setVisible(false);
+				nextlevel.setVisible(false); 
 				Map next = new Map(frame,score-10);
 			}	  
 			if(e.getSource() == next) {
@@ -136,16 +148,16 @@ import javax.swing.JPanel;
 			      buttons.clear();
 		    	  count++;
 		    	  next = new JButton("Next");
-				  next.setFont(new Font("Times New Roman", Font.BOLD, 30));
-				  next.setBounds(500,300,100,70);
-			      next.setForeground(new java.awt.Color(23,36,24));
-			      next.setFocusable(false);
-				  next.addActionListener(this);
-				  next.setVisible(true);
-				  next.setBackground(new java.awt.Color(255,236,204));
-				  next.setOpaque(true);
-			      next.setBorderPainted(false);
-				  title_panel.add(next,Integer.valueOf(2));
+		    	  next.setFont(new Font("Times New Roman", Font.BOLD, 30));
+					next.setBounds(500,0,100,70);
+					next.setForeground(new java.awt.Color(23,36,24));
+					next.setFocusable(false);
+					next.addActionListener(this);
+					next.setVisible(true);
+					next.setBorder(BorderFactory.createBevelBorder(1));
+					next.setOpaque(true);
+				    next.setBackground(new java.awt.Color(color1,color2,color3));
+				    title_panel.add(next,Integer.valueOf(2));
 		      }	 
 		}
 
@@ -155,14 +167,14 @@ import javax.swing.JPanel;
 				    count++;  
 				    next = new JButton("Next");
 				    next.setFont(new Font("Times New Roman", Font.BOLD, 30));
-					next.setBounds(500,300,100,70);
+					next.setBounds(500,0,100,70);
 					next.setForeground(new java.awt.Color(23,36,24));
 					next.setFocusable(false);
 					next.addActionListener(this);
 					next.setVisible(true);
+					next.setBorder(BorderFactory.createBevelBorder(1));
 					next.setOpaque(true);
-				    next.setBackground(new java.awt.Color(255,236,204));
-					next.setBorderPainted(false);
+				    next.setBackground(new java.awt.Color(color1,color2,color3));
 				    title_panel.add(next,Integer.valueOf(2));
 			}	
 		}
@@ -213,7 +225,7 @@ import javax.swing.JPanel;
 			 }else {
 					frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 					frame.setSize(new Dimension(608,800));
-					frame.setBackground(new java.awt.Color(153,204,255));
+					frame.getContentPane().setBackground(new java.awt.Color(color1, color2, color3));
 					frame.setLayout(new BorderLayout());
 					frame.setLocationRelativeTo(null);   
 		      		frame.setResizable(false);
@@ -221,8 +233,8 @@ import javax.swing.JPanel;
 					question.setFont(new java.awt.Font("Times New Roman", Font.BOLD , 24));
 					question.setHorizontalAlignment(JLabel.CENTER);
 					question.setForeground(new java.awt.Color(0,0,102));
-			   	    question_panel.setBackground(new java.awt.Color(255,236,204));
-			        question_panel.add(question);      
+			   	    question_panel.setBackground(new java.awt.Color(color1, color2, color3));
+			        question_panel.add(question);
 			      	question.setVisible(true);
 				    question_panel.setVisible(true);
 				    question.setBounds(0,0,620,600);
@@ -232,25 +244,25 @@ import javax.swing.JPanel;
 			 		      builder.append(gaps.get(i)+" ");   
 				          textfield.setText(builder.toString());  
 			 	   } 	  
-				   textfield.setBackground((new java.awt.Color(255,236,204)));
+				   textfield.setBackground((new java.awt.Color(color1, color2, color3)));
 			       textfield.setFont(new java.awt.Font("Times New Roman", Font.BOLD, 30));
-			       textfield.setBounds(100, 140, 380, 60);
+			       textfield.setBounds(107, 95, 385, 50);
 			       textfield.setHorizontalAlignment(JLabel.CENTER);
 			       textfield.setOpaque(true);
 			 	   textfield.setForeground(new java.awt.Color(51,0,51));
 			 	   textfield.setVisible(true);
 			 	   if(count==0) { 
-				       pic.setBounds(0,0,610,600);
+				       pic.setBounds(0,0,610,670);
 			 		   title_panel.add(pic, Integer.valueOf(0));
 					   title_panel.add(textfield,Integer.valueOf(1));
 				   }
 			 	   button_panel = new JPanel();   
 				   for(int i=0;i<letters.size();i++) {
 						Random r = new Random();  
-						button_panel.setBounds(0,0,620,150);	
+						button_panel.setBounds(0,0,608,100);	
 						buttons.add( new JButton(letters.get(set.get(i))));
 						button_panel.add(buttons.get(i));
-						buttons.get(i).setFont(new Font("Times New Roman",Font.BOLD,40));
+						buttons.get(i).setFont(new Font("Times New Roman",Font.BOLD,35));
 						buttons.get(i).setBounds(250,250,20,20);
 						button_panel.setLayout(new GridLayout(letters.size()/3,letters.size()/2));
 						buttons.get(i).setForeground(new java.awt.Color(r.nextInt(152), r.nextInt(203), r.nextInt(254)));
@@ -260,7 +272,7 @@ import javax.swing.JPanel;
 						buttons.get(i).setContentAreaFilled(false);
 						buttons.get(i).setBorderPainted(false);
 					} 		
-					button_panel.setBackground(new java.awt.Color(255,236,204));
+					button_panel.setBackground(new java.awt.Color(color1, color2, color3));
 					title_panel.setVisible(true);
 					button_panel.setVisible(true);
 					frame.add(title_panel,BorderLayout.CENTER);
@@ -297,6 +309,3 @@ import javax.swing.JPanel;
 		}
 		
 	}
-
-
-
