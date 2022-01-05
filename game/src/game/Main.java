@@ -12,19 +12,6 @@ public class Main {
 		JFrame frame = new JFrame();
 		Menu men = new Menu(0,frame);
 		//Map map = new Map(frame, 0);
-		
-		
-		
-		
-
-	
-	       
-	
 	}
 
 }
-
-
-
-
-
