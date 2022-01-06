@@ -111,7 +111,9 @@ public class Map extends JFrame {
 		ActionListener b10 = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {	  
 	 			    panel.setVisible(false);
-	 			    System.exit(ABORT);
+	 			    Result result = new Result(frame);
+	 			    //System.exit(ABORT);
+	 			    
 			}
 	 	};	
 	    JButton exit = new JButton("Exit");
