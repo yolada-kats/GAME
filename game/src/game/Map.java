@@ -9,7 +9,6 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 public class Map extends JFrame {
 	JFrame frame;
-    int level;
 	JLabel pic;
 	JLayeredPane panel = new JLayeredPane();
 	JLabel totalscore = new JLabel();
@@ -19,6 +18,12 @@ public class Map extends JFrame {
 	public Map(JFrame frame,int score) {
 		this.frame = frame;
 		total_score = score + total_score;
+		createmapframe();
+	}
+	public Map(JFrame frame,int score,int count) {
+		this.frame = frame;
+		this.count = count;
+        total_score = 0;
 		createmapframe();
 	}
 	private void createmapframe() {

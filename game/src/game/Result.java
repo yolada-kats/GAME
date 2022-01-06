@@ -14,13 +14,12 @@ import javax.swing.JTextField;
 public class Result extends JFrame implements ActionListener{
 	JFrame frame;
 	JTextField textfield = new JTextField();
-	
+	JButton playagain = new JButton();
 	JButton buttonE = new JButton();
 	int total_score;
 	public Result (JFrame frame,int total_score) {
 		this.frame = frame;
-		this.total_score = total_score;
-		
+		this.total_score = total_score;	
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(608,800);
 		frame.getContentPane().setBackground(new Color(201,240,245));
@@ -37,10 +36,15 @@ public class Result extends JFrame implements ActionListener{
 		textfield.setHorizontalAlignment(JTextField.CENTER);
 		textfield.setEditable(false);
 		
-		
-		//frame.add(textfield);
-		//frame.add(buttonC);
-		//frame.setVisible(true);
+		playagain.setBounds(150,300,300,50);
+		playagain.setFont(new Font("MV BOLI",Font.BOLD,35));
+		playagain.setFont(new Font("Dialog", Font.ITALIC, 30));
+		playagain.setFocusable(false);
+		playagain.addActionListener(this);
+		playagain.setForeground(new Color(0,0,0));
+		playagain.setOpaque(false);
+		playagain.setContentAreaFilled(false);
+		playagain.setBorderPainted(false);
 		
 		buttonE.setBounds(150,400,300,50);
 		buttonE.setFont(new Font("MV BOLI",Font.BOLD,35));
@@ -49,34 +53,34 @@ public class Result extends JFrame implements ActionListener{
 		buttonE.addActionListener(this);
 		buttonE.setForeground(new Color(0,0,0));
 		//buttonC.setText("C");
-		
-		
 		buttonE.setOpaque(false);
 		buttonE.setContentAreaFilled(false);
 		buttonE.setBorderPainted(false);
 		
 		textfield.setOpaque(false);
-		
-		frame.add(buttonE);
-		
+		buttons();
+		frame.add(buttonE);	
 		frame.add(textfield);
-		
-		frame.setVisible(true);
-	    buttons();
-		
+		frame.add(playagain);
+		frame.setVisible(true);	
 	}
 	
 	public void buttons() {
 		textfield.setText("RESULTS " + total_score);
 		buttonE.setText("EXIT");
-		
-		
+		playagain.setText("PLAY AGAIN");	
 	}
 	
 	public void actionPerformed(ActionEvent e) {
-		buttonE.setEnabled(false);
+		//buttonE.setEnabled(false);
 		if (e.getSource()==buttonE) {
 			System.exit(0);
+		}
+		if (e.getSource()==playagain) {
+			frame.remove(buttonE);
+			frame.remove(playagain);
+            frame.remove(textfield);
+			Map map = new Map(frame, 0,0);
 		}
 	}
 }
