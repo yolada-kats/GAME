@@ -14,7 +14,6 @@ public class Menu  implements ActionListener {
 	JTextField textfield = new JTextField();
 	 JFrame frame;
 
-	JLabel background1 = new JLabel();
 	JLabel background2 = new JLabel();
 	JLabel background3 = new JLabel();
 	JButton buttonA = new JButton();
@@ -23,8 +22,6 @@ public class Menu  implements ActionListener {
 	JLabel answer_IconB = new JLabel();
 	JLabel answer_IconC = new JLabel();
 	
-//	ImageIcon menuback = new ImageIcon("game/src/game/SANTA.PNG");
-	ImageIcon scroll = new ImageIcon("game/src/game/scroll.png");
 	ImageIcon sky = new ImageIcon("game/src/game/menuBackground.jpg");
 	
 	public Menu(int ind, JFrame frame) {
@@ -38,13 +35,7 @@ public class Menu  implements ActionListener {
 		frame.setResizable(false);
 		frame.setLocationRelativeTo(null);
 		
-		background1.setBounds(0, 320, 150,424);
-		//background1.setIcon(menuback);
-		background1.setVisible(true);
 		
-		/*background2.setBounds(110, 120, 400, 440);
-		background2.setIcon(scroll);
-		background2.setVisible(true);*/
 		
 		background3.setBounds(0, 0, 600, 800);
 		background3.setIcon(sky);
@@ -112,8 +103,6 @@ public class Menu  implements ActionListener {
 		frame.add(textfield);
 		
 		frame.setVisible(true);
-		frame.add(background1);
-		frame.add(background2);
 		frame.add(background3);
 		buttons(ind);
 	}
@@ -142,9 +131,9 @@ public class Menu  implements ActionListener {
 			frame.remove(buttonB);
 			frame.remove(textfield);
 			frame.remove(buttonC);
-			frame.remove(background1);
-			frame.remove(background2);
 			frame.remove(background3);
+			frame.remove(answer_IconB);
+			
 			Map star = new Map(frame, 0);
 			
 		}

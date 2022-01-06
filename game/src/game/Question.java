@@ -138,22 +138,24 @@ static ArrayList <String> options3 = new ArrayList<String>();
 	JTextField textfield = new JTextField();
 	JTextArea textarea = new JTextArea();
 	//background label
+	JLabel scrollLabel = new JLabel();
 	JLabel background = new JLabel();
+	
+	
 	JButton buttonA = new JButton();
 	JButton buttonB = new JButton();
 	JButton buttonC = new JButton();
 	JButton buttonD = new JButton();
-	
 	JButton map = new JButton();
 	//next button
 	JButton nextButton = new JButton();
+	
 	JLabel answer_IconA = new JLabel();
 	JLabel answer_IconB = new JLabel();
 	JLabel answer_IconC = new JLabel();
 	JLabel answer_IconD = new JLabel();
 	
 	
-	ImageIcon answer_scroll = new ImageIcon("answer_scroll-removebg-preview.png");
 	JTextField number_right = new JTextField();
 	JTextField percentage = new JTextField();
 
@@ -162,7 +164,9 @@ static ArrayList <String> options3 = new ArrayList<String>();
 	ImageIcon mycenae = new ImageIcon("game/src/game/mycenae.jpg");
 	ImageIcon right = new ImageIcon("game/src/game/right-removebg-preview.png");
 	ImageIcon wrong = new ImageIcon("game/src/game/wrong-removebg-preview.png");
-	//color that changes, for buttons and textareas 
+	ImageIcon scroll = new ImageIcon("game/src/game/scroll.png");
+
+	//color that changes, for buttons and text areas 
 	Color color;
 	public Question(int x, JFrame frame) {
 		this.x = x;
@@ -174,6 +178,11 @@ static ArrayList <String> options3 = new ArrayList<String>();
 		frame.getContentPane().setBackground(new Color(238,236,194));
 		frame.setLayout(null);
 		frame.setResizable(false);
+		
+		scrollLabel.setBounds(140, 180, 320, 453);
+		scrollLabel.setIcon(scroll);
+		scrollLabel.setVisible(true);
+		
 		
 		background.setBounds(0, 0, 608, 800);
 		if (x==1) {
@@ -286,14 +295,19 @@ static ArrayList <String> options3 = new ArrayList<String>();
 		nextButton.setForeground(Color.black);
 		nextButton.setBorder(BorderFactory.createLineBorder(Color.black));
 		
-		//number_right.setIcon(answer_scroll);
-		number_right.setBounds(100, 183, 400, 400);
+		/*number_right.setBounds(100, 183, 400, 400);
 		number_right.setBackground(new Color(238,236,194));
 		number_right.setForeground(new Color(0,0,0));
 		number_right.setFont(new Font("Ink Free",Font.BOLD,50));
 		number_right.setBorder(BorderFactory.createBevelBorder(1));
 		number_right.setHorizontalAlignment(JTextField.CENTER);
 		number_right.setEditable(false);
+		number_right.setOpaque(false);*/
+		
+		/*scrollLabel.setBounds(140, 180, 320, 453);
+		scrollLabel.setIcon(scroll);
+		scrollLabel.setVisible(true);*/
+		
 		
 
 		frame.add(nextButton);
@@ -451,21 +465,22 @@ static ArrayList <String> options3 = new ArrayList<String>();
 			
 		}
 		if (e.getSource()==map) {
-			nextButton.setVisible(false);
-			textfield.setVisible(false);
-			textarea.setVisible(false);
-			map.setVisible(false);
-			percentage.setVisible(false);
-			number_right.setVisible(false);
-			background.setVisible(false);
-			answer_IconA.setVisible(false);
-			answer_IconB.setVisible(false);
-			answer_IconC.setVisible(false);
-			answer_IconD.setVisible(false);
+			frame.remove(nextButton);
+			frame.remove(textfield);
+			frame.remove(textarea);
+			frame.remove(map);
+			frame.remove(percentage);
+			frame.remove(number_right);
+			frame.remove(background);
+			frame.remove(answer_IconA);
+			frame.remove(answer_IconB);
+			frame.remove(answer_IconC);
+			frame.remove(answer_IconD);
 			frame.remove(buttonA);
 			frame.remove(buttonB);
 			frame.remove(buttonC);
 			frame.remove(buttonD);
+			frame.remove(scrollLabel);
 			Map men = new Map(frame , result);
 		}
 		
@@ -534,29 +549,29 @@ static ArrayList <String> options3 = new ArrayList<String>();
 	}
 	
 	public void results(){
-		buttonA.setEnabled(false);
-		buttonB.setEnabled(false);
-		buttonC.setEnabled(false);
-		buttonD.setEnabled(false);
 		
-		//nextButton.setAction();
-		result = correct_guesses*10;
-		
-		textfield.setText("RESULTS!");
-		textarea.setText("");
-		buttonA.setText("");
-		buttonB.setText("");
-		buttonC.setText("");
-		buttonD.setText("");
-		
-		number_right.setText(""+result);
-		
-		frame.add(number_right);
-		frame.add(percentage);
 		frame.remove(buttonA);
 		frame.remove(buttonB);
 		frame.remove(buttonC);
 		frame.remove(buttonD);
+		buttonA.setVisible(false);
+		buttonB.setVisible(false);
+		buttonC.setVisible(false);
+		buttonD.setVisible(false);
+		frame.remove(number_right);
+		frame.remove(percentage);
+		result = correct_guesses*10;
+		
+		textfield.setText("RESULTS!");
+		textarea.setText("");
+		background.add(scrollLabel);
+		//scrollLabel.setText("Result:" + result);
+		
+		
+		//number_right.setText(""+result);
+		//frame.add(number_right);
+		//frame.add(percentage);
+		
 	}
 
 }
