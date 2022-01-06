@@ -11,15 +11,15 @@ import javax.swing.JFrame;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-public class Result extends JFrame {
+public class Result extends JFrame implements ActionListener{
 	JFrame frame;
 	JTextField textfield = new JTextField();
 	
-	JButton buttonC = new JButton();
-	
-	public Result (JFrame frame) {
+	JButton buttonE = new JButton();
+	int total_score;
+	public Result (JFrame frame,int total_score) {
 		this.frame = frame;
-		
+		this.total_score = total_score;
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(608,800);
@@ -38,43 +38,44 @@ public class Result extends JFrame {
 		textfield.setEditable(false);
 		
 		
-		frame.add(textfield);
-		frame.add(buttonC);
-		frame.setVisible(true);
+		//frame.add(textfield);
+		//frame.add(buttonC);
+		//frame.setVisible(true);
 		
-		buttonC.setBounds(150,400,300,50);
-		//buttonC.setFont(new Font("MV BOLI",Font.BOLD,35));
-		buttonC.setFont(new Font("Dialog", Font.ITALIC, 30));
-		buttonC.setFocusable(false);
-		buttonC.addActionListener((ActionListener) this);
-		buttonC.setForeground(new Color(0,0,0));
+		buttonE.setBounds(150,400,300,50);
+		buttonE.setFont(new Font("MV BOLI",Font.BOLD,35));
+		buttonE.setFont(new Font("Dialog", Font.ITALIC, 30));
+		buttonE.setFocusable(false);
+		buttonE.addActionListener(this);
+		buttonE.setForeground(new Color(0,0,0));
 		//buttonC.setText("C");
 		
 		
-		buttonC.setOpaque(false);
-		buttonC.setContentAreaFilled(false);
-		buttonC.setBorderPainted(false);
+		buttonE.setOpaque(false);
+		buttonE.setContentAreaFilled(false);
+		buttonE.setBorderPainted(false);
 		
 		textfield.setOpaque(false);
-		frame.add(buttonC);
+		
+		frame.add(buttonE);
 		
 		frame.add(textfield);
 		
 		frame.setVisible(true);
-		buttons();
+	    buttons();
 		
 	}
 	
 	public void buttons() {
-		textfield.setText("RESULTS");
-		buttonC.setText("EXIT");
+		textfield.setText("RESULTS " + total_score);
+		buttonE.setText("EXIT");
 		
 		
 	}
 	
 	public void actionPerformed(ActionEvent e) {
-		buttonC.setEnabled(false);
-		if (e.getSource()==buttonC) {
+		buttonE.setEnabled(false);
+		if (e.getSource()==buttonE) {
 			System.exit(0);
 		}
 	}

@@ -23,7 +23,7 @@ public class Menu  implements ActionListener {
 	JLabel answer_IconB = new JLabel();
 	JLabel answer_IconC = new JLabel();
 	
-	ImageIcon menuback = new ImageIcon("game/src/game/SANTA.PNG");
+//	ImageIcon menuback = new ImageIcon("game/src/game/SANTA.PNG");
 	ImageIcon scroll = new ImageIcon("game/src/game/scroll.png");
 	ImageIcon sky = new ImageIcon("game/src/game/menuBackground.jpg");
 	
