@@ -20,10 +20,11 @@ public class Map extends JFrame {
 		total_score = score + total_score;
 		createmapframe();
 	}
-	public Map(JFrame frame,int score,int count) {
+	public Map(JFrame frame,int score,int count1) {
 		this.frame = frame;
-		this.count = count;
+	    this.count = count1;
         total_score = 0;
+        cities.clear();
 		createmapframe();
 	}
 	private void createmapframe() {
@@ -116,9 +117,7 @@ public class Map extends JFrame {
 		ActionListener b10 = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {	  
 	 			    frame.remove(panel);
-	 			    new Result(frame,total_score);
-	 			    //System.exit(ABORT);
-	 			    
+	 			    new Result(frame,total_score);	 			    
 			}
 	 	};	
 	    JButton exit = new JButton("End Game");
@@ -135,8 +134,7 @@ public class Map extends JFrame {
 		ActionListener b1 = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {	  
 				 frame.remove(panel);
-	 			    //ithaca.setForeground(Color.red);
-	 				Findthewords ithaci = new Findthewords(frame, 2);
+	 				new Findthewords(frame, 2);
 	 				cities.add("Ithaca");
 	 				count++;
 			}
@@ -144,7 +142,7 @@ public class Map extends JFrame {
 	 	ActionListener b2 = new ActionListener() {
 	 		public void actionPerformed(ActionEvent e) {	
 	 			 frame.remove(panel);
-	 				Findthewords sparti = new Findthewords(frame, 1);
+	 				new Findthewords(frame, 1);
 	 				cities.add("Sparta");
 	 				count++;
 	 		}
@@ -152,7 +150,7 @@ public class Map extends JFrame {
 	 	ActionListener b3 = new ActionListener() {
 	 		public void actionPerformed(ActionEvent e) {	  
 	 			 frame.remove(panel);
-	 		 	   Findthewords bergina = new Findthewords(frame, 3);
+	 		 	   new Findthewords(frame, 3);
 	 		 	   cities.add("Vergina");
 	 		 	   count++;
 	 		}
@@ -160,7 +158,7 @@ public class Map extends JFrame {
 	 	ActionListener b4 = new ActionListener() {
 	 		public void actionPerformed(ActionEvent e) {	  
 	 			 frame.remove(panel);
-	 		 	   Question creta = new Question(3,frame);
+	 		 	   new Question(3,frame);
 	 		 	   cities.add("Crete");
 	 		 	   count++;
 	 		}
@@ -168,8 +166,7 @@ public class Map extends JFrame {
 	 	ActionListener b5 = new ActionListener() {
 	 		public void actionPerformed(ActionEvent e) {	  
 	 			 frame.remove(panel);
-	 			 panel.setVisible(false);
-	 		 	   Question mecynes = new Question(1,frame);
+	 		 	   new Question(1,frame);
 	 		 	   cities.add("Mecynae");
 	 		 	   count++;
 	 		}
@@ -177,7 +174,7 @@ public class Map extends JFrame {
 	 	ActionListener b6 = new ActionListener() {
 	 		public void actionPerformed(ActionEvent e) {	  
 	 			 frame.remove(panel);
-	 		 	   Question dilo = new Question(2,frame);
+	 		 	   new Question(2,frame);
 	 		 	   cities.add("Dilos");
 	 		 	   count++;
 	 		}
@@ -185,7 +182,7 @@ public class Map extends JFrame {
 		ActionListener b7 = new ActionListener() {
 	 		public void actionPerformed(ActionEvent e) {	  
 	 			 frame.remove(panel);
-	 			 Pesvres athena = new Pesvres("ATHENS");
+	 			 new Pesvres("ATHENS");
 	 		 	   cities.add("Athens");
 	 		 	   count++;
 	 		}
@@ -193,7 +190,7 @@ public class Map extends JFrame {
 	 	ActionListener b8 = new ActionListener() {
 	 		public void actionPerformed(ActionEvent e) {	  
 	 			 frame.remove(panel);
-	 		 	   Pesvres delfi = new Pesvres("DELPHI");
+	 		 	   new Pesvres("DELPHI");
 	 		 	   cities.add("Delphi");
 	 		       count++;
 	 		}
@@ -201,7 +198,7 @@ public class Map extends JFrame {
 	 	ActionListener b9 = new ActionListener() {
 	 		public void actionPerformed(ActionEvent e) {	  
 	 			 frame.remove(panel);
-	 		 	   Pesvres thermopiles = new Pesvres("THERMOPYLAE");
+	 		 	   new Pesvres("THERMOPYLAE");
 	 		 	   cities.add("Thermopylae");
 	 		 	   count++;
 	 		}
