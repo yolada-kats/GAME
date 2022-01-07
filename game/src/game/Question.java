@@ -6,6 +6,7 @@ import java.awt.*;
 import javax.swing.*;
 
 
+
 public class Question implements ActionListener {
 	
 	 static ArrayList <String>  question1 = new ArrayList<String>();  
@@ -177,8 +178,13 @@ static ArrayList <String> options3 = new ArrayList<String>();
 		frame.setLayout(null);
 		frame.setResizable(false);
 		
-		scrollLabel.setBounds(140, 130, 350, 600);
+		scrollLabel.setBounds(122, 150, 350, 495);
 		scrollLabel.setIcon(scroll);
+		scrollLabel.setForeground(Color.BLACK);
+		scrollLabel.setFont(new Font("Ink Free",Font.BOLD,30));
+		scrollLabel.setIconTextGap(-100);
+		scrollLabel.setHorizontalTextPosition(JLabel.CENTER);
+		scrollLabel.setVerticalTextPosition(JLabel.TOP);
 		scrollLabel.setVisible(true);
 		
 		
@@ -215,7 +221,7 @@ static ArrayList <String> options3 = new ArrayList<String>();
 		textarea.setEditable(false);
 		
 		
-		buttonA.setBounds(150,195,320,50);
+		buttonA.setBounds(150,200,320,50);
 		buttonA.setFont(new Font("Times New Roman",Font.BOLD,30));
 		buttonA.setFocusable(false);
 		buttonA.addActionListener(this);
@@ -227,7 +233,7 @@ static ArrayList <String> options3 = new ArrayList<String>();
 		buttonA.setBorderPainted(false);*/
 		
 		
-		buttonB.setBounds(150,295,320,50);
+		buttonB.setBounds(150,333,320,50);
 		buttonB.setFont(new Font("Times New Roman",Font.BOLD,30));
 		buttonB.setFocusable(false);
 		buttonB.addActionListener(this);
@@ -239,7 +245,7 @@ static ArrayList <String> options3 = new ArrayList<String>();
 		buttonB.setContentAreaFilled(false);
 		buttonB.setBorderPainted(false);*/
 		
-		buttonC.setBounds(150,395,320,50);
+		buttonC.setBounds(150,466,320,50);
 		buttonC.setFont(new Font("Times New Roman",Font.BOLD,30));
 		buttonC.setFocusable(false);
 		buttonC.addActionListener(this);
@@ -251,7 +257,7 @@ static ArrayList <String> options3 = new ArrayList<String>();
 		buttonC.setContentAreaFilled(false);
 		buttonC.setBorderPainted(false);*/
 		
-		buttonD.setBounds(150,495,320,50);
+		buttonD.setBounds(150,600,320,50);
 		buttonD.setFont(new Font("Times New Roman",Font.BOLD,30));
 		buttonD.setFocusable(false);
 		buttonD.addActionListener(this);
@@ -263,10 +269,10 @@ static ArrayList <String> options3 = new ArrayList<String>();
 		buttonD.setContentAreaFilled(false);
 		buttonD.setBorderPainted(false);*/
 		
-		answer_IconA.setBounds(50, 180, 120, 70);
-		answer_IconB.setBounds(50, 280, 120, 70);
-		answer_IconC.setBounds(50, 380, 120, 70);
-		answer_IconD.setBounds(50, 480, 120, 70);
+		answer_IconA.setBounds(50, 190, 120, 70);
+		answer_IconB.setBounds(50, 323, 120, 70);
+		answer_IconC.setBounds(50, 456, 120, 70);
+		answer_IconD.setBounds(50, 590, 120, 70);
 		 
 		ImageIcon next_arrow = new ImageIcon("download-removebg-preview (1).png");
 		map.setBounds(0,100,150,50);
@@ -501,10 +507,10 @@ static ArrayList <String> options3 = new ArrayList<String>();
 			frame.remove(answer_IconB);
 			frame.remove(answer_IconC);
 			frame.remove(answer_IconD);
-			/*frame.remove(buttonA);
+			frame.remove(buttonA);
 			frame.remove(buttonB);
 			frame.remove(buttonC);
-			frame.remove(buttonD);*/
+			frame.remove(buttonD);
 			frame.remove(scrollLabel);
 			new Map(frame , result);
 		}
@@ -574,13 +580,14 @@ static ArrayList <String> options3 = new ArrayList<String>();
 	}
 	
 	public void results(){
-		
 		result = correct_guesses*10;
-		
+		scrollLabel.setText("Result:" + result);
 		textfield.setText("RESULTS!");
 		textarea.setText("");
+		
+		
 		background.add(scrollLabel);
-		//scrollLabel.setText("Result:" + result);
+		
 		
 		
 	}
