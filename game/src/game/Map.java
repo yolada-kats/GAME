@@ -121,7 +121,7 @@ public class Map extends JFrame {
 	 			    
 			}
 	 	};	
-	    JButton exit = new JButton("Exit");
+	    JButton exit = new JButton("End Game");
 	    exit.setBounds(510,40, 90, 40);
 	    exit.setVisible(true);
 	    exit.setBackground(new java.awt.Color(23,0,29));
