@@ -1,7 +1,10 @@
 package game;
 
 import java.awt.event.*;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Scanner;
 import java.awt.*;
 import javax.swing.*;
 
@@ -125,6 +128,7 @@ static ArrayList <String> options3 = new ArrayList<String>();
 	char guess;
 	char answer;
 	int index;
+	String data;
 	int correct_guesses =0;
 	int total_questions = 4;
 	int result;
@@ -584,7 +588,24 @@ static ArrayList <String> options3 = new ArrayList<String>();
 		scrollLabel.setText("Result:" + result);
 		textfield.setText("RESULTS!");
 		textarea.setText("");
-		
+		 int y=0;
+			try {
+			      File file = new File("C:\\Users\\giolk\\OneDrive\\Έγγραφα\\GAME\\game\\src\\game\\filename.txt");
+			      Scanner myReader = new Scanner(file);
+			      while (myReader.hasNextLine()) {
+			        data = myReader.nextLine();
+			        JLabel info = new JLabel(data);
+			        info.setForeground(Color.black);
+		        	info.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		         	info.setBounds(75,-190+y,500,600);
+	                scrollLabel.add(info);
+               y+=20;
+			      }
+			      myReader.close();
+			    } catch (FileNotFoundException e) {
+			      System.out.println("An error occurred.");
+			      e.printStackTrace();
+			    }
 		
 		background.add(scrollLabel);
 		
