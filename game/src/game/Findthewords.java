@@ -6,10 +6,14 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
+import java.util.Scanner;
+
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -41,6 +45,7 @@ import javax.swing.JPanel;
 			int color1;
 			int color2;
 			int color3;
+			String data;
 		public Findthewords(JFrame frame, int position) {
 			this.frame= frame;
 			frame.getContentPane().setBackground(new Color(255,236,204));
@@ -256,6 +261,7 @@ import javax.swing.JPanel;
 			        pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("./scroll.png")));
 			        pic.setBounds(120,-10,400,590);
 			        title_panel.add(pic, Integer.valueOf(1));
+			        readfile();
 					score_panel.add(score1);
 					button_panel.add(nextlevel);
 					score_panel.setVisible(true);
@@ -323,6 +329,27 @@ import javax.swing.JPanel;
 			 	 }	 
 		} 
 		
+		private void readfile() {
+			  int y=0;
+				try {
+				      File file = new File("C:\\Users\\johan\\OneDrive\\Έγγραφα\\GitHub\\GAME\\game\\src\\game\\filename.txt");
+				      Scanner myReader = new Scanner(file);
+				      while (myReader.hasNextLine()) {
+				        data = myReader.nextLine();
+				        JLabel info = new JLabel(data);
+				        info.setForeground(Color.black);
+			        	info.setFont(new Font("Times New Roman", Font.BOLD, 20));
+			         	info.setBounds(177,-190+y,500,600);
+		                title_panel.add(info,Integer.valueOf(2));
+                      y+=20;
+				      }
+				      myReader.close();
+				    } catch (FileNotFoundException e) {
+				      System.out.println("An error occurred.");
+				      e.printStackTrace();
+				    }
+		}
+
 		public void createlists() {
 			/*
 			 * Split the word and create a list with the letters of the word 
