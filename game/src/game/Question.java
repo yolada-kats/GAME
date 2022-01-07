@@ -1,8 +1,6 @@
 package game;
 
 import java.awt.event.*;
-import java.awt.image.ImageObserver;
-import java.awt.image.ImageProducer;
 import java.util.ArrayList;
 import java.awt.*;
 import javax.swing.*;
@@ -156,10 +154,10 @@ static ArrayList <String> options3 = new ArrayList<String>();
 	JLabel answer_IconD = new JLabel();
 	
 	
-	JTextField number_right = new JTextField();
-	JTextField percentage = new JTextField();
+	//JTextField number_right = new JTextField();
+	//JTextField percentage = new JTextField();
 
-	ImageIcon delos = new ImageIcon("game/src/game/4.jpg");
+	ImageIcon delos = new ImageIcon("game/src/game/dilos.jpg");
 	ImageIcon crete = new ImageIcon("game/src/game/crete.jpg");
 	ImageIcon mycenae = new ImageIcon("game/src/game/mycenae.jpg");
 	ImageIcon right = new ImageIcon("game/src/game/right-removebg-preview.png");
@@ -171,7 +169,7 @@ static ArrayList <String> options3 = new ArrayList<String>();
 	public Question(int x, JFrame frame) {
 		this.x = x;
 		this.frame = frame;
-		//te background settings
+		//the background settings
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(608,800);
@@ -179,12 +177,12 @@ static ArrayList <String> options3 = new ArrayList<String>();
 		frame.setLayout(null);
 		frame.setResizable(false);
 		
-		scrollLabel.setBounds(140, 180, 320, 453);
+		scrollLabel.setBounds(140, 130, 350, 600);
 		scrollLabel.setIcon(scroll);
 		scrollLabel.setVisible(true);
 		
 		
-		background.setBounds(0, 0, 608, 800);
+		background.setSize(608, 800);
 		if (x==1) {
 			background.setIcon(mycenae);
 			 color = new Color(255,225,185);
@@ -334,6 +332,15 @@ static ArrayList <String> options3 = new ArrayList<String>();
 		
 	if (c==1) {
 		if(index>=total_questions) {
+			nextButton.setEnabled(false);
+			buttonA.setVisible(false);
+			buttonB.setVisible(false);
+			buttonC.setVisible(false);
+			buttonD.setVisible(false);
+			frame.remove(buttonA);
+			frame.remove(buttonB);
+			frame.remove(buttonC);
+			frame.remove(buttonD);
 			results();
 		}else {
 			
@@ -347,6 +354,15 @@ static ArrayList <String> options3 = new ArrayList<String>();
 		
 	}else if (c==2) {
 			if(index>=total_questions) {
+				nextButton.setEnabled(false);
+				buttonA.setVisible(false);
+				buttonB.setVisible(false);
+				buttonC.setVisible(false);
+				buttonD.setVisible(false);
+				frame.remove(buttonA);
+				frame.remove(buttonB);
+				frame.remove(buttonC);
+				frame.remove(buttonD);
 				results();
 			}else {
 				
@@ -360,6 +376,15 @@ static ArrayList <String> options3 = new ArrayList<String>();
 			
 	}else if (c==3) {
 			if(index>=total_questions) {
+				nextButton.setEnabled(false);
+				buttonA.setVisible(false);
+				buttonB.setVisible(false);
+				buttonC.setVisible(false);
+				buttonD.setVisible(false);
+				frame.remove(buttonA);
+				frame.remove(buttonB);
+				frame.remove(buttonC);
+				frame.remove(buttonD);
 				results();
 			}else {
 				
@@ -469,19 +494,19 @@ static ArrayList <String> options3 = new ArrayList<String>();
 			frame.remove(textfield);
 			frame.remove(textarea);
 			frame.remove(map);
-			frame.remove(percentage);
-			frame.remove(number_right);
+			//frame.remove(percentage);
+			//frame.remove(number_right);
 			frame.remove(background);
 			frame.remove(answer_IconA);
 			frame.remove(answer_IconB);
 			frame.remove(answer_IconC);
 			frame.remove(answer_IconD);
-			frame.remove(buttonA);
+			/*frame.remove(buttonA);
 			frame.remove(buttonB);
 			frame.remove(buttonC);
-			frame.remove(buttonD);
+			frame.remove(buttonD);*/
 			frame.remove(scrollLabel);
-			Map men = new Map(frame , result);
+			new Map(frame , result);
 		}
 		
 	}
@@ -550,16 +575,6 @@ static ArrayList <String> options3 = new ArrayList<String>();
 	
 	public void results(){
 		
-		frame.remove(buttonA);
-		frame.remove(buttonB);
-		frame.remove(buttonC);
-		frame.remove(buttonD);
-		buttonA.setVisible(false);
-		buttonB.setVisible(false);
-		buttonC.setVisible(false);
-		buttonD.setVisible(false);
-		frame.remove(number_right);
-		frame.remove(percentage);
 		result = correct_guesses*10;
 		
 		textfield.setText("RESULTS!");
@@ -567,10 +582,6 @@ static ArrayList <String> options3 = new ArrayList<String>();
 		background.add(scrollLabel);
 		//scrollLabel.setText("Result:" + result);
 		
-		
-		//number_right.setText(""+result);
-		//frame.add(number_right);
-		//frame.add(percentage);
 		
 	}
 

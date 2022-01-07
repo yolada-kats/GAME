@@ -1,4 +1,4 @@
-package game;
+/*package game;
 import java.util.*;
 
 public class fill_the_gap {
@@ -106,4 +106,4 @@ public class fill_the_gap {
 		return score;
 	}
 
-}
+}*/

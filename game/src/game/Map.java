@@ -116,7 +116,7 @@ public class Map extends JFrame {
 		ActionListener b10 = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {	  
 	 			    frame.remove(panel);
-	 			    Result result = new Result(frame,total_score);
+	 			    new Result(frame,total_score);
 	 			    //System.exit(ABORT);
 	 			    
 			}
@@ -168,6 +168,7 @@ public class Map extends JFrame {
 	 	ActionListener b5 = new ActionListener() {
 	 		public void actionPerformed(ActionEvent e) {	  
 	 			 frame.remove(panel);
+	 			 panel.setVisible(false);
 	 		 	   Question mecynes = new Question(1,frame);
 	 		 	   cities.add("Mecynae");
 	 		 	   count++;
