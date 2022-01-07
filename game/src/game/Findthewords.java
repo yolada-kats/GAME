@@ -25,20 +25,19 @@ import javax.swing.JPanel;
 			JLabel question = new JLabel();
 			JPanel button_panel;
 			JLabel pic = new JLabel();
-			JButton nextlevel; 
-			JButton next;
+			JButton nextlevel;   
+			JButton next;       
+			JLabel score1 = new JLabel();
+			JPanel score_panel = new JPanel();
 	        ArrayList <String> question1 = new  ArrayList<String>();
 	        ArrayList <String> list1 = new  ArrayList<String>();
 	        ArrayList <String> gaps = new  ArrayList<String>();
 	        ArrayList <String> letters = new  ArrayList<String>();
 	        ArrayList<Integer> set = new  ArrayList<Integer>();
-			int k=0;
-			int x;
-	        protected int count=0;
+			int k=0;  //counts the number of the letters that the user finds
+	        protected int count=0;   //the index of a word in the arraylist
 	        private int tries=0;
-	        int score=0;
-			JLabel score1 = new JLabel();
-			JPanel score_panel = new JPanel();
+	        int score=0;	
 			int color1;
 			int color2;
 			int color3;
@@ -88,29 +87,22 @@ import javax.swing.JPanel;
 			createframe();
 		}
 		
-		public void actionPerformed(ActionEvent e) {			
-			if(e.getSource() == nextlevel) {
-				score1.setVisible(false);
-				score_panel.setVisible(false);
-				button_panel.setVisible(false);
-				nextlevel.setVisible(false); 
-				Map next = new Map(frame,score-10);
-			}	  
-			if(e.getSource() == next) {
+		public void actionPerformed(ActionEvent e) {			 
+			/*if(e.getSource() == next) {
 				 for (int i1 = 0; i1 < letters.size(); i1++) {
-                     (buttons.get(i1)).setVisible(false);
+                     button_panel.remove(buttons.get(i1));
 				 }   
+				 frame.remove(button_panel);         
+				 next.setVisible(false);
 				 letters.clear();
 				 gaps.clear();
 				 set.clear();
-				 buttons.removeAll(buttons);
-			     question_panel.setVisible(false);
 				 question.setVisible(false);
-				 button_panel.setVisible(false);         
-				 textfield.setVisible(false);
-				 next.setVisible(false);
+				 buttons.removeAll(buttons);
+				 title_panel.remove(next);
+				 frame.remove(next);
 			     createframe();	
-			}	  
+			}*/	  
 		        /*
 		        * Examine if the pressed button is the right letter then gaps list changes else player's tries are increased by one
 		        */
@@ -126,7 +118,6 @@ import javax.swing.JPanel;
 			             }
 				     }  
 				}
-				//Display an array in the jlabel textfield
 				 StringBuilder builder = new StringBuilder();
 				    for (String gap : gaps) {
 					      builder.append(gap + " ");	      
@@ -147,17 +138,34 @@ import javax.swing.JPanel;
 			      set.clear();
 			      buttons.clear();
 		    	  count++;
+		    	  ActionListener b2 = new ActionListener() {
+						public void actionPerformed(ActionEvent e) {	  
+							 for (int i1 = 0; i1 < letters.size(); i1++) {
+			                     button_panel.remove(buttons.get(i1));
+							 }   
+							 frame.remove(button_panel);         
+							 next.setVisible(false);
+							 letters.clear();
+							 gaps.clear();
+							 set.clear();
+							 question.setVisible(false);
+							 buttons.removeAll(buttons);
+							 title_panel.remove(next);
+							 frame.remove(next);
+						     createframe();	
+						}
+				 	};	
 		    	  next = new JButton("Next");
 		    	  next.setFont(new Font("Times New Roman", Font.BOLD, 30));
-					next.setBounds(500,0,100,70);
-					next.setForeground(new java.awt.Color(23,36,24));
-					next.setFocusable(false);
-					next.addActionListener(this);
-					next.setVisible(true);
-					next.setBorder(BorderFactory.createBevelBorder(1));
-					next.setOpaque(true);
-				    next.setBackground(new java.awt.Color(color1,color2,color3));
-				    title_panel.add(next,Integer.valueOf(2));
+				  next.setBounds(500,0,100,70);
+				  next.setForeground(new java.awt.Color(23,36,24));
+				  next.setFocusable(false);
+				  next.addActionListener(b2);
+				  next.setVisible(true);
+				  next.setBorder(BorderFactory.createBevelBorder(1));
+				  next.setOpaque(true);
+				  next.setBackground(new java.awt.Color(color1,color2,color3));
+			      title_panel.add(next,Integer.valueOf(2));
 		      }	 
 		}
 
@@ -165,18 +173,35 @@ import javax.swing.JPanel;
 			      if (k == letters.size()) {
 			    	score += 10;
 				    count++;  
+				    ActionListener b2 = new ActionListener() {
+						public void actionPerformed(ActionEvent e) {	  
+							 for (int i1 = 0; i1 < letters.size(); i1++) {
+			                     button_panel.remove(buttons.get(i1));
+							 }   
+							 frame.remove(button_panel);         
+							 next.setVisible(false);
+							 letters.clear();
+							 gaps.clear();
+							 set.clear();
+							 question.setVisible(false);
+							 buttons.removeAll(buttons);
+							 title_panel.remove(next);
+							 frame.remove(next);
+						     createframe();	
+						}
+				 	};	
 				    next = new JButton("Next");
 				    next.setFont(new Font("Times New Roman", Font.BOLD, 30));
 					next.setBounds(500,0,100,70);
 					next.setForeground(new java.awt.Color(23,36,24));
 					next.setFocusable(false);
-					next.addActionListener(this);
+					next.addActionListener(b2);
 					next.setVisible(true);
 					next.setBorder(BorderFactory.createBevelBorder(1));
 					next.setOpaque(true);
 				    next.setBackground(new java.awt.Color(color1,color2,color3));
 				    title_panel.add(next,Integer.valueOf(2));
-			}	
+			     }	
 		}
 
 		public void createframe() {  
@@ -186,42 +211,58 @@ import javax.swing.JPanel;
 			  * if word is the last one display score, level completed, if not display frame with the next word
 			  */
 			 if (count >= 4) {
-				 pic.setVisible(false);
-				 textfield.setVisible(false);
-				 question.setVisible(false);
-				 question_panel.setVisible(false);
- 				 button_panel.setVisible(false);
- 				 title_panel.setVisible(false);
+ 				 frame.remove(question_panel);
+ 				 //title_panel.remove(textfield);
+ 				 //title_panel.remove(pic);
+ 				 //title_panel.remove(next);
+ 				 frame.remove(next);
+ 				 frame.remove(title_panel);
 				 for (int i1 = 0; i1 < letters.size(); i1++) {
-						buttons.get(i1).setVisible(false);
+						button_panel.remove(buttons.get(i1));
 				 }
-					score1.setText("Score: " + score);
-			        score_panel.setBackground(new java.awt.Color(255,236,204));
-			        score1.setForeground(Color.WHITE);
-			        score1.setFont(new Font("Times New Roman", Font.BOLD, 40));
+					score1.setText("RESULT:  " + score);
+			        score_panel.setBackground(new java.awt.Color(color1,color2,color3));
+			        score1.setForeground(new java.awt.Color(51,0,51));
+			        score1.setFont(new Font("Times New Roman", Font.BOLD, 60));
 			        score1.setBounds(300,400,400,300);
 				    score1.setHorizontalAlignment(JLabel.CENTER);
 				    score1.setLayout(new BorderLayout());
 				    score1.setVisible(true);
-				    score_panel.setBounds(0,0,620,600);
+				    score_panel.setBounds(0,0,608,200);
 				    score_panel.add(score1); 
 				    button_panel = new JPanel();
-				    button_panel.setBounds(0,0,620,600);
-				    button_panel.setBackground(new java.awt.Color(255,236,204));
+				    button_panel.setBounds(0,0,608,200);
+				    button_panel.setBackground(new java.awt.Color(color1,color2,color3));
+				    ActionListener b1 = new ActionListener() {
+						public void actionPerformed(ActionEvent e) {	  
+							frame.remove(score_panel);
+							frame.remove(button_panel);
+							frame.remove(title_panel);
+							new Map(frame,score);
+						}
+				 	};	
 				    nextlevel = new JButton("Map"); 
-				    nextlevel.setFont(new Font("Times New Roman", Font.BOLD, 60));
-					nextlevel.setBounds(310,600,200,200);
-					nextlevel.setBackground(Color.white);
+				    nextlevel.setFont(new Font("Times New Roman", Font.BOLD, 80));
+					nextlevel.setBounds(400,0,500,400);
 					nextlevel.setForeground(new java.awt.Color(51,0,51));
 					nextlevel.setFocusable(false);
-					nextlevel.addActionListener(this);
+					nextlevel.addActionListener(b1);
+					nextlevel.setOpaque(false);
+					nextlevel.setContentAreaFilled(false);
 					nextlevel.setBorderPainted(false);
 					nextlevel.setVisible(true);
+					title_panel = new JLayeredPane();
+					title_panel.setBounds(0,0,608,400);
+			        pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("./scroll.png")));
+			        pic.setBounds(120,-10,400,590);
+			        title_panel.add(pic, Integer.valueOf(1));
 					score_panel.add(score1);
 					button_panel.add(nextlevel);
 					score_panel.setVisible(true);
+					title_panel.setVisible(true);
 					frame.add(score_panel,BorderLayout.NORTH);		
-					frame.add(button_panel,BorderLayout.SOUTH);		
+					frame.add(button_panel,BorderLayout.SOUTH);	
+					frame.add(title_panel);
 			 }else {
 					frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 					frame.setSize(new Dimension(608,800));
@@ -294,7 +335,7 @@ import javax.swing.JPanel;
 			for(int i=0;i<letters.size();i++) {
 				set.add(i);
 			}
-			x=letters.size();
+			int x=letters.size();
 	        Random random = new Random();
 			for (int i=0;i<x;i++) {
 				int randomIndex = random.nextInt(x);
@@ -303,9 +344,5 @@ import javax.swing.JPanel;
 				set.set(i, temp);
 			} 
 		}
-		
-		public int getScore() {
-			return score;
-		}
-		
 	}
+
