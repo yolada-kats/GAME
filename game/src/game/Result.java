@@ -24,6 +24,7 @@ public class Result extends JFrame implements ActionListener{
 	ImageIcon image = new ImageIcon("game/src/game/final.jpg");
 	ImageIcon stars = new ImageIcon("game/src/game/stars.gif");
 	int total_score;
+	
 	public Result (JFrame frame,int total_score) {
 		this.frame = frame;
 		this.total_score = total_score;
@@ -41,7 +42,7 @@ public class Result extends JFrame implements ActionListener{
 		background.setIcon(image);
 		background.setVisible(true);
 		
-		star.setBounds(0, 50, 400, 309);
+		star.setBounds(50, 100, 400, 600);
 		star.setIcon(stars);
 		star.setVisible(true);
 		
