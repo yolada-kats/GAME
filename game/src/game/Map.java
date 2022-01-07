@@ -50,7 +50,8 @@ public class Map extends JFrame {
     	totalscore.setText(" Score:"+ total_score);
     	totalscore.setBackground((new java.awt.Color(255,236,204)));
 	    totalscore.setFont(new java.awt.Font("Times New Roman", Font.BOLD, 17));
-	    totalscore.setBounds(510,0, 90, 40);
+	    totalscore.setBounds(460,15, 120, 40);
+	    totalscore.setHorizontalTextPosition(JLabel.CENTER);
 	    panel.add(totalscore,Integer.valueOf(1));
 	    totalscore.setOpaque(true);
 	 	totalscore.setForeground(new java.awt.Color(51,0,51));   
@@ -121,7 +122,7 @@ public class Map extends JFrame {
 			}
 	 	};	
 	    JButton exit = new JButton("End Game");
-	    exit.setBounds(510,40, 90, 40);
+	    exit.setBounds(460,55, 120, 40);
 	    exit.setVisible(true);
 	    exit.setBackground(new java.awt.Color(23,0,29));
 	    exit.setForeground(Color.white);

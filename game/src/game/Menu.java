@@ -54,8 +54,8 @@ public class Menu  implements ActionListener {
 		frame.setVisible(true);
 	
 		
-		buttonA.setBounds(150,300,300,50);
-		buttonA.setFont(new Font("Dialog", Font.ITALIC, 30));
+		buttonA.setBounds(120,300,350,50);
+		buttonA.setFont(new Font("Dialog", Font.ITALIC, 40));
 		//buttonA.setFont(new Font("MV BOLI",Font.BOLD,35));
 		buttonA.setFocusable(false);
 		buttonA.addActionListener(this);
@@ -69,7 +69,7 @@ public class Menu  implements ActionListener {
 		//buttonA.setText("A");
 		
 		buttonB.setBounds(150,200,300,50);
-		buttonB.setFont(new Font("Dialog", Font.ITALIC, 30));
+		buttonB.setFont(new Font("Dialog", Font.ITALIC, 40));
 		//buttonB.setFont(new Font("MV BOLI",Font.BOLD,35));
 		buttonB.setFocusable(false);
 		buttonB.addActionListener(this);
@@ -83,7 +83,7 @@ public class Menu  implements ActionListener {
 		
 		buttonC.setBounds(150,400,300,50);
 		//buttonC.setFont(new Font("MV BOLI",Font.BOLD,35));
-		buttonC.setFont(new Font("Dialog", Font.ITALIC, 30));
+		buttonC.setFont(new Font("Dialog", Font.ITALIC, 40));
 		buttonC.setFocusable(false);
 		buttonC.addActionListener(this);
 		buttonC.setForeground(new Color(0,0,0));
