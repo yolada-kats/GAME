@@ -20,9 +20,9 @@ public class Result extends JFrame implements ActionListener{
 	JButton playagain = new JButton();
 	JButton buttonE = new JButton();
 	JLabel background = new JLabel();
-	JLabel star = new JLabel();
+	JLabel flame = new JLabel();
 	ImageIcon image = new ImageIcon("game/src/game/final.jpg");
-	ImageIcon stars = new ImageIcon("game/src/game/stars.gif");
+	ImageIcon flames = new ImageIcon("game/src/game/flame.gif");
 	int total_score;
 	
 	public Result (JFrame frame,int total_score) {
@@ -42,19 +42,19 @@ public class Result extends JFrame implements ActionListener{
 		background.setIcon(image);
 		background.setVisible(true);
 		
-		star.setBounds(50, 100, 400, 600);
-		star.setIcon(stars);
-		star.setVisible(true);
+		flame.setBounds(165,62, 400, 600);
+		flame.setIcon(flames);
+		flame.setVisible(true);
 		
 		textfield.setBounds(0,45,620,50);
 		textfield.setBackground(new Color(135,206,250));
-		textfield.setForeground(new Color(135,206,250));
+		textfield.setForeground(new Color(0,0,0));
 		textfield.setFont(new Font("Sunrise",Font.BOLD,60));
 		textfield.setBorder(BorderFactory.createBevelBorder(-1));
 		textfield.setHorizontalAlignment(JTextField.CENTER);
 		textfield.setEditable(false);
 		
-		playagain.setBounds(150,300,300,50);
+		playagain.setBounds(150,100,300,50);
 		playagain.setFont(new Font("MV BOLI",Font.BOLD,35));
 		playagain.setFont(new Font("Dialog", Font.ITALIC, 30));
 		playagain.setFocusable(false);
@@ -64,7 +64,7 @@ public class Result extends JFrame implements ActionListener{
 		playagain.setContentAreaFilled(false);
 		playagain.setBorderPainted(false);
 		
-		buttonE.setBounds(150,400,300,50);
+		buttonE.setBounds(150,150,300,50);
 		buttonE.setFont(new Font("MV BOLI",Font.BOLD,35));
 		buttonE.setFont(new Font("Dialog", Font.ITALIC, 30));
 		buttonE.setFocusable(false);
@@ -76,11 +76,11 @@ public class Result extends JFrame implements ActionListener{
 		
 		textfield.setOpaque(false);
 		buttons();
-		panel.add(buttonE, Integer.valueOf(1));	
-		panel.add(textfield, Integer.valueOf(1));
-		panel.add(playagain, Integer.valueOf(1));
+		panel.add(buttonE, Integer.valueOf(2));	
+		panel.add(textfield, Integer.valueOf(2));
+		panel.add(playagain, Integer.valueOf(2));
 		panel.add(background, Integer.valueOf(0));
-		panel.add(star, Integer.valueOf(2));
+		panel.add(flame, Integer.valueOf(1));
 		frame.add(panel);
 		frame.setVisible(true);	
 	}

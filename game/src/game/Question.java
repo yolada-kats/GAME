@@ -303,20 +303,6 @@ static ArrayList <String> options3 = new ArrayList<String>();
 		nextButton.setForeground(Color.black);
 		nextButton.setBorder(BorderFactory.createLineBorder(Color.black));
 		
-		/*number_right.setBounds(100, 183, 400, 400);
-		number_right.setBackground(new Color(238,236,194));
-		number_right.setForeground(new Color(0,0,0));
-		number_right.setFont(new Font("Ink Free",Font.BOLD,50));
-		number_right.setBorder(BorderFactory.createBevelBorder(1));
-		number_right.setHorizontalAlignment(JTextField.CENTER);
-		number_right.setEditable(false);
-		number_right.setOpaque(false);*/
-		
-		/*scrollLabel.setBounds(140, 180, 320, 453);
-		scrollLabel.setIcon(scroll);
-		scrollLabel.setVisible(true);*/
-		
-		
 
 		frame.add(nextButton);
 		frame.add(map);
@@ -590,7 +576,7 @@ static ArrayList <String> options3 = new ArrayList<String>();
 		textarea.setText("");
 		 int y=0;
 			try {
-			      File file = new File("C:\\Users\\giolk\\OneDrive\\¸ããñáöá\\GAME\\game\\src\\game\\filename.txt");
+			      File file = new File("C:\\Users\\giolk\\OneDrive\\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\\GAME\\game\\src\\game\\filename.txt");
 			      Scanner myReader = new Scanner(file);
 			      while (myReader.hasNextLine()) {
 			        data = myReader.nextLine();
