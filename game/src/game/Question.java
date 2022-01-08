@@ -576,7 +576,7 @@ static ArrayList <String> options3 = new ArrayList<String>();
 		textarea.setText("");
 		 int y=0;
 			try {
-			      File file = new File("C:\\Users\\giolk\\OneDrive\\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\\GAME\\game\\src\\game\\filename.txt");
+			      File file = new File("C:\\Users\\giolk\\OneDrive\\¸ããñáöá\\GAME\\game\\src\\game\\filename.txt");
 			      Scanner myReader = new Scanner(file);
 			      while (myReader.hasNextLine()) {
 			        data = myReader.nextLine();
