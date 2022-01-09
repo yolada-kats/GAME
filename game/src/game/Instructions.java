@@ -4,6 +4,8 @@ import java.awt.Font;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+
+import javax.swing.AbstractButton;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -16,6 +18,7 @@ public class Instructions implements ActionListener {
 	JFrame frame;
 	String data;
 	JLayeredPane panel = new JLayeredPane();
+	JLabel pic = new JLabel();
 	public Instructions(JFrame frame) {
 		this.frame = frame;
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -29,21 +32,28 @@ public class Instructions implements ActionListener {
 	}
 
 	private void addbutton() {
-	   Icon icon = new ImageIcon("game/src/game/back.png");
-       JButton back = new JButton();	   
-       back.setIcon(icon);
+	  // Icon icon = new ImageIcon("game/src/game/inst.png");
+       JButton back = new JButton("Menu");	   
+     //  back.setIcon(icon);
+       back.setIconTextGap(-6);
+       back.setHorizontalTextPosition(JButton.CENTER);
+	   back.setVerticalTextPosition(JButton.BOTTOM);
        back.setBounds(440,659,130,80);
-       back.setBackground(new java.awt.Color(153,204,255));
+       back.setBackground(new java.awt.Color(128,144,238));
+       back.setForeground(Color.black);
        back.setFocusable(false);
        back.setBorderPainted(false);
-       back.setOpaque(false);
        back.addActionListener(this);
-       back.setFont(new Font("Times New Roman", Font.BOLD, 27));
+       back.setFont(new Font("Times New Roman", Font.BOLD, 30));
        panel.add(back, Integer.valueOf(2));
 		
 	}
 
 	private void getInstructions() {
+		pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("./instructionspic.jpg")));
+		pic.setBounds(0,0,608, 800);
+		pic.setVisible(true);
+        panel.add(pic, Integer.valueOf(1));
 		JLabel title  = new JLabel("INSTRUCTIONS:");
 		title.setBounds(150,0,300,100);
 		title.setFont(new Font("Times New Roman", Font.BOLD, 35));
