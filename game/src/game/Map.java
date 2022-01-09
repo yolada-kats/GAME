@@ -47,10 +47,10 @@ public class Map extends JFrame {
 		pic.setVisible(true);
     	pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("./map3.jpg")));
     	panel.add(pic, Integer.valueOf(0));	
-    	totalscore.setText(" Score:"+ total_score);
+    	totalscore.setText("    Score:"+ total_score);
     	totalscore.setBackground((new java.awt.Color(255,236,204)));
 	    totalscore.setFont(new java.awt.Font("Times New Roman", Font.BOLD, 17));
-	    totalscore.setBounds(460,15, 120, 40);
+	    totalscore.setBounds(500,0, 100, 40);
 	    totalscore.setHorizontalTextPosition(JLabel.CENTER);
 	    panel.add(totalscore,Integer.valueOf(1));
 	    totalscore.setOpaque(true);
@@ -122,7 +122,7 @@ public class Map extends JFrame {
 			}
 	 	};	
 	    JButton exit = new JButton("End Game");
-	    exit.setBounds(460,55, 120, 40);
+	    exit.setBounds(500,40, 100, 40);
 	    exit.setVisible(true);
 	    exit.setBackground(new java.awt.Color(23,0,29));
 	    exit.setForeground(Color.white);

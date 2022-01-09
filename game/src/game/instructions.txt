@@ -1,0 +1,26 @@
+     The player starting his journey in the map of 
+ Greece following a predetermined route from Crete,
+    aiming to reach Delphi, depending on the area 
+ in which it is located, is facing three types of games:
+
+GAMES:
+1)QUESTIONS:In this particular game 4 questions are 
+   asked to the player,always based on the destination, 
+    at which he has to choose the correct answer (from 
+      the 4 available) in order to contribute points 
+                            to its overall score.
+
+2)PES-VRES:In this case the user is asked to find 4 
+  specific words, each time, related to the city and its 
+      history. Depending on how many he finds,
+ his corresponding score for each stop is calculated.
+
+3)ANAGRAM:The player, in whichever destination he 
+   has to face this game, is asked to place the letters in 
+the correct order in order to create the requested word. 
+The requested words are 4 and the possibility of wrong
+      letter selection is up to 3 times in each of them.
+
+Then, after the player has gone through all the available 
+    stops on the Greek map, his total point collection is
+                         displayed on the screen.
