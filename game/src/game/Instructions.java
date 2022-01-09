@@ -51,7 +51,7 @@ public class Instructions implements ActionListener {
 		panel.add(title, Integer.valueOf(2));
 		int y=0;
 			try {
-			      File file = new File("C:\\Users\\johan\\OneDrive\\Έγγραφα\\GitHub\\GAME\\game\\src\\game\\instructions.txt");
+			      File file = new File("game/src/game/instructions.txt");
 			      Scanner myReader = new Scanner(file);
 			      while (myReader.hasNextLine()) {
 			        data = myReader.nextLine();

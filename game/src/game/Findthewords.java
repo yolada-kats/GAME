@@ -332,7 +332,7 @@ import javax.swing.JPanel;
 		private void readfile() {
 			  int y=0;
 				try {
-				      File file = new File("C:\\Users\\johan\\OneDrive\\Έγγραφα\\GitHub\\GAME\\game\\src\\game\\filename.txt");
+				      File file = new File("game/src/game/filename.txt");
 				      Scanner myReader = new Scanner(file);
 				      while (myReader.hasNextLine()) {
 				        data = myReader.nextLine();
