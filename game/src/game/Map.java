@@ -200,7 +200,7 @@ public class Map extends JFrame {
 	 	ActionListener b9 = new ActionListener() {
 	 		public void actionPerformed(ActionEvent e) {	  
 	 			 frame.remove(panel);
-	 		 	   new Pesvres("THERMOPYLAE");
+	 		 	   new Pesvres("THERMOPYLES");
 	 		 	   cities.add("Thermopylae");
 	 		 	   count++;
 	 		}
