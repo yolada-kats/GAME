@@ -3,7 +3,7 @@
     aiming to reach Delphi, depending on the area 
  in which it is located, is facing three types of games:
 
-GAMES:
+                                       GAMES:
 1)QUESTIONS:In this particular game 4 questions are 
    asked to the player,always based on the destination, 
     at which he has to choose the correct answer (from 

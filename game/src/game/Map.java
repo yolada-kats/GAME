@@ -124,6 +124,7 @@ public class Map extends JFrame {
 	    JButton exit = new JButton("End Game");
 	    exit.setBounds(500,40, 100, 40);
 	    exit.setVisible(true);
+	    exit.setFont(new java.awt.Font("Times New Roman", Font.BOLD, 14));
 	    exit.setBackground(new java.awt.Color(23,0,29));
 	    exit.setForeground(Color.white);
 	    exit.setFocusable(false);

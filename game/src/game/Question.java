@@ -124,7 +124,7 @@ static ArrayList <String> options3 = new ArrayList<String>();
 	                 };
 
 	
-	
+	String filename;
 	char guess;
 	char answer;
 	int index;
@@ -196,19 +196,22 @@ static ArrayList <String> options3 = new ArrayList<String>();
 		if (x==1) {
 			background.setIcon(mycenae);
 			 color = new Color(255,225,185);
+			 filename = "Ã’ «Õ≈”.txt";
 		}else if (x==2) {
 			background.setIcon(delos);
 			color = new Color(229,254,255);
+			filename = "ƒ«Àœ”.txt";
 		}else if (x==3) {
 			background.setIcon(crete);
 			color = new Color(212,241,255);
+			filename = " —«‘«.txt";
 		}
 		background.setVisible(true);
 		
 		textfield.setBounds(0,0,620,50);
 		textfield.setBackground(color);
 		textfield.setForeground(new Color(0,0,0));
-		textfield.setFont(new Font(" CASTELLAR",Font.BOLD,30));
+		textfield.setFont(new Font("Times New Roman",Font.BOLD,30));
 		textfield.setBorder(BorderFactory.createLineBorder(Color.black));
 		textfield.setHorizontalAlignment(JTextField.CENTER);
 		textfield.setEditable(false);
@@ -571,21 +574,25 @@ static ArrayList <String> options3 = new ArrayList<String>();
 	
 	public void results(){
 		result = correct_guesses*10;
-		scrollLabel.setText("Result:" + result);
-		textfield.setText("RESULTS!");
+	//	scrollLabel.setText("Result:" + result);
+		textfield.setText("RESULTS:" + result);
 		textarea.setText("");
+		int y1=-175;
+		 if(filename.equals("ƒ«Àœ”.txt")) {
+			y1=-204;
+		 }
 		 int y=0;
 			try {
-			      File file = new File("game/src/game/filename.txt");
+			      File file = new File("game/src/game/" + filename);
 			      Scanner myReader = new Scanner(file);
 			      while (myReader.hasNextLine()) {
 			        data = myReader.nextLine();
 			        JLabel info = new JLabel(data);
 			        info.setForeground(Color.black);
-		        	info.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		         	info.setBounds(75,-190+y,500,600);
+		        	info.setFont(new Font("Times New Roman", Font.BOLD, 27));
+		         	info.setBounds(60,y1+y,500,600);
 	                scrollLabel.add(info);
-               y+=20;
+               y+=27;
 			      }
 			      myReader.close();
 			    } catch (FileNotFoundException e) {

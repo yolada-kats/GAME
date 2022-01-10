@@ -37,6 +37,7 @@ import javax.swing.JPanel;
 	        ArrayList <String> gaps = new  ArrayList<String>();
 	        ArrayList <String> letters = new  ArrayList<String>();
 	        ArrayList<Integer> set = new  ArrayList<Integer>();
+	        String filename;
 			int k=0;  //counts the number of the letters that the user finds
 	        protected int count=0;   //the index of a word in the arraylist
 	        private int tries=0;
@@ -61,10 +62,11 @@ import javax.swing.JPanel;
 	        	color1 = 196;
 	        	color2 = 218;
 	        	color3 = 241;
+	        	filename = "спаятг.txt";
 			} else if (position == 2) {  //level ithaca
 				list1.add("ODYSSEAS");
 				list1.add("PENELOPE");
-				list1.add("ARGOS");
+			    list1.add("ARGOS");
 				list1.add("OMYROS");	
 		        question1.add("He was the king of Ithaca");
 		        question1.add("She was Odyssea's wife");
@@ -74,6 +76,7 @@ import javax.swing.JPanel;
 	        	color1 = 232;
 	        	color2 = 179;
 	        	color3 = 179;
+	        	filename = "ихайг.txt";
 			} else if (position == 3) {   //level vergina
 				list1.add("ALEXANDER");
 				list1.add("FILLIPOS");
@@ -87,26 +90,12 @@ import javax.swing.JPanel;
 	        	color1 = 241;
 	        	color2 = 229;
 	        	color3 = 108;
+	        	filename = "беяцима.txt";
 			}
 			createframe();
 		}
 		
 		public void actionPerformed(ActionEvent e) {			 
-			/*if(e.getSource() == next) {
-				 for (int i1 = 0; i1 < letters.size(); i1++) {
-                     button_panel.remove(buttons.get(i1));
-				 }   
-				 frame.remove(button_panel);         
-				 next.setVisible(false);
-				 letters.clear();
-				 gaps.clear();
-				 set.clear();
-				 question.setVisible(false);
-				 buttons.removeAll(buttons);
-				 title_panel.remove(next);
-				 frame.remove(next);
-			     createframe();	
-			}*/	  
 		        /*
 		        * Examine if the pressed button is the right letter then gaps list changes else player's tries are increased by one
 		        */
@@ -331,16 +320,16 @@ import javax.swing.JPanel;
 		private void readfile() {
 			  int y=0;
 				try {
-				      File file = new File("game/src/game/filename.txt");
+				      File file = new File("game/src/game/"+filename);
 				      Scanner myReader = new Scanner(file);
 				      while (myReader.hasNextLine()) {
 				        data = myReader.nextLine();
 				        JLabel info = new JLabel(data);
 				        info.setForeground(Color.black);
-			        	info.setFont(new Font("Times New Roman", Font.BOLD, 20));
-			         	info.setBounds(177,-190+y,500,600);
+			        	info.setFont(new Font("Times New Roman", Font.BOLD, 27));
+			         	info.setBounds(177,-165+y,500,600);
 		                title_panel.add(info,Integer.valueOf(2));
-                      y+=20;
+                      y+=27;
 				      }
 				      myReader.close();
 				    } catch (FileNotFoundException e) {

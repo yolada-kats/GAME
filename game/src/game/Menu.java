@@ -41,7 +41,7 @@ public class Menu  extends JFrame {
 		textfield.setBounds(0,45,620,50);
 		textfield.setBackground(new Color(135,206,250));
 		textfield.setForeground(new Color(135,206,250));
-		textfield.setFont(new Font("Sunrise",Font.BOLD,60));
+		textfield.setFont(new Font("Times New Roman",Font.BOLD,60));
 		//textfield.setFont(new Font("Ink Free",Font.BOLD,30));
 		textfield.setBorder(BorderFactory.createBevelBorder(-1));
 		textfield.setHorizontalAlignment(JTextField.CENTER);
@@ -63,7 +63,7 @@ public class Menu  extends JFrame {
 	 	};	
 		
 		buttonA.setBounds(120,300,350,50);
-		buttonA.setFont(new Font("Dialog", Font.ITALIC, 40));
+		buttonA.setFont(new Font("Times New Roman", Font.ITALIC, 40));
 		//buttonA.setFont(new Font("MV BOLI",Font.BOLD,35));
 		buttonA.setFocusable(false);
 		buttonA.addActionListener(b1);
@@ -90,7 +90,7 @@ public class Menu  extends JFrame {
 	 		}
 	 	};	
 		buttonB.setBounds(150,200,300,50);
-		buttonB.setFont(new Font("Dialog", Font.ITALIC, 40));
+		buttonB.setFont(new Font("Times New Roman", Font.ITALIC, 40));
 		//buttonB.setFont(new Font("MV BOLI",Font.BOLD,35));
 		buttonB.setFocusable(false);
 		buttonB.addActionListener(b2);
@@ -110,7 +110,7 @@ public class Menu  extends JFrame {
 	 	};	
 		buttonC.setBounds(150,400,300,50);
 		//buttonC.setFont(new Font("MV BOLI",Font.BOLD,35));
-		buttonC.setFont(new Font("Dialog", Font.ITALIC, 40));
+		buttonC.setFont(new Font("Times New Roman", Font.ITALIC, 40));
 		buttonC.setFocusable(false);
 		buttonC.addActionListener(b3);
 		buttonC.setForeground(new Color(0,0,0));
