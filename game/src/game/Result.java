@@ -64,6 +64,7 @@ public class Result extends JFrame implements ActionListener{
 		playagain.setContentAreaFilled(false);
 		playagain.setBorderPainted(false);
 		
+		
 		buttonE.setBounds(150,150,300,50);
 		buttonE.setFont(new Font("MV BOLI",Font.BOLD,35));
 		buttonE.setFont(new Font("Dialog", Font.ITALIC, 30));

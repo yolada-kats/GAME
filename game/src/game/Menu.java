@@ -12,6 +12,7 @@ public class Menu  extends JFrame {
 	int ind = 0;
 	char answer;
 	JTextField textfield = new JTextField();
+	
 	JFrame frame;
 	JLabel background2 = new JLabel();
 	JLabel background3 = new JLabel();

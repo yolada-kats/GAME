@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 public class Map extends JFrame {
 	JFrame frame;
+	
 	JLabel pic;
 	JLayeredPane panel = new JLayeredPane();
 	JLabel totalscore = new JLabel();

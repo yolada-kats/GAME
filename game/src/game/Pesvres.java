@@ -3,6 +3,7 @@ package game;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Frame;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,9 +19,7 @@ import javax.swing.SwingConstants;
 
 public class Pesvres extends JFrame implements ActionListener{
 
-	/**
-	 * 
-	 */
+
 
 	private JPanel contentPane;
 	private String place;
@@ -35,7 +34,7 @@ public class Pesvres extends JFrame implements ActionListener{
 	private boolean flag;
 	private JLabel lblNewLabel;
 	
-	public Pesvres(String place) {
+	public Pesvres(String place, Frame frame) {
 		this.place = place;
 		this.score = 0;
 		this.flag = false;
@@ -159,6 +158,7 @@ public class Pesvres extends JFrame implements ActionListener{
 				 	}
 			 	}
 			 	if(flag == true) {
+			 		
 			 		answers.remove(i);
 			 		answers.add(i, "C");
 			 		flag = false;
