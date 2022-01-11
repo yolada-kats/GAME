@@ -185,7 +185,7 @@ public class Map extends JFrame {
 		ActionListener b7 = new ActionListener() {
 	 		public void actionPerformed(ActionEvent e) {	  
 	 			 frame.remove(panel);
-	 			 new Pesvres("ATHENS");
+	 			 new Pesvres("ATHENS",frame);
 	 		 	   cities.add("Athens");
 	 		 	   count++;
 	 		}
@@ -193,7 +193,7 @@ public class Map extends JFrame {
 	 	ActionListener b8 = new ActionListener() {
 	 		public void actionPerformed(ActionEvent e) {	  
 	 			 frame.remove(panel);
-	 		 	   new Pesvres("DELPHI");
+	 		 	   new Pesvres("DELPHI",frame);
 	 		 	   cities.add("Delphi");
 	 		       count++;
 	 		}
@@ -201,8 +201,8 @@ public class Map extends JFrame {
 	 	ActionListener b9 = new ActionListener() {
 	 		public void actionPerformed(ActionEvent e) {	  
 	 			 frame.remove(panel);
-	 		 	   new Pesvres("THERMOPYLES");
-	 		 	   cities.add("Thermopylae");
+	 		 	   new Pesvres("THERMOPYLES",frame);
+	 		 	   cities.add("Thermopyles");
 	 		 	   count++;
 	 		}
 	 	};
