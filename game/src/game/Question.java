@@ -196,15 +196,15 @@ static ArrayList <String> options3 = new ArrayList<String>();
 		if (x==1) {
 			background.setIcon(mycenae);
 			 color = new Color(255,225,185);
-			 filename = "Ã’ «Õ≈”.txt";
+			 filename = "myk.txt";
 		}else if (x==2) {
 			background.setIcon(delos);
 			color = new Color(229,254,255);
-			filename = "ƒ«Àœ”.txt";
+			filename = "dil.txt";
 		}else if (x==3) {
 			background.setIcon(crete);
 			color = new Color(212,241,255);
-			filename = " —«‘«.txt";
+			filename = "cret.txt";
 		}
 		background.setVisible(true);
 		
@@ -578,7 +578,7 @@ static ArrayList <String> options3 = new ArrayList<String>();
 		textfield.setText("RESULTS:" + result);
 		textarea.setText("");
 		int y1=-175;
-		 if(filename.equals("ƒ«Àœ”.txt")) {
+		 if(filename.equals("dil.txt")) {
 			y1=-204;
 		 }
 		 int y=0;

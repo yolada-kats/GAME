@@ -20,7 +20,12 @@ import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 	public class Findthewords implements ActionListener { 
-			ArrayList<JButton> buttons = new ArrayList<JButton>();
+			ArrayList<JButton> buttons = new ArrayList<JButton>(); 
+			ArrayList <String> question1 = new  ArrayList<String>();
+	        ArrayList <String> list1 = new  ArrayList<String>();
+	        ArrayList <String> gaps = new  ArrayList<String>();
+	        ArrayList <String> letters = new  ArrayList<String>();
+	        ArrayList<Integer> set = new  ArrayList<Integer>();
 			JFrame frame;
 			JPanel question_panel = new JPanel();
 			JLayeredPane title_panel = new JLayeredPane();
@@ -28,16 +33,13 @@ import javax.swing.JPanel;
 			JLabel question = new JLabel();
 			JPanel button_panel;
 			JLabel pic = new JLabel();
+			JLabel scrollpic = new JLabel();
 			JButton nextlevel;   
 			JButton next;       
 			JLabel score1 = new JLabel();
-			JPanel score_panel = new JPanel();
-	        ArrayList <String> question1 = new  ArrayList<String>();
-	        ArrayList <String> list1 = new  ArrayList<String>();
-	        ArrayList <String> gaps = new  ArrayList<String>();
-	        ArrayList <String> letters = new  ArrayList<String>();
-	        ArrayList<Integer> set = new  ArrayList<Integer>();
+			JPanel score_panel = new JPanel();       
 	        String filename;
+	        int picposition_y;
 			int k=0;  //counts the number of the letters that the user finds
 	        protected int count=0;   //the index of a word in the arraylist
 	        private int tries=0;
@@ -62,7 +64,8 @@ import javax.swing.JPanel;
 	        	color1 = 196;
 	        	color2 = 218;
 	        	color3 = 241;
-	        	filename = "спаятг.txt";
+	        	filename = "spart.txt";
+	        	picposition_y = -10;
 			} else if (position == 2) {  //level ithaca
 				list1.add("ODYSSEAS");
 				list1.add("PENELOPE");
@@ -76,7 +79,8 @@ import javax.swing.JPanel;
 	        	color1 = 232;
 	        	color2 = 179;
 	        	color3 = 179;
-	        	filename = "ихайг.txt";
+	        	filename = "ith.txt";
+	        	picposition_y = -10;
 			} else if (position == 3) {   //level vergina
 				list1.add("ALEXANDER");
 				list1.add("FILLIPOS");
@@ -90,7 +94,8 @@ import javax.swing.JPanel;
 	        	color1 = 241;
 	        	color2 = 229;
 	        	color3 = 108;
-	        	filename = "беяцима.txt";
+	        	filename = "verg.txt";
+	        	picposition_y = -95;
 			}
 			createframe();
 		}
@@ -204,59 +209,7 @@ import javax.swing.JPanel;
 			  * if word is the last one display score, level completed, if not display frame with the next word
 			  */
 			 if (count >= 4) {
- 				 frame.remove(question_panel);
- 				 //title_panel.remove(textfield);
- 				 //title_panel.remove(pic);
- 				 //title_panel.remove(next);
- 				 frame.remove(next);
- 				 frame.remove(title_panel);
-				 for (int i1 = 0; i1 < letters.size(); i1++) {
-						button_panel.remove(buttons.get(i1));
-				 }
-					score1.setText("RESULT:  " + score);
-			        score_panel.setBackground(new java.awt.Color(color1,color2,color3));
-			        score1.setForeground(new java.awt.Color(51,0,51));
-			        score1.setFont(new Font("Times New Roman", Font.BOLD, 60));
-			        score1.setBounds(300,400,400,300);
-				    score1.setHorizontalAlignment(JLabel.CENTER);
-				    score1.setLayout(new BorderLayout());
-				    score1.setVisible(true);
-				    score_panel.setBounds(0,0,608,200);
-				    score_panel.add(score1); 
-				    button_panel = new JPanel();
-				    button_panel.setBounds(0,0,608,200);
-				    button_panel.setBackground(new java.awt.Color(color1,color2,color3));
-				    ActionListener b1 = new ActionListener() {
-						public void actionPerformed(ActionEvent e) {	  
-							frame.remove(score_panel);
-							frame.remove(button_panel);
-							frame.remove(title_panel);
-							new Map(frame,score);
-						}
-				 	};	
-				    nextlevel = new JButton("Map"); 
-				    nextlevel.setFont(new Font("Times New Roman", Font.BOLD, 80));
-					nextlevel.setBounds(400,0,500,400);
-					nextlevel.setForeground(new java.awt.Color(51,0,51));
-					nextlevel.setFocusable(false);
-					nextlevel.addActionListener(b1);
-					nextlevel.setOpaque(false);
-					nextlevel.setContentAreaFilled(false);
-					nextlevel.setBorderPainted(false);
-					nextlevel.setVisible(true);
-					title_panel = new JLayeredPane();
-					title_panel.setBounds(0,0,608,400);
-			        pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("./scroll.png")));
-			        pic.setBounds(120,-10,400,590);
-			        title_panel.add(pic, Integer.valueOf(1));
-			        readfile();
-					score_panel.add(score1);
-					button_panel.add(nextlevel);
-					score_panel.setVisible(true);
-					title_panel.setVisible(true);
-					frame.add(score_panel,BorderLayout.NORTH);		
-					frame.add(button_panel,BorderLayout.SOUTH);	
-					frame.add(title_panel);
+					scorepanels();
 			 }else {
 					frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 					frame.setSize(new Dimension(608,800));
@@ -287,7 +240,7 @@ import javax.swing.JPanel;
 			 	   textfield.setForeground(new java.awt.Color(51,0,51));
 			 	   textfield.setVisible(true);
 			 	   if(count==0) { 
-				       pic.setBounds(0,0,610,670);
+				       pic.setBounds(0,picposition_y,610,670);
 			 		   title_panel.add(pic, Integer.valueOf(0));
 					   title_panel.add(textfield,Integer.valueOf(1));
 				   }
@@ -317,6 +270,58 @@ import javax.swing.JPanel;
 			 	 }	 
 		} 
 		
+		private void scorepanels() {
+			     frame.remove(question_panel);
+				 frame.remove(next);
+				 frame.remove(button_panel);
+				 frame.remove(title_panel);
+			 for (int i1 = 0; i1 < letters.size(); i1++) {
+					button_panel.remove(buttons.get(i1));
+			 }
+				score1.setText("RESULT:  " + score);
+		        score_panel.setBackground(new java.awt.Color(color1,color2,color3));
+		        score_panel.setBorder(BorderFactory.createBevelBorder(1));
+		        score1.setForeground(new java.awt.Color(51,0,51));
+		        score1.setFont(new Font("Times New Roman", Font.BOLD, 60));
+		        score1.setBounds(300,400,400,310);
+			    score1.setHorizontalAlignment(JLabel.CENTER);
+			    score1.setLayout(new BorderLayout());
+			    score1.setVisible(true);
+			    score_panel.setBounds(0,0,608,200);
+			    score_panel.add(score1); 
+			    ActionListener b1 = new ActionListener() {
+					public void actionPerformed(ActionEvent e) {	  
+						frame.remove(score_panel);
+						frame.remove(button_panel);
+						frame.remove(title_panel);
+						new Map(frame,score);
+					}
+			 	};	
+			    nextlevel = new JButton("Map"); 
+			    nextlevel.setFont(new Font("Times New Roman", Font.BOLD, 30));
+				nextlevel.setBounds(0,0,100,80);
+				nextlevel.setForeground(new java.awt.Color(51,0,51));
+				nextlevel.setBackground(new java.awt.Color(color1,color2,color3));
+				nextlevel.setFocusable(false);
+				nextlevel.setBorder(BorderFactory.createBevelBorder(1));
+				nextlevel.addActionListener(b1);
+				nextlevel.setVisible(true);
+				title_panel = new JLayeredPane();
+				title_panel.setBounds(0,-80,608,800);
+			    pic.setBounds(0,picposition_y,610,800);
+		        title_panel.add(pic, Integer.valueOf(0));
+		        scrollpic.setIcon(new javax.swing.ImageIcon(getClass().getResource("./scroll.png")));
+		        scrollpic.setBounds(120,-10,400,590);
+		        title_panel.add(scrollpic, Integer.valueOf(1));
+		        readfile();
+				score_panel.add(score1);
+				score_panel.setVisible(true);
+				title_panel.setVisible(true);
+				title_panel.add(nextlevel,Integer.valueOf(1));
+				frame.add(score_panel,BorderLayout.NORTH);		
+				frame.add(title_panel);			
+		}
+
 		private void readfile() {
 			  int y=0;
 				try {
