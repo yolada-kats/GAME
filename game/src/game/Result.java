@@ -21,8 +21,10 @@ public class Result extends JFrame implements ActionListener{
 	JButton buttonE = new JButton();
 	JLabel background = new JLabel();
 	JLabel flame = new JLabel();
-	ImageIcon image = new ImageIcon("game/src/game/final.jpg");
+	ImageIcon final1 = new ImageIcon("game/src/game/final.jpg");
+	ImageIcon final2 = new ImageIcon("game/src/game/final2.jpg");
 	ImageIcon flames = new ImageIcon("game/src/game/flame.gif");
+	Color color;
 	int total_score;
 	
 	public Result (JFrame frame,int total_score) {
@@ -39,16 +41,21 @@ public class Result extends JFrame implements ActionListener{
 		panel.setBounds(0, 0, 608, 800);
 		
 		background.setBounds(0, 0, 608, 800);
-		background.setIcon(image);
+		if (total_score > 230) {
+			background.setIcon(final1);
+			flame.setBounds(165,62, 400, 600);
+			flame.setIcon(flames);
+			flame.setVisible(true);
+			color = new Color(0,0,0);
+		}else {
+			background.setIcon(final2);
+			color = new Color(255,255,255);
+		}
 		background.setVisible(true);
-		
-		flame.setBounds(165,62, 400, 600);
-		flame.setIcon(flames);
-		flame.setVisible(true);
 		
 		textfield.setBounds(0,45,620,50);
 		textfield.setBackground(new Color(135,206,250));
-		textfield.setForeground(new Color(0,0,0));
+		textfield.setForeground(color);
 		textfield.setFont(new Font("Sunrise",Font.BOLD,60));
 		textfield.setBorder(BorderFactory.createBevelBorder(-1));
 		textfield.setHorizontalAlignment(JTextField.CENTER);
@@ -59,7 +66,7 @@ public class Result extends JFrame implements ActionListener{
 		playagain.setFont(new Font("Dialog", Font.ITALIC, 30));
 		playagain.setFocusable(false);
 		playagain.addActionListener(this);
-		playagain.setForeground(new Color(0,0,0));
+		playagain.setForeground(color);
 		playagain.setOpaque(false);
 		playagain.setContentAreaFilled(false);
 		playagain.setBorderPainted(false);
@@ -70,7 +77,7 @@ public class Result extends JFrame implements ActionListener{
 		buttonE.setFont(new Font("Dialog", Font.ITALIC, 30));
 		buttonE.setFocusable(false);
 		buttonE.addActionListener(this);
-		buttonE.setForeground(new Color(0,0,0));
+		buttonE.setForeground(color);
 		buttonE.setOpaque(false);
 		buttonE.setContentAreaFilled(false);
 		buttonE.setBorderPainted(false);
