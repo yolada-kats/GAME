@@ -243,7 +243,7 @@ import javax.swing.JPanel;
 			 	   textfield.setForeground(new java.awt.Color(51,0,51));
 			 	   textfield.setVisible(true);
 			 	   if(count==0) { 
-				       pic.setBounds(0,picposition_y,610,670);
+				       pic.setBounds(0,picposition_y,610,800);
 			 		   title_panel.add(pic, Integer.valueOf(0));
 					   title_panel.add(textfield,Integer.valueOf(1));
 				   }
