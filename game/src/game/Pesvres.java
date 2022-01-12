@@ -30,6 +30,7 @@ public class Pesvres  implements ActionListener{
 	Image img, img2, img3;
 	private JButton btnNewButton;
 	private JTextField textField_5;
+	JLabel city_img = new JLabel();
 	private int score;
 	private boolean flag;
 	private JLabel lblNewLabel;
@@ -91,16 +92,33 @@ public class Pesvres  implements ActionListener{
 		frame.getContentPane().add(btnNewButton);
 		btnNewButton.setVisible(true);
 		
+			ActionListener b1 = new ActionListener() {
+			public void actionPerformed(ActionEvent e) {	  
+				frame.getContentPane().remove(btnNewButton);
+				frame.getContentPane().remove(lblNewLabel);
+				frame.remove(textField_5);
+				frame.remove(map);
+				frame.getContentPane().remove(city_img);
+				for(int i = 0; i < 5; i++) {
+					frame.getContentPane().remove(results.get(i));
+				}
+				for(int i = 0; i < 5; i++) {
+					frame.getContentPane().remove(textFields.get(i));
+				}
+				new Map(frame,score*10);
+			}
+	 	};	
 		map = new JButton("Map");
 		map.setFont(new Font("Times New Roman", Font.BOLD, 50));
 		map.setForeground(Color.WHITE);
 		map.setOpaque(false);
 		map.setBounds(190, 650, 250, 50);
-		map.addActionListener(this);
+		map.addActionListener(b1);
 		map.setContentAreaFilled(false);
 		map.setBorderPainted(false);
 		frame.getContentPane().add(map);
 		map.setVisible(false);
+		
 		
 		lblNewLabel = new JLabel("Write 5 words related to the destination of: "+ place );
 		lblNewLabel.setForeground(Color.BLACK);
@@ -110,10 +128,12 @@ public class Pesvres  implements ActionListener{
 		frame.getContentPane().add(lblNewLabel);
 		lblNewLabel.setVisible(true);
 		
-		JLabel city_img = new JLabel();
+		//JLabel city_img = new JLabel();
 		city_img.setIcon(new ImageIcon(img));
 		city_img.setBounds(-50, -120, 5000, 1050);
 		frame.getContentPane().add(city_img);
+		
+	
 		
 	}
 	
@@ -191,7 +211,7 @@ public class Pesvres  implements ActionListener{
 			}
 		displayAnswers(e);
 		//
-		if (e.getSource() == map) {
+	/*	if (e.getSource() == map) {
 			
 			frame.getContentPane().remove(btnNewButton);
 			frame.getContentPane().remove(lblNewLabel);
@@ -201,7 +221,7 @@ public class Pesvres  implements ActionListener{
 				frame.getContentPane().remove(textFields.get(i));
 			}
 			new Map(frame,score*10);
-		}
+		}*/
 		   
 		}
 	}
