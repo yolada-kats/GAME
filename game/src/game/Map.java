@@ -35,10 +35,10 @@ public class Map extends JFrame {
 	    frame.setBackground(new java.awt.Color(153,204,255));
 		frame.setLayout(new BorderLayout());
 		frame.setResizable(false);
-		JLabel title = new JLabel("Map You");
-		title.setFont(new java.awt.Font("Times New Roman", Font.BOLD, 60));
+		JLabel title = new JLabel("Prometheus Quest");
+		title.setFont(new java.awt.Font("Times New Roman", Font.BOLD, 40));
 		title.setForeground(new java.awt.Color(51,0,51)); 
-		title.setBounds(170, -19, 1400, 100);
+		title.setBounds(140, -19, 1400, 100);
 		title.setOpaque(false);
 		title.setVisible(true);
 		panel.add(title, Integer.valueOf(1));
