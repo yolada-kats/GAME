@@ -16,6 +16,17 @@ public class Map extends JFrame {
 	static int total_score=0;
 	static int count=0;
 	static ArrayList <String> cities = new  ArrayList<String>();
+	static {
+		cities.add("Crete");
+		cities.add("Sparta");
+		cities.add("Athens");
+		cities.add("Dilos");
+		cities.add("Vergina");
+		cities.add("Thermopylae");
+		cities.add("Mecynae");
+		cities.add("Ithaca");
+		cities.add("Delphi");
+	}
 	public Map(JFrame frame,int score) {
 		this.frame = frame;
 		total_score = score + total_score;
@@ -25,7 +36,6 @@ public class Map extends JFrame {
 		this.frame = frame;
 	    this.count = count1;
         total_score = 0;
-        cities.clear();
 		createmapframe();
 	}
 	private void createmapframe() {
@@ -218,7 +228,8 @@ public class Map extends JFrame {
 	    ithaca.setContentAreaFilled(false);
 	    ithaca.setBorderPainted(false);
 	 	ithaca.setForeground(new java.awt.Color(51,0,51));   
-	 	ithaca.setVisible(true); 	
+	 	ithaca.setVisible(true);
+	 	ithaca.setEnabled(false);
 	 	JButton sparta = new JButton("Sparta");
 	 	sparta.setBackground((new java.awt.Color(255,236,204)));
 	 	sparta.setFont(new java.awt.Font("Times New Roman", Font.BOLD, 17));
@@ -230,7 +241,8 @@ public class Map extends JFrame {
 	 	sparta.setContentAreaFilled(false);
 	 	sparta.setBorderPainted(false);
 	 	sparta.setForeground(new java.awt.Color(51,0,51));   
-	 	sparta.setVisible(true); 	
+	 	sparta.setVisible(true); 
+	 	sparta.setEnabled(false);
 	 	JButton vergina = new JButton("Vergina");
 	 	vergina.setBackground((new java.awt.Color(255,236,204)));
 	 	vergina.setFont(new java.awt.Font("Times New Roman", Font.BOLD, 17));
@@ -243,6 +255,7 @@ public class Map extends JFrame {
 	 	vergina.setBorderPainted(false);
 	 	vergina.setForeground(new java.awt.Color(51,0,51));   
 	 	vergina.setVisible(true);
+	 	vergina.setEnabled(false);
 	 	JButton crete = new JButton("Crete");
 	 	crete.setBackground((new java.awt.Color(255,236,204)));
 	 	crete.setFont(new java.awt.Font("Times New Roman", Font.BOLD, 17));
@@ -255,6 +268,8 @@ public class Map extends JFrame {
 	 	crete.setBorderPainted(false);
 	 	crete.setForeground(new java.awt.Color(51,0,51));   
 	 	crete.setVisible(true); 
+	 	crete.setEnabled(false);
+	 	crete.setEnabled(false);
 	 	JButton mycenae = new JButton("Myceneae");
 	 	mycenae.setBackground((new java.awt.Color(255,236,204)));
 	 	mycenae.setFont(new java.awt.Font("Times New Roman", Font.BOLD, 17));
@@ -267,6 +282,7 @@ public class Map extends JFrame {
 	 	mycenae.setBorderPainted(false);
 	 	mycenae.setForeground(new java.awt.Color(51,0,51));   
 	 	mycenae.setVisible(true);
+	 	mycenae.setEnabled(false);
 	 	JButton dilos = new JButton("Dilos");
 	 	dilos.setBackground((new java.awt.Color(255,236,204)));
 	 	dilos.setFont(new java.awt.Font("Times New Roman", Font.BOLD, 17));
@@ -279,6 +295,7 @@ public class Map extends JFrame {
 	 	dilos.setBorderPainted(false);
 	 	dilos.setForeground(new java.awt.Color(51,0,51));   
 	 	dilos.setVisible(true);
+	 	dilos.setEnabled(false);
 	 	JButton athens = new JButton("Athens");
 	 	athens.setBackground((new java.awt.Color(255,236,204)));
 	 	athens.setFont(new java.awt.Font("Times New Roman", Font.BOLD, 17));
@@ -291,6 +308,7 @@ public class Map extends JFrame {
 	 	athens.setBorderPainted(false);
 	 	athens.setForeground(new java.awt.Color(51,0,51));   
 	 	athens.setVisible(true); 
+	 	athens.setEnabled(false);
 	 	JButton delphi = new JButton("Delphi");
 	 	delphi.setBackground((new java.awt.Color(255,236,204)));
 	 	delphi.setFont(new java.awt.Font("Times New Roman", Font.BOLD, 17));
@@ -303,6 +321,7 @@ public class Map extends JFrame {
 	 	delphi.setBorderPainted(false);
 	 	delphi.setForeground(new java.awt.Color(51,0,51));   
 	 	delphi.setVisible(true); 
+	 	delphi.setEnabled(false);
 		JButton thermopylae = new JButton("Thermopylae");
 		thermopylae.setBackground((new java.awt.Color(255,236,204)));
 		thermopylae.setFont(new java.awt.Font("Times New Roman", Font.BOLD, 17));
@@ -315,28 +334,27 @@ public class Map extends JFrame {
 		thermopylae.setBorderPainted(false);
 		thermopylae.setForeground(new java.awt.Color(51,0,51));   
 		thermopylae.setVisible(true); 
-		if(count!=0) {
-			for(int i=0; i<cities.size();i++) {
-				if(cities.get(i).equals("Ithaca")) {
-					ithaca.setEnabled(false);
-				}else if(cities.get(i).equals("Sparta")) {
-					sparta.setEnabled(false);
-				}else if(cities.get(i).equals("Vergina")) {
-					vergina.setEnabled(false);
-				}else if(cities.get(i).equals("Crete")) {
-					crete.setEnabled(false);
-				}else if(cities.get(i).equals("Mecynae")) {
-					mycenae.setEnabled(false);
-				}else if(cities.get(i).equals("Dilos")) {
-					dilos.setEnabled(false);
-				}else if(cities.get(i).equals("Athens")) {
-					athens.setEnabled(false);
-				}else if(cities.get(i).equals("Delphi")) {
-					delphi.setEnabled(false);
-				}else if(cities.get(i).equals("Thermopylae")) {
-					thermopylae.setEnabled(false);
+	 	thermopylae.setEnabled(false);
+		if(count<9) {
+				if(cities.get(count).equals("Ithaca")) {
+					ithaca.setEnabled(true);
+				}else if(cities.get(count).equals("Sparta")) {
+					sparta.setEnabled(true);
+				}else if(cities.get(count).equals("Vergina")) {
+					vergina.setEnabled(true);
+				}else if(cities.get(count).equals("Crete")) {
+					crete.setEnabled(true);
+				}else if(cities.get(count).equals("Mecynae")) {
+					mycenae.setEnabled(true);
+				}else if(cities.get(count).equals("Dilos")) {
+					dilos.setEnabled(true);
+				}else if(cities.get(count).equals("Athens")) {
+					athens.setEnabled(true);
+				}else if(cities.get(count).equals("Delphi")) {
+					delphi.setEnabled(true);
+				}else if(cities.get(count).equals("Thermopylae")) {
+					thermopylae.setEnabled(true);
 				}
-			}
 		}		
 	 	panel.add(ithaca,Integer.valueOf(2));
 	 	panel.add(sparta,Integer.valueOf(2));
