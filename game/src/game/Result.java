@@ -88,7 +88,7 @@ public class Result extends JFrame implements ActionListener{
 		panel.add(textfield, Integer.valueOf(2));
 		panel.add(playagain, Integer.valueOf(2));
 		panel.add(background, Integer.valueOf(0));
-		//panel.add(flame, Integer.valueOf(1));
+		panel.add(flame, Integer.valueOf(1));
 		frame.add(panel);
 		frame.setVisible(true);	
 	}
