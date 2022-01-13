@@ -300,7 +300,7 @@ import javax.swing.JPanel;
 						new Map(frame,score);
 					}
 			 	};	
-			    nextlevel = new JButton("Map"); 
+			    nextlevel = new JButton("MAP"); 
 			    nextlevel.setFont(new Font("Times New Roman", Font.BOLD, 30));
 				nextlevel.setBounds(0,0,100,80);
 				nextlevel.setForeground(new java.awt.Color(51,0,51));

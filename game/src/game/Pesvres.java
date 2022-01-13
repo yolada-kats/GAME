@@ -1,6 +1,5 @@
 package game;
-
-
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Frame;
@@ -8,6 +7,8 @@ import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -34,8 +35,9 @@ public class Pesvres  implements ActionListener{
 	private int score;
 	private boolean flag;
 	private JLabel lblNewLabel;
-	private JButton map;
-	
+	private JButton scoreb;
+	Color color;
+
 	public Pesvres(String place,JFrame frame) {
 		this.place = place;
 		this.score = 0;
@@ -53,10 +55,13 @@ public class Pesvres  implements ActionListener{
 		
 		if(place.equals("ATHENS")) {
 			img = new ImageIcon(this.getClass().getResource("/athens.jpg")).getImage();
+			color = new Color(232,189,177);
 		} else if(place.equals("THERMOPYLES")) {
 			img = new ImageIcon(this.getClass().getResource("/thermopiles.jpg")).getImage();
+			 color = new Color(201,175,132);
 		} else {
 			img = new ImageIcon(this.getClass().getResource("/delfi.jpg")).getImage();
+			 color = new Color(215,234,208);
 		}
 		
 		Font textField_Font = new Font("Times New Roman", Font.BOLD, 22);
@@ -88,16 +93,20 @@ public class Pesvres  implements ActionListener{
 		btnNewButton = new JButton("RESULTS");
 		btnNewButton.setFont(new Font("Times New Roman", Font.BOLD, 24));
 		btnNewButton.setBounds(180, 640, 250, 45);
+		btnNewButton.setBackground(color);
+		btnNewButton.setFocusable(false);
+		btnNewButton.setForeground(Color.BLACK);
+		btnNewButton.setBorder(BorderFactory.createBevelBorder(1));
 		btnNewButton.addActionListener(this);
 		frame.getContentPane().add(btnNewButton);
 		btnNewButton.setVisible(true);
 		
-			ActionListener b1 = new ActionListener() {
-			public void actionPerformed(ActionEvent e) {	  
+		
+		ActionListener b1 = new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
 				frame.getContentPane().remove(btnNewButton);
 				frame.getContentPane().remove(lblNewLabel);
 				frame.remove(textField_5);
-				frame.remove(map);
 				frame.getContentPane().remove(city_img);
 				for(int i = 0; i < 5; i++) {
 					frame.getContentPane().remove(results.get(i));
@@ -105,20 +114,20 @@ public class Pesvres  implements ActionListener{
 				for(int i = 0; i < 5; i++) {
 					frame.getContentPane().remove(textFields.get(i));
 				}
-				new Map(frame,score*10);
+				frame.remove(scoreb);
+				new PesVresScore(frame, score*10);
 			}
 	 	};	
-		map = new JButton("Map");
-		map.setFont(new Font("Times New Roman", Font.BOLD, 50));
-		map.setForeground(Color.WHITE);
-		map.setOpaque(false);
-		map.setBounds(190, 650, 250, 50);
-		map.addActionListener(b1);
-		map.setContentAreaFilled(false);
-		map.setBorderPainted(false);
-		frame.getContentPane().add(map);
-		map.setVisible(false);
-		
+		scoreb = new JButton("SCORE");
+		scoreb.setFont(new Font("Times New Roman", Font.BOLD, 24));
+		scoreb.setForeground(Color.BLACK);
+		scoreb.setBackground(color);
+		scoreb.setFocusable(false);
+		scoreb.setBorder(BorderFactory.createBevelBorder(1));
+		scoreb.setBounds(180, 640, 250, 45);
+		scoreb.addActionListener(b1);	
+		frame.getContentPane().add(scoreb);
+		scoreb.setVisible(false);
 		
 		lblNewLabel = new JLabel("Write 5 words related to the destination of: "+ place );
 		lblNewLabel.setForeground(Color.BLACK);
@@ -128,12 +137,9 @@ public class Pesvres  implements ActionListener{
 		frame.getContentPane().add(lblNewLabel);
 		lblNewLabel.setVisible(true);
 		
-		//JLabel city_img = new JLabel();
 		city_img.setIcon(new ImageIcon(img));
 		city_img.setBounds(-50, -120, 5000, 1050);
 		frame.getContentPane().add(city_img);
-		
-	
 		
 	}
 	
@@ -208,29 +214,16 @@ public class Pesvres  implements ActionListener{
 			 		answers.remove(i);
 			 		answers.add(i, "W");
 		 		}
-			}
+			}				
 		displayAnswers(e);
-		//
-	/*	if (e.getSource() == map) {
-			
-			frame.getContentPane().remove(btnNewButton);
-			frame.getContentPane().remove(lblNewLabel);
-			frame.remove(textField_5);
-			frame.remove(map);
-			for(int i = 0; i < 5; i++) {
-				frame.getContentPane().remove(textFields.get(i));
-			}
-			new Map(frame,score*10);
-		}*/
-		   
 		}
 	}
 
 	public void displayAnswers(ActionEvent e) {
 		btnNewButton.setVisible(false);
-		lblNewLabel.setVisible(false);
+		//lblNewLabel.setVisible(false);
 		textField_5.setVisible(true);
-		map.setVisible(true);
+		scoreb.setVisible(true);
 		
 		for(int i = 0; i < 5; i++) {
 			System.out.println(answers.get(i));
@@ -239,8 +232,8 @@ public class Pesvres  implements ActionListener{
 			}
 			(results.get(i)).setVisible(true);
 		}
-		
-		textField_5.setText("  RESULTS: " + score*10);
+		frame.remove(textField_5);
 		
 	}
+
 } 
