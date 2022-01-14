@@ -53,7 +53,7 @@ import javax.swing.JPanel;
 			frame.getContentPane().setBackground(new Color(255,236,204));
 			if (position == 1) {    //level sparta
 				list1.add("LEONIDAS");   //add the words in list1
-				list1.add("LYKOURGOS");
+				list1.add("LYCURGUS");
 				list1.add("BRAVENESS");
 				list1.add("LABE");
 				question1.add("He was the king of Sparta");   //add the questions in list question1
@@ -67,14 +67,14 @@ import javax.swing.JPanel;
 	        	filename = "spart.txt";
 	        	picposition_y = -10;
 			} else if (position == 2) {  //level ithaca
-				list1.add("ODYSSEAS");
+				list1.add("ODYSSEUS");
 				list1.add("PENELOPE");
 			    list1.add("ARGOS");
-				list1.add("OMYROS");	
+				list1.add("HOMER");	
 		        question1.add("He was the king of Ithaca");
 		        question1.add("She was Odyssea's wife");
 		        question1.add("He was Odyssea's dog");
-		        question1.add("He was the writter of Odyssea");
+		        question1.add("He was the writter of Odyssey");
 		        pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("./ithaca.jpeg")));
 	        	color1 = 232;
 	        	color2 = 179;
@@ -83,13 +83,13 @@ import javax.swing.JPanel;
 	        	picposition_y = -10;
 			} else if (position == 3) {   //level vergina
 				list1.add("ALEXANDER");
-				list1.add("FILLIPOS");
+				list1.add("PHILIP");
 				list1.add("INDIA");
 				list1.add("PELLA");	
 		        question1.add("He was the most famous king of Macedonia");
 		        question1.add("He was the father of Alexander");
 		        question1.add("The country that the Great Alexander arrived");
-		        question1.add("The historical capital of the ancient kingdom of Macedon");
+		        question1.add("The historical capital of Macedonia");
 		        pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("./vergina.png")));
 	        	color1 = 241;
 	        	color2 = 229;
@@ -131,6 +131,15 @@ import javax.swing.JPanel;
 				        	
 		public void nextword() {
 			 if (tries == 3) {
+				 StringBuilder builder = new StringBuilder();
+				    for (String letters : letters) {
+					      builder.append(letters + " ");	      
+				   }
+				  textfield.setVisible(true);
+				  textfield.setText(builder.toString()); 
+				  for (int i1 = 0; i1 < letters.size(); i1++) {
+		    	  				buttons.get(i1).setEnabled(false);
+		    	  }
 				  for (int i1 = 0; i1 < letters.size(); i1++) {
 		    	  				buttons.get(i1).setEnabled(false);
 		    	  }
@@ -221,14 +230,14 @@ import javax.swing.JPanel;
 					frame.setLocationRelativeTo(null);   
 		      		frame.setResizable(false);
 					question = new JLabel(question1.get(count));
-					question.setFont(new java.awt.Font("Times New Roman", Font.BOLD , 24));
+					question.setFont(new java.awt.Font("Times New Roman", Font.BOLD , 29));
 					question.setHorizontalAlignment(JLabel.CENTER);
 					question.setForeground(new java.awt.Color(0,0,102));
 			   	    question_panel.setBackground(new java.awt.Color(color1, color2, color3));
 			        question_panel.add(question);
 			      	question.setVisible(true);
 				    question_panel.setVisible(true);
-				    question.setBounds(0,0,620,600);
+				    question.setBounds(0,0,620,300);
 				    createlists();   
 			       StringBuilder builder = new StringBuilder();
 			 	   for(int i =0;i<letters.size();i++) {
@@ -285,7 +294,7 @@ import javax.swing.JPanel;
 		        score_panel.setBackground(new java.awt.Color(color1,color2,color3));
 		        score_panel.setBorder(BorderFactory.createBevelBorder(1));
 		        score1.setForeground(new java.awt.Color(51,0,51));
-		        score1.setFont(new Font("Times New Roman", Font.BOLD, 60));
+		        score1.setFont(new Font("Times New Roman", Font.BOLD, 45));
 		        score1.setBounds(300,400,400,310);
 			    score1.setHorizontalAlignment(JLabel.CENTER);
 			    score1.setLayout(new BorderLayout());

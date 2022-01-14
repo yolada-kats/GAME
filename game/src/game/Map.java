@@ -58,7 +58,7 @@ public class Map extends JFrame {
 		pic.setVisible(true);
     	pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("./map3.jpg")));
     	panel.add(pic, Integer.valueOf(0));	
-    	totalscore.setText("    Score:"+ total_score);
+    	totalscore.setText("   Score: "+ total_score);
     	totalscore.setBackground((new java.awt.Color(255,236,204)));
 	    totalscore.setFont(new java.awt.Font("Times New Roman", Font.BOLD, 17));
 	    totalscore.setBounds(500,0, 100, 40);
