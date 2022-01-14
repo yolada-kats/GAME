@@ -15,16 +15,16 @@ public class Question implements ActionListener {
 	 static ArrayList <String>  question1 = new ArrayList<String>();  
 	  static {
  	  question1.add("1. Who was the king of Mycenae?");  
- 	  question1.add("2. Who killed his mother in Mycenae era ?");  
+ 	  question1.add("2. Who killed his mother in Mycenae?");  
  	  question1.add("3. Mycenaeans did leave behind a written language. What is it called?");  
  	  question1.add("4. What animal guarded the famous gate into Mycenae?");  
 	  }
 	  
 	  static ArrayList <String>  question2 = new ArrayList<String>();
 	  static {
-		  question2.add("1. For what thing is known the Cycladitic civilization?");
+		  question2.add("1. For which thing is the Cycladitic civilization known?");
 		  question2.add( "2. How did the Cyclades form?");
-		  question2.add("3. Where were te Cyclades located?");
+		  question2.add("3. Where are the Cyclades located?");
 		  question2.add("4. Who was born there?");
 	  }
 	  
@@ -158,9 +158,6 @@ static ArrayList <String> options3 = new ArrayList<String>();
 	JLabel answer_IconC = new JLabel();
 	JLabel answer_IconD = new JLabel();
 	
-	
-	//JTextField number_right = new JTextField();
-	//JTextField percentage = new JTextField();
 
 	ImageIcon delos = new ImageIcon("game/src/game/dilos.jpg");
 	ImageIcon crete = new ImageIcon("game/src/game/crete.jpg");
@@ -218,7 +215,7 @@ static ArrayList <String> options3 = new ArrayList<String>();
 		frame.add(textfield);
 		frame.setVisible(true);
 		
-		textarea.setBounds(0,50,800,50);
+		textarea.setBounds(0,50,608,50);
 		textarea.setLineWrap(true);
 		textarea.setWrapStyleWord(true);
 		textarea.setBackground(color);

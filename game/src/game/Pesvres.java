@@ -178,7 +178,7 @@ public class Pesvres  implements ActionListener{
 			solutions.add("FUTURE");
 			solutions.add("APOLLO");
 			solutions.add("ORACLE");
-			solutions.add("TEMPLE OF APOLLO");
+			solutions.add("TEMPLE");
 			solutions.add("PROPHETIC");
 			solutions.add("MUSES");
 			solutions.add("PYTHIO");
