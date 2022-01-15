@@ -17,7 +17,7 @@ public class Question implements ActionListener {
  	  question1.add("1. Who was the king of Mycenae?");  
  	  question1.add("2. Who killed his mother in Mycenae?");  
  	  question1.add("3. Mycenaeans did leave behind a written language. What is it called?");  
- 	  question1.add("4. What animal guarded the famous gate into Mycenae?");  
+ 	  question1.add("4. What animal guarded the famous gate in Mycenae?");  
 	  }
 	  
 	  static ArrayList <String>  question2 = new ArrayList<String>();
@@ -31,7 +31,7 @@ public class Question implements ActionListener {
 	  static ArrayList <String>  question3 = new ArrayList<String>();
 	  static {
 		  question3.add("1. Who was the daughter of the Minoan king?");
-		  question3.add("2. The ruins of a number of multi-functional architectural complexes have been excavated on the island. What is the best known of these 'palaces'?");
+		  question3.add("2. What is the best known architectural complexes that have been excavated in Crete?");
 		  question3.add("3. Which was a sacred symbol for the Minoans?");
 		  question3.add("4. Who was the gurdian of the labyrinth?");
 	  }
