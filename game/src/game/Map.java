@@ -7,15 +7,16 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+
 public class Map extends JFrame {
 	JFrame frame;
-	
 	JLabel pic;
 	JLayeredPane panel = new JLayeredPane();
 	JLabel totalscore = new JLabel();
 	static int total_score=0;
 	static int count=0;
 	static ArrayList <String> cities = new  ArrayList<String>();
+	
 	static {
 		cities.add("Crete");
 		cities.add("Sparta");
@@ -27,17 +28,20 @@ public class Map extends JFrame {
 		cities.add("Ithaca");
 		cities.add("Delphi");
 	}
+	
 	public Map(JFrame frame,int score) {
 		this.frame = frame;
 		total_score = score + total_score;
 		createmapframe();
 	}
+	
 	public Map(JFrame frame,int score,int count1) {
 		this.frame = frame;
 	    this.count = count1;
         total_score = 0;
 		createmapframe();
 	}
+	
 	private void createmapframe() {
 		//Create frame
 	    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -76,6 +80,7 @@ public class Map extends JFrame {
 		frame.setVisible(true);
 		frame.setLocationRelativeTo(null);
 	}
+	
 	private void writenumbers() {
 		JLabel l1 = new JLabel("1");
 		l1.setFont(new java.awt.Font("Times New Roman", Font.BOLD, 17));
@@ -122,9 +127,8 @@ public class Map extends JFrame {
 		l9.setForeground(Color.white);
 		l9.setBounds(178, 230, 100, 40);
 		panel.add(l9,Integer.valueOf(2));
-
-		
 	}
+	
 	private void createxitbutton() {
 		ActionListener b10 = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {	  
@@ -132,6 +136,7 @@ public class Map extends JFrame {
 	 			    new Result(frame,total_score);	 			    
 			}
 	 	};	
+	 	
 	    JButton exit = new JButton("End Game");
 	    exit.setBounds(500,40, 100, 40);
 	    exit.setVisible(true);
@@ -143,6 +148,7 @@ public class Map extends JFrame {
 	    exit.addActionListener(b10);
 		panel.add(exit, Integer.valueOf(1));
 	}
+	
 	private void createcities() {
 		ActionListener b1 = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {	  

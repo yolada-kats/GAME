@@ -11,119 +11,101 @@ import javax.swing.*;
 
 
 public class Question implements ActionListener {
+	static ArrayList <String>  question1 = new ArrayList<String>();  
+	static {
+		question1.add("1. Who was the king of Mycenae?");  
+		question1.add("2. Who killed his mother in Mycenae?");  
+		question1.add("3. Mycenaeans did leave behind a written language. What is it called?");  
+		question1.add("4. What animal guarded the famous gate in Mycenae?");  
+	}
+	static ArrayList <String>  question2 = new ArrayList<String>();
+	static {
+		question2.add("1. For which thing is the Cycladitic civilization known?");
+	    question2.add( "2. How did the Cyclades form?");
+		question2.add("3. Where are the Cyclades located?");
+		question2.add("4. Who was born there?");
+	}
 	
-	 static ArrayList <String>  question1 = new ArrayList<String>();  
-	  static {
- 	  question1.add("1. Who was the king of Mycenae?");  
- 	  question1.add("2. Who killed his mother in Mycenae?");  
- 	  question1.add("3. Mycenaeans did leave behind a written language. What is it called?");  
- 	  question1.add("4. What animal guarded the famous gate in Mycenae?");  
-	  }
-	  
-	  static ArrayList <String>  question2 = new ArrayList<String>();
-	  static {
-		  question2.add("1. For which thing is the Cycladitic civilization known?");
-		  question2.add( "2. How did the Cyclades form?");
-		  question2.add("3. Where are the Cyclades located?");
-		  question2.add("4. Who was born there?");
-	  }
-	  
-	  static ArrayList <String>  question3 = new ArrayList<String>();
-	  static {
-		  question3.add("1. Who was the daughter of the Minoan king?");
-		  question3.add("2. What is the best known architectural complexes that have been excavated in Crete?");
-		  question3.add("3. Which was a sacred symbol for the Minoans?");
-		  question3.add("4. Who was the gurdian of the labyrinth?");
-	  }
-	                     	  
-	 
-	  static ArrayList <String> options1 = new ArrayList<String>();
-	  
-	  static {
-		  options1.add("Periklis");
-		  options1.add("King Alexander");
-		  options1.add("Agamemnon");
-		  options1.add("Leonidas");
-		  options1.add("Orestis");
-		  options1.add("Achilleas");
-		  options1.add("Patroklos");
-		  options1.add("Diomidis");
-	      options1.add("Linear B");
-		  options1.add("Hieroglyphics");
-		  options1.add("Linear A");
-		  options1.add("Demotic");
-		  options1.add("Tiger");
-		  options1.add("Bull");
-		  options1.add("Lion");
-		  options1.add("Peageon");
-	  }
-	 
-static ArrayList <String> options2 = new ArrayList<String>();
-	  
-	  static {
-		  options2.add("War");
-		  options2.add("Monuments");
-		  options2.add("Art");
-		  options2.add("Kings");
-		  options2.add("Erruption");
-		  options2.add("Earthquake");
-		  options2.add("Collision");
-		  options2.add("Big Bang");
-	      options2.add("Attiki");
-		  options2.add("Aegean");
-		  options2.add("Peloponissos");
-		  options2.add("Ionian Sea");
-		  options2.add("Appolo and Artemis");
-		  options2.add("Athena");
-		  options2.add("Zeus");
-		  options2.add("Aphrodite");
-	  }
-	
-	  
-static ArrayList <String> options3 = new ArrayList<String>();
-	  
-	  static {
-		  options3.add("Ermioni");
-		  options3.add("Iphigeneia");
-		  options3.add("Cassandra");
-		  options3.add("Ariadne");
-		  options3.add("Colosseum");
-		  options3.add("Delphi");
-		  options3.add("Knossos");
-		  options3.add("Parhenon");
-	      options3.add("Sacred Horns");
-		  options3.add("The Axe");
-		  options3.add("The Bull");
-		  options3.add("The Sea");
-		  options3.add("Hydra");
-		  options3.add("Minotauros");
-		  options3.add("The Lion of Nemea");
-		  options3.add("Ades");
-	  }
-	  
-	
-	
-	
-	
-	
-	
-	char[] answers = {
-			            'C',
-			            'A',
-			            'A',
-			            'C',
-	                    'C',
-			            'A',
-			            'B',
-			            'A',
-			            'D',
-			            'C',
-			            'A',
-			            'B',
-			            ' '
-	                 };
+	static ArrayList <String>  question3 = new ArrayList<String>();
+	static {
+		question3.add("1. Who was the daughter of the Minoan king?");
+		question3.add("2. What is the best known architectural complexes that have been excavated in Crete?");
+		question3.add("3. Which was a sacred symbol for the Minoans?");
+		question3.add("4. Who was the gurdian of the labyrinth?");
+	}
+	static ArrayList <String> options1 = new ArrayList<String>();
+	static {
+		options1.add("Periklis");
+		options1.add("King Alexander");
+		options1.add("Agamemnon");
+		options1.add("Leonidas");
+		options1.add("Orestis");
+		options1.add("Achilleas");
+		options1.add("Patroklos");
+		options1.add("Diomidis");
+	    options1.add("Linear B");
+		options1.add("Hieroglyphics");
+		options1.add("Linear A");
+		options1.add("Demotic");
+		options1.add("Tiger");
+		options1.add("Bull");
+		options1.add("Lion");
+		options1.add("Peageon");
+	}
+	static ArrayList <String> options2 = new ArrayList<String>();
+	static {
+		options2.add("War");
+		options2.add("Monuments");
+		options2.add("Art");
+		options2.add("Kings");
+		options2.add("Erruption");
+		options2.add("Earthquake");
+		options2.add("Collision");
+		options2.add("Big Bang");
+	    options2.add("Attiki");
+		options2.add("Aegean");
+		options2.add("Peloponissos");
+		options2.add("Ionian Sea");
+		options2.add("Appolo and Artemis");
+		options2.add("Athena");
+		options2.add("Zeus");
+		options2.add("Aphrodite");
+	}
+	static ArrayList <String> options3 = new ArrayList<String>();
+	static {
+		options3.add("Ermioni");
+		options3.add("Iphigeneia");
+		options3.add("Cassandra");
+		options3.add("Ariadne");
+		options3.add("Colosseum");
+		options3.add("Delphi");
+		options3.add("Knossos");
+		options3.add("Parhenon");
+	    options3.add("Sacred Horns");
+		options3.add("The Axe");
+		options3.add("The Bull");
+		options3.add("The Sea");
+		options3.add("Hydra");
+		options3.add("Minotauros");
+		options3.add("The Lion of Nemea");
+		options3.add("Ades");
+	}
 
-	
+	char[] answers = {
+			'C',
+			'A',
+			'A',
+			'C',
+	        'C',
+			'A',
+			'B',
+			'A',
+			'D',
+			'C',
+			'A',
+			'B',
+			' '
+			};
 	String filename;
 	char guess;
 	char answer;
@@ -232,9 +214,6 @@ static ArrayList <String> options3 = new ArrayList<String>();
 		buttonA.setEnabled(true);
 		buttonA.setBackground(new Color(233, 232, 210));
 		buttonA.setBorder(BorderFactory.createLineBorder(new Color(129, 129,119), 2, true));
-		/*buttonA.setOpaque(false);
-		buttonA.setContentAreaFilled(false);
-		buttonA.setBorderPainted(false);*/
 		
 		
 		buttonB.setBounds(150,333,320,50);
@@ -245,9 +224,6 @@ static ArrayList <String> options3 = new ArrayList<String>();
 		buttonB.setBackground(new Color(233, 232, 210));
 		buttonB.setBorder(BorderFactory.createBevelBorder(1));
 		buttonB.setBorder(BorderFactory.createLineBorder(new Color(129, 129,119), 2, true));
-		/*buttonB.setOpaque(false);
-		buttonB.setContentAreaFilled(false);
-		buttonB.setBorderPainted(false);*/
 		
 		buttonC.setBounds(150,466,320,50);
 		buttonC.setFont(new Font("Times New Roman",Font.BOLD,30));
@@ -257,9 +233,6 @@ static ArrayList <String> options3 = new ArrayList<String>();
 		buttonC.setBackground(new Color(233, 232, 210));
 		buttonC.setBorder(BorderFactory.createBevelBorder(1));
 		buttonC.setBorder(BorderFactory.createLineBorder(new Color(129, 129,119), 2, true));
-		/*buttonC.setOpaque(false);
-		buttonC.setContentAreaFilled(false);
-		buttonC.setBorderPainted(false);*/
 		
 		buttonD.setBounds(150,600,320,50);
 		buttonD.setFont(new Font("Times New Roman",Font.BOLD,30));
@@ -269,9 +242,6 @@ static ArrayList <String> options3 = new ArrayList<String>();
 		buttonD.setBackground(new Color(233, 232, 210));
 		buttonD.setBorder(BorderFactory.createBevelBorder(1));
 		buttonD.setBorder(BorderFactory.createLineBorder(new Color(129, 129,119), 2, true));
-		/*buttonD.setOpaque(false);
-		buttonD.setContentAreaFilled(false);
-		buttonD.setBorderPainted(false);*/
 		
 		answer_IconA.setBounds(50, 190, 120, 70);
 		answer_IconB.setBounds(50, 323, 120, 70);
@@ -325,30 +295,27 @@ static ArrayList <String> options3 = new ArrayList<String>();
     }	
 	
 	public  void nextQuestion(int c) {
-		
-	if (c==1) {
-		if(index>=total_questions) {
-			nextButton.setEnabled(false);
-			buttonA.setVisible(false);
-			buttonB.setVisible(false);
-			buttonC.setVisible(false);
-			buttonD.setVisible(false);
-			frame.remove(buttonA);
-			frame.remove(buttonB);
-			frame.remove(buttonC);
-			frame.remove(buttonD);
-			results();
-		}else {
-			
-			textfield.setText("Question"+(index+1));
-			textarea.setText(question1.get(index));
-			buttonA.setText(options1.get(tt));
-			buttonB.setText(options1.get(tt+1));
-			buttonC.setText(options1.get(tt+2));
-			buttonD.setText(options1.get(tt+3));	
-		}
-		
-	}else if (c==2) {
+		if (c==1) {
+			if(index>=total_questions) {
+				nextButton.setEnabled(false);
+				buttonA.setVisible(false);
+				buttonB.setVisible(false);
+				buttonC.setVisible(false);
+				buttonD.setVisible(false);
+				frame.remove(buttonA);
+				frame.remove(buttonB);
+				frame.remove(buttonC);
+				frame.remove(buttonD);
+				results();
+			}else {
+				textfield.setText("Question"+(index+1));
+				textarea.setText(question1.get(index));
+				buttonA.setText(options1.get(tt));
+				buttonB.setText(options1.get(tt+1));
+				buttonC.setText(options1.get(tt+2));
+				buttonD.setText(options1.get(tt+3));	
+			}
+		}else if (c==2) {
 			if(index>=total_questions) {
 				nextButton.setEnabled(false);
 				buttonA.setVisible(false);
@@ -369,8 +336,7 @@ static ArrayList <String> options3 = new ArrayList<String>();
 				buttonC.setText(options2.get(tt+2));
 				buttonD.setText(options2.get(tt+3));
 		    }
-			
-	}else if (c==3) {
+		}else if (c==3) {
 			if(index>=total_questions) {
 				nextButton.setEnabled(false);
 				buttonA.setVisible(false);
@@ -383,7 +349,6 @@ static ArrayList <String> options3 = new ArrayList<String>();
 				frame.remove(buttonD);
 				results();
 			}else {
-				
 				textfield.setText("Question"+(index+1));
 				textarea.setText(question3.get(index));
 				buttonA.setText(options3.get(tt));
@@ -478,7 +443,6 @@ static ArrayList <String> options3 = new ArrayList<String>();
 				}
 			}	
 		}
-		
 		displayAnswer();
 		if (e.getSource()==nextButton) {
 			tt = tt+4;
@@ -490,8 +454,6 @@ static ArrayList <String> options3 = new ArrayList<String>();
 			frame.remove(textfield);
 			frame.remove(textarea);
 			frame.remove(map);
-			//frame.remove(percentage);
-			//frame.remove(number_right);
 			frame.remove(background);
 			frame.remove(answer_IconA);
 			frame.remove(answer_IconB);
@@ -571,7 +533,6 @@ static ArrayList <String> options3 = new ArrayList<String>();
 	
 	public void results(){
 		result = correct_guesses*10;
-	//	scrollLabel.setText("Result:" + result);
 		textfield.setText("RESULTS:" + result);
 		textarea.setText("");
 		int y1=-175;
