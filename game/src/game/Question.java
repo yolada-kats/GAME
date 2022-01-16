@@ -21,7 +21,7 @@ public class Question implements ActionListener {
 	static ArrayList <String>  question2 = new ArrayList<String>();
 	static {
 		question2.add("1. For which thing is the Cycladitic civilization known?");
-	    question2.add( "2. How did the Cyclades form?");
+	    question2.add("2. How did the Cyclades form?");
 		question2.add("3. Where are the Cyclades located?");
 		question2.add("4. Who was born there?");
 	}
@@ -105,17 +105,17 @@ public class Question implements ActionListener {
 			'A',
 			'B',
 			' '
-			};
+	};
 	String filename;
 	char guess;
 	char answer;
 	int index;
 	String data;
-	int correct_guesses =0;
+	int correct_guesses = 0;
 	int total_questions = 4;
 	int result;
-	int xi=1;
-	int t=1;
+	int xi = 1;
+	int t = 1;
 	//the x shows in which city we are located
 	int x;
 	int tt = 0;
@@ -125,8 +125,6 @@ public class Question implements ActionListener {
 	//background label
 	JLabel scrollLabel = new JLabel();
 	JLabel background = new JLabel();
-	
-	
 	JButton buttonA = new JButton();
 	JButton buttonB = new JButton();
 	JButton buttonC = new JButton();
@@ -134,108 +132,94 @@ public class Question implements ActionListener {
 	JButton map = new JButton();
 	//next button
 	JButton nextButton = new JButton();
-	
 	JLabel answer_IconA = new JLabel();
 	JLabel answer_IconB = new JLabel();
 	JLabel answer_IconC = new JLabel();
 	JLabel answer_IconD = new JLabel();
-	
-
 	ImageIcon delos = new ImageIcon("game/src/game/dilos.jpg");
 	ImageIcon crete = new ImageIcon("game/src/game/crete.jpg");
 	ImageIcon mycenae = new ImageIcon("game/src/game/mycenae.jpg");
 	ImageIcon right = new ImageIcon("game/src/game/right-removebg-preview.png");
 	ImageIcon wrong = new ImageIcon("game/src/game/wrong-removebg-preview.png");
 	ImageIcon scroll = new ImageIcon("game/src/game/scroll.png");
-
 	//color that changes, for buttons and text areas 
 	Color color;
 	public Question(int x, JFrame frame) {
 		this.x = x;
 		this.frame = frame;
 		//the background settings
-		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(608,800);
-		frame.getContentPane().setBackground(new Color(238,236,194));
+		frame.getContentPane().setBackground(new Color(238, 236, 194));
 		frame.setLayout(null);
 		frame.setResizable(false);
-		
 		scrollLabel.setBounds(122, 150, 350, 495);
 		scrollLabel.setIcon(scroll);
 		scrollLabel.setForeground(Color.BLACK);
-		scrollLabel.setFont(new Font("Ink Free",Font.BOLD,30));
+		scrollLabel.setFont(new Font("Ink Free", Font.BOLD, 30));
 		scrollLabel.setIconTextGap(-100);
 		scrollLabel.setHorizontalTextPosition(JLabel.CENTER);
 		scrollLabel.setVerticalTextPosition(JLabel.TOP);
 		scrollLabel.setVisible(true);
-		
-		
 		background.setSize(608, 800);
-		if (x==1) {
+		if (x == 1) {
 			background.setIcon(mycenae);
-			 color = new Color(255,225,185);
-			 filename = "myk.txt";
-		}else if (x==2) {
+			color = new Color(255, 225, 185);
+			filename = "myk.txt";
+		} else if (x == 2) {
 			background.setIcon(delos);
-			color = new Color(229,254,255);
+			color = new Color(229, 254, 255);
 			filename = "dil.txt";
-		}else if (x==3) {
+		} else if (x == 3) {
 			background.setIcon(crete);
-			color = new Color(212,241,255);
+			color = new Color(212, 241, 255);
 			filename = "cret.txt";
 		}
 		background.setVisible(true);
-		
-		textfield.setBounds(0,0,620,50);
+		textfield.setBounds(0, 0, 620, 50);
 		textfield.setBackground(color);
-		textfield.setForeground(new Color(0,0,0));
-		textfield.setFont(new Font("Times New Roman",Font.BOLD,30));
+		textfield.setForeground(new Color(0, 0, 0));
+		textfield.setFont(new Font("Times New Roman", Font.BOLD, 30));
 		textfield.setBorder(BorderFactory.createLineBorder(Color.black));
 		textfield.setHorizontalAlignment(JTextField.CENTER);
 		textfield.setEditable(false);
 		frame.add(textfield);
 		frame.setVisible(true);
-		
-		textarea.setBounds(0,50,608,50);
+		textarea.setBounds(0, 50, 608, 50);
 		textarea.setLineWrap(true);
 		textarea.setWrapStyleWord(true);
 		textarea.setBackground(color);
-		textarea.setForeground(new Color(0,0,0));
-		textarea.setFont(new Font("Times New Roman",Font.BOLD,20));
+		textarea.setForeground(new Color(0, 0, 0));
+		textarea.setFont(new Font("Times New Roman", Font.BOLD,20));
 		textarea.setBorder(BorderFactory.createLineBorder(Color.black));
 		textarea.setEditable(false);
-		
-		
 		buttonA.setBounds(150,200,320,50);
-		buttonA.setFont(new Font("Times New Roman",Font.BOLD,30));
+		buttonA.setFont(new Font("Times New Roman",Font.BOLD, 30));
 		buttonA.setFocusable(false);
 		buttonA.addActionListener(this);
 		buttonA.setEnabled(true);
 		buttonA.setBackground(new Color(233, 232, 210));
-		buttonA.setBorder(BorderFactory.createLineBorder(new Color(129, 129,119), 2, true));
-		
-		
-		buttonB.setBounds(150,333,320,50);
-		buttonB.setFont(new Font("Times New Roman",Font.BOLD,30));
+		buttonA.setBorder(BorderFactory.createLineBorder(new Color(129, 129, 119), 2, true));
+		buttonB.setBounds(150, 333, 320, 50);
+		buttonB.setFont(new Font("Times New Roman", Font.BOLD, 30));
 		buttonB.setFocusable(false);
 		buttonB.addActionListener(this);
 		buttonB.setEnabled(true);	
 		buttonB.setBackground(new Color(233, 232, 210));
 		buttonB.setBorder(BorderFactory.createBevelBorder(1));
-		buttonB.setBorder(BorderFactory.createLineBorder(new Color(129, 129,119), 2, true));
+		buttonB.setBorder(BorderFactory.createLineBorder(new Color(129, 129, 119), 2, true));
 		
-		buttonC.setBounds(150,466,320,50);
-		buttonC.setFont(new Font("Times New Roman",Font.BOLD,30));
+		buttonC.setBounds(150, 466, 320, 50);
+		buttonC.setFont(new Font("Times New Roman", Font.BOLD, 30));
 		buttonC.setFocusable(false);
 		buttonC.addActionListener(this);
 		buttonC.setEnabled(true);	
 		buttonC.setBackground(new Color(233, 232, 210));
 		buttonC.setBorder(BorderFactory.createBevelBorder(1));
-		buttonC.setBorder(BorderFactory.createLineBorder(new Color(129, 129,119), 2, true));
+		buttonC.setBorder(BorderFactory.createLineBorder(new Color(129, 129, 119), 2, true));
 		
-		buttonD.setBounds(150,600,320,50);
-		buttonD.setFont(new Font("Times New Roman",Font.BOLD,30));
+		buttonD.setBounds(150, 600, 320, 50);
+		buttonD.setFont(new Font("Times New Roman", Font.BOLD, 30));
 		buttonD.setFocusable(false);
 		buttonD.addActionListener(this);
 		buttonD.setEnabled(true);
@@ -249,9 +233,9 @@ public class Question implements ActionListener {
 		answer_IconD.setBounds(50, 590, 120, 70);
 		 
 		ImageIcon next_arrow = new ImageIcon("download-removebg-preview (1).png");
-		map.setBounds(0,100,150,50);
+		map.setBounds(0, 100, 150, 50);
 		map.addActionListener(this);
-		map.setFont(new Font("Times New Roman",Font.BOLD,25));
+		map.setFont(new Font("Times New Roman", Font.BOLD, 25));
 		map.setFocusable(false);
 		map.setText("MAP");
 		map.setIcon(next_arrow);
@@ -261,9 +245,9 @@ public class Question implements ActionListener {
 		map.setForeground(Color.black);
 		map.setBorder(BorderFactory.createLineBorder(Color.black));
 		
-		nextButton.setBounds(470,100,150,50);
+		nextButton.setBounds(470, 100, 150, 50);
 		nextButton.addActionListener(this);
-		nextButton.setFont(new Font("Times New Roman",Font.BOLD,25));
+		nextButton.setFont(new Font("Times New Roman", Font.BOLD, 25));
 		nextButton.setFocusable(false);
 		nextButton.setText("Next");
 		nextButton.setIcon(next_arrow);
@@ -272,8 +256,6 @@ public class Question implements ActionListener {
 		nextButton.setBackground(color);
 		nextButton.setForeground(Color.black);
 		nextButton.setBorder(BorderFactory.createLineBorder(Color.black));
-		
-
 		frame.add(nextButton);
 		frame.add(map);
 		frame.add(buttonA);
@@ -289,14 +271,12 @@ public class Question implements ActionListener {
 		frame.setVisible(true);
 		//adds background
 		frame.add(background);
-		
-		
 		nextQuestion(x);
     }	
 	
 	public  void nextQuestion(int c) {
-		if (c==1) {
-			if(index>=total_questions) {
+		if (c == 1) {
+			if (index >= total_questions) {
 				nextButton.setEnabled(false);
 				buttonA.setVisible(false);
 				buttonB.setVisible(false);
@@ -307,16 +287,16 @@ public class Question implements ActionListener {
 				frame.remove(buttonC);
 				frame.remove(buttonD);
 				results();
-			}else {
-				textfield.setText("Question"+(index+1));
+			} else {
+				textfield.setText("Question" + (index + 1));
 				textarea.setText(question1.get(index));
 				buttonA.setText(options1.get(tt));
-				buttonB.setText(options1.get(tt+1));
-				buttonC.setText(options1.get(tt+2));
-				buttonD.setText(options1.get(tt+3));	
+				buttonB.setText(options1.get(tt + 1));
+				buttonC.setText(options1.get(tt + 2));
+				buttonD.setText(options1.get(tt + 3));	
 			}
-		}else if (c==2) {
-			if(index>=total_questions) {
+		}else if (c == 2) {
+			if (index >= total_questions) {
 				nextButton.setEnabled(false);
 				buttonA.setVisible(false);
 				buttonB.setVisible(false);
@@ -327,17 +307,16 @@ public class Question implements ActionListener {
 				frame.remove(buttonC);
 				frame.remove(buttonD);
 				results();
-			}else {
-				
-				textfield.setText("Question"+(index+1));
+			} else {
+				textfield.setText("Question" + (index + 1));
 				textarea.setText(question2.get(index));
 				buttonA.setText(options2.get(tt));
-				buttonB.setText(options2.get(tt+1));
-				buttonC.setText(options2.get(tt+2));
-				buttonD.setText(options2.get(tt+3));
+				buttonB.setText(options2.get(tt + 1));
+				buttonC.setText(options2.get(tt + 2));
+				buttonD.setText(options2.get(tt + 3));
 		    }
-		}else if (c==3) {
-			if(index>=total_questions) {
+		} else if (c == 3) {
+			if(index >= total_questions) {
 				nextButton.setEnabled(false);
 				buttonA.setVisible(false);
 				buttonB.setVisible(false);
@@ -348,13 +327,13 @@ public class Question implements ActionListener {
 				frame.remove(buttonC);
 				frame.remove(buttonD);
 				results();
-			}else {
-				textfield.setText("Question"+(index+1));
+			} else {
+				textfield.setText("Question" + (index + 1));
 				textarea.setText(question3.get(index));
 				buttonA.setText(options3.get(tt));
-				buttonB.setText(options3.get(tt+1));
-				buttonC.setText(options3.get(tt+2));
-				buttonD.setText(options3.get(tt+3));
+				buttonB.setText(options3.get(tt + 1));
+				buttonC.setText(options3.get(tt + 2));
+				buttonD.setText(options3.get(tt + 3));
 			}
 		}
 	}
@@ -367,89 +346,89 @@ public class Question implements ActionListener {
 		buttonC.setEnabled(false);
 		buttonD.setEnabled(false);
 
-		if(x==2) {
-			if (e.getSource()==buttonA) {
-				answer= 'A';
-				if (answer == answers[xi+3]) {
+		if (x == 2) {
+			if (e.getSource() == buttonA) {
+				answer = 'A';
+				if (answer == answers[xi + 3]) {
 					correct_guesses++;
 				} 
 			}
-			if (e.getSource()==buttonB) {
-				answer= 'B';
-				if (answer == answers[xi+3]) {
+			if (e.getSource() == buttonB) {
+				answer = 'B';
+				if (answer == answers[xi + 3]) {
 					correct_guesses++;
 				}
 			}
-			if (e.getSource()==buttonC) {
+			if (e.getSource() == buttonC) {
 				answer= 'C';
-				if (answer == answers[xi+3]) {
+				if (answer == answers[xi + 3]) {
 					correct_guesses++;
 				}
 			}
 			if (e.getSource()==buttonD) {
-				answer= 'D';
-				if (answer == answers[xi+3]) {
+				answer = 'D';
+				if (answer == answers[xi + 3]) {
 					correct_guesses++;
 				}
 			}
 		}else if (x == 1) {
-			if (e.getSource()==buttonA) {
+			if (e.getSource() == buttonA) {
 				answer= 'A';
-				if (answer == answers[xi-1]) {
+				if (answer == answers[xi - 1]) {
 					correct_guesses++;
 				}
 			}
 			if (e.getSource()==buttonB) {
-				answer= 'B';
-				if (answer == answers[xi-1]) {
+				answer = 'B';
+				if (answer == answers[xi - 1]) {
 					correct_guesses++;
 				}
 			}
-			if (e.getSource()==buttonC) {
-				answer= 'C';
-				if (answer == answers[xi-1]) {
+			if (e.getSource() == buttonC) {
+				answer = 'C';
+				if (answer == answers[xi - 1]) {
 					correct_guesses++;
 				}
 		     }
 			if (e.getSource()==buttonD) {
-				answer= 'D';
-				if (answer == answers[xi-1]) {
+				answer = 'D';
+				if (answer == answers[xi - 1]) {
 					correct_guesses++;
 				}
 			}
 		}else if (x == 3) {
-			if (e.getSource()==buttonA) {
-				answer= 'A';
-				if (answer == answers[xi+7]) {
+			if (e.getSource() == buttonA) {
+				answer = 'A';
+				if (answer == answers[xi + 7]) {
 					correct_guesses++;
 				}
 			}
 			if (e.getSource()==buttonB) {
-				answer= 'B';
-				if (answer == answers[xi+7]) {
+				answer = 'B';
+				if (answer == answers[xi + 7]) {
 					correct_guesses++;
 				}
 			}
-			if (e.getSource()==buttonC) {
-				answer= 'C';
-				if (answer == answers[xi+7]) {
+			if (e.getSource() == buttonC) {
+				answer = 'C';
+				if (answer == answers[xi + 7]) {
 					correct_guesses++;
 				}
-		     }
+		    }
 			if (e.getSource()==buttonD) {
-				answer= 'D';
-				if (answer == answers[xi+7]) {
+				answer = 'D';
+				if (answer == answers[xi + 7]) {
 					correct_guesses++;
 				}
 			}	
 		}
 		displayAnswer();
-		if (e.getSource()==nextButton) {
-			tt = tt+4;
+		if (e.getSource() == nextButton) {
+			tt = tt + 4;
 			nextPage();
 			
 		}
-		if (e.getSource()==map) {
+		if (e.getSource() == map) {
 			frame.remove(nextButton);
 			frame.remove(textfield);
 			frame.remove(textarea);
@@ -464,7 +443,7 @@ public class Question implements ActionListener {
 			frame.remove(buttonC);
 			frame.remove(buttonD);
 			frame.remove(scrollLabel);
-			new Map(frame , result);
+			new Map(frame, result);
 		}
 		
 	}
@@ -482,33 +461,33 @@ public class Question implements ActionListener {
 		answer_IconD.setIcon(wrong);
 
 		if (x == 1) {
-			if (answers[xi-1] == 'A') {
+			if (answers[xi - 1] == 'A') {
 				answer_IconA.setIcon(right);
-			}else if (answers[xi-1] == 'B') {
+			} else if (answers[xi - 1] == 'B') {
 				answer_IconB.setIcon(right);
-			}else if (answers[xi-1] == 'C') {
+			} else if (answers[xi - 1] == 'C') {
 				answer_IconC.setIcon(right);
-			}else if (answers[xi-1] == 'D') {
+			} else if (answers[xi - 1] == 'D') {
 				answer_IconD.setIcon(right);
 			}
 		}else if (x == 2) {
-			if (answers[xi+3] == 'A') {
+			if (answers[xi + 3] == 'A') {
 				answer_IconA.setIcon(right);
-			}else if (answers[xi+3] == 'B') {
+			}else if (answers[xi + 3] == 'B') {
 				answer_IconB.setIcon(right);
-			}else if (answers[xi+3] == 'C') {
+			}else if (answers[xi + 3] == 'C') {
 				answer_IconC.setIcon(right);
-			}else if (answers[xi+3] == 'D') {
+			}else if (answers[xi + 3] == 'D') {
 				answer_IconD.setIcon(right);
 			}
-		}else if (x == 3) {
-			if (answers[xi+7] == 'A') {
+		} else if (x == 3) {
+			if (answers[xi + 7] == 'A') {
 				answer_IconA.setIcon(right);
-			}else if (answers[xi+7] == 'B') {
+			} else if (answers[xi + 7] == 'B') {
 				answer_IconB.setIcon(right);
-			}else if (answers[xi+7] == 'C') {
+			} else if (answers[xi + 7] == 'C') {
 				answer_IconC.setIcon(right);
-			}else if (answers[xi+7] == 'D') {
+			} else if (answers[xi + 7] == 'D') {
 				answer_IconD.setIcon(right);
 			}
 		}
@@ -531,37 +510,32 @@ public class Question implements ActionListener {
 					
 	}
 	
-	public void results(){
-		result = correct_guesses*10;
+	public void results() {
+		result = correct_guesses * 10;
 		textfield.setText("RESULTS:" + result);
 		textarea.setText("");
-		int y1=-175;
-		 if(filename.equals("dil.txt")) {
-			y1=-204;
-		 }
-		 int y=0;
-			try {
-			      File file = new File("game/src/game/" + filename);
-			      Scanner myReader = new Scanner(file);
-			      while (myReader.hasNextLine()) {
-			        data = myReader.nextLine();
-			        JLabel info = new JLabel(data);
-			        info.setForeground(Color.black);
-		        	info.setFont(new Font("Times New Roman", Font.BOLD, 27));
-		         	info.setBounds(60,y1+y,500,600);
-	                scrollLabel.add(info);
-               y+=27;
-			      }
-			      myReader.close();
-			    } catch (FileNotFoundException e) {
-			      System.out.println("An error occurred.");
-			      e.printStackTrace();
-			    }
-		
+		int y1 =- 175;
+		if(filename.equals("dil.txt")) {
+			y1 =- 204;
+		}
+		int y = 0;
+		try {
+			File file = new File("game/src/game/" + filename);
+			Scanner myReader = new Scanner(file);
+			while (myReader.hasNextLine()) {
+				data = myReader.nextLine();
+			    JLabel info = new JLabel(data);
+			    info.setForeground(Color.black);
+			    info.setFont(new Font("Times New Roman", Font.BOLD, 27));
+		        info.setBounds(60, y1 + y, 500, 600);
+	            scrollLabel.add(info);
+	            y += 27;
+			}
+			myReader.close();
+		} catch (FileNotFoundException e) {
+			System.out.println("An error occurred.");
+			e.printStackTrace();
+		}
 		background.add(scrollLabel);
-		
-		
-		
 	}
-
 }

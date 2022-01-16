@@ -1,8 +1,6 @@
 package game;
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.Frame;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,8 +9,6 @@ import java.util.ArrayList;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
@@ -22,7 +18,6 @@ public class Pesvres  implements ActionListener{
 
 
 	JFrame frame;
-	//private JPanel contentPane;
 	private String place;
 	static ArrayList <String> solutions = new ArrayList<String>();
 	static ArrayList <String> answers = new ArrayList<String>();
@@ -38,7 +33,7 @@ public class Pesvres  implements ActionListener{
 	private JButton scoreb;
 	Color color;
 
-	public Pesvres(String place,JFrame frame) {
+	public Pesvres(String place, JFrame frame) {
 		this.place = place;
 		this.score = 0;
 		this.flag = false;
@@ -49,25 +44,25 @@ public class Pesvres  implements ActionListener{
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(608,800);
-		frame.getContentPane().setBackground(new Color(238,236,194));
+		frame.getContentPane().setBackground(new Color(238, 236, 194));
 		frame.getContentPane().setLayout(null);
 		frame.setResizable(false);
 		
 		if(place.equals("ATHENS")) {
 			img = new ImageIcon(this.getClass().getResource("/athens.jpg")).getImage();
-			color = new Color(232,189,177);
+			color = new Color(232, 189, 177);
 		} else if(place.equals("THERMOPYLES")) {
 			img = new ImageIcon(this.getClass().getResource("/thermopiles.jpg")).getImage();
-			 color = new Color(201,175,132);
+			 color = new Color(201, 175, 132);
 		} else {
 			img = new ImageIcon(this.getClass().getResource("/delfi.jpg")).getImage();
-			 color = new Color(215,234,208);
+			 color = new Color(215, 234, 208);
 		}
 		
 		Font textField_Font = new Font("Times New Roman", Font.BOLD, 22);
 		for(int i = 0; i < 5; i++) {
 			textFields.add(i, new JTextField());
-			(textFields.get(i)).setBounds(160, 150 + (i*90), 280, 45);
+			(textFields.get(i)).setBounds(160, 150 + (i * 90), 280, 45);
 			(textFields.get(i)).setFont(textField_Font);
 			frame.getContentPane().add(textFields.get(i));
 			(textFields.get(i)).setColumns(10);
@@ -76,7 +71,6 @@ public class Pesvres  implements ActionListener{
 		textField_5 = new JTextField();
 		textField_5.setBounds(230, 50, 160, 61);
 		textField_5.setFont(textField_Font);
-		//textField_5.setBackground(Color.orange);
 		textField_5.setOpaque(false);
 		textField_5.setVisible(false);
 		frame.getContentPane().add(textField_5);
@@ -85,7 +79,7 @@ public class Pesvres  implements ActionListener{
 		for(int i = 0; i < 5; i++) {
 			results.add(i, new JLabel());
 			(results.get(i)).setIcon(new ImageIcon(img3));
-			(results.get(i)).setBounds(480, 151 + (i*90), 45, 55);
+			(results.get(i)).setBounds(480, 151 + (i * 90), 45, 55);
 			frame.getContentPane().add(results.get(i));
 			(results.get(i)).setVisible(false);
 		}
@@ -115,7 +109,7 @@ public class Pesvres  implements ActionListener{
 					frame.getContentPane().remove(textFields.get(i));
 				}
 				frame.remove(scoreb);
-				new PesVresScore(frame, score*10);
+				new PesVresScore(frame, score * 10);
 			}
 	 	};	
 		scoreb = new JButton("SCORE");
@@ -206,7 +200,6 @@ public class Pesvres  implements ActionListener{
 				 	}
 			 	}
 			 	if(flag == true) {
-			 		
 			 		answers.remove(i);
 			 		answers.add(i, "C");
 			 		flag = false;
@@ -221,7 +214,6 @@ public class Pesvres  implements ActionListener{
 
 	public void displayAnswers(ActionEvent e) {
 		btnNewButton.setVisible(false);
-		//lblNewLabel.setVisible(false);
 		textField_5.setVisible(true);
 		scoreb.setVisible(true);
 		
