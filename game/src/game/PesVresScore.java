@@ -99,23 +99,7 @@ public class PesVresScore {
 	
 	private void readfile() {
 		int y = 0;
-		try (FileReader fileReader = new FileReader("game/src/game/\" + filename"); 
-			      BufferedReader reader = new BufferedReader(fileReader)) {
-			      String contents = reader.lines()
-			      .collect(Collectors.joining(System.lineSeparator()));
-			      JLabel info = new JLabel(contents);
-		    	  info.setForeground(Color.black);
-		    	  info.setFont(new Font("Times New Roman", Font.BOLD, 27));
-		    	  info.setBounds(177, -20 + y, 500, 600);
-		    	  score_panel.add(info, Integer.valueOf(2));
-		} catch (FileNotFoundException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-		/*try {
+		try {
 		      File file = new File("game/src/game/" + filename);
 		      Scanner myReader = new Scanner(file);
 		      while (myReader.hasNextLine()) {
@@ -131,7 +115,7 @@ public class PesVresScore {
 		} catch (FileNotFoundException e) {
 			System.out.println("An error occurred.");
 		    e.printStackTrace();
-		}	*/	
+		}
 	}
 	
 	private void addpics() {

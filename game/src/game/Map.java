@@ -18,6 +18,7 @@ public class Map extends JFrame {
 	JLayeredPane panel = new JLayeredPane();
 	JLabel totalscore = new JLabel();
 	private BufferedImage img;
+	private Image img1;
 	public static int total_score = 0;
 	static int count = 0;
 	static ArrayList <String> cities = new  ArrayList<String>();
@@ -106,11 +107,11 @@ public class Map extends JFrame {
 		pic1.setBounds(0, 450, 350, 350);
 		pic1.setVisible(true);
 		try {
-			img = ImageIO.read(getClass().getResource("/" + s));
+			img1 = ImageIO.read(getClass().getResource("/" + s));
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
-    	pic1.setIcon(new ImageIcon(img));
+    	pic1.setIcon(new ImageIcon(img1));
     	panel.add(pic1, Integer.valueOf(2));
 	}
 

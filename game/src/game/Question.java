@@ -158,14 +158,14 @@ public class Question implements ActionListener {
 		}
 		
 		try {
-			img2 = ImageIO.read(getClass().getResource("/crete.jpg"));
+			img2 = ImageIO.read(getClass().getResource("/crete.JPG"));
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		
 		try {
-			img3 = ImageIO.read(getClass().getResource("/mycenae.jpg"));
+			img3 = ImageIO.read(getClass().getResource("/mycenae.JPG"));
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -275,11 +275,13 @@ public class Question implements ActionListener {
 		answer_IconC.setBounds(50, 456, 120, 70);
 		answer_IconD.setBounds(50, 590, 120, 70);
 		 
+		ImageIcon next_arrow = new ImageIcon("download-removebg-preview (1).png");
 		map.setBounds(0, 100, 150, 50);
 		map.addActionListener(this);
 		map.setFont(new Font("Times New Roman", Font.BOLD, 25));
 		map.setFocusable(false);
 		map.setText("MAP");
+		map.setIcon(next_arrow);
 		map.setHorizontalTextPosition(JButton.LEFT);
 		map.setIconTextGap(20);
 		map.setBackground(color);
@@ -291,6 +293,7 @@ public class Question implements ActionListener {
 		nextButton.setFont(new Font("Times New Roman", Font.BOLD, 25));
 		nextButton.setFocusable(false);
 		nextButton.setText("Next");
+		nextButton.setIcon(next_arrow);
 		nextButton.setHorizontalTextPosition(JButton.LEFT);
 		nextButton.setIconTextGap(20);
 		nextButton.setBackground(color);
