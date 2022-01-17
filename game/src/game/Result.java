@@ -27,6 +27,7 @@ public class Result extends JFrame implements ActionListener{
 	Color color;
 	int total_score;
 	BufferedImage img;
+	private BufferedImage img1;
 	
 	public Result (JFrame frame, int total_score) {
 		this.frame = frame;
@@ -47,11 +48,11 @@ public class Result extends JFrame implements ActionListener{
 		    }
 	    	background.setIcon(new ImageIcon(img));
 	    	try {
-				 img = ImageIO.read(getClass().getResource("/flame.gif"));
+				 img1 = ImageIO.read(getClass().getResource("/flame.gif"));
 		    } catch (IOException e1) {
 				 e1.printStackTrace();
 		    }
-	    	flame.setIcon(new ImageIcon(img));
+	    	flame.setIcon(new ImageIcon(img1));
 			flame.setBounds(165, 62, 400, 600);
 			flame.setVisible(true);
 			color = new Color(0, 0, 0);
@@ -108,7 +109,7 @@ public class Result extends JFrame implements ActionListener{
 		pic1.setBounds(0, 450, 320, 320);
 		pic1.setVisible(true);
 		try {
-			 img = ImageIO.read(getClass().getResource("./" + s));
+			 img = ImageIO.read(getClass().getResource("/" + s));
 	    } catch (IOException e1) {
 			 e1.printStackTrace();
 	    }
