@@ -50,7 +50,7 @@ public class Map extends JFrame {
 		frame.setLayout(new BorderLayout());
 		frame.setResizable(false);
 		if (count == 0) {
-			addgif("  ");
+			addgif("SANTA1.gif");
 		}
 		JLabel title = new JLabel("Prometheus Quest");
 		title.setFont(new java.awt.Font("Times New Roman", Font.BOLD, 40));
@@ -86,7 +86,7 @@ public class Map extends JFrame {
 	
 	private void addgif(String s) {
 		JLabel pic1 = new JLabel();
-		pic1.setBounds(0, 690, 320, 320);
+		pic1.setBounds(0, 450, 320, 320);
 		pic1.setVisible(true);
     	pic1.setIcon(new javax.swing.ImageIcon(getClass().getResource("./" + s)));	
     	panel.add(pic1, Integer.valueOf(2));
