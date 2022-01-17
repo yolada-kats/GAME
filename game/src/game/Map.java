@@ -52,6 +52,9 @@ public class Map extends JFrame {
 		if (count == 0) {
 			addgif("SANTA1.gif");
 		}
+		if (count == 4) {
+			addgif("SANTA2.gif");
+		}
 		JLabel title = new JLabel("Prometheus Quest");
 		title.setFont(new java.awt.Font("Times New Roman", Font.BOLD, 40));
 		title.setForeground(new java.awt.Color(51 , 0, 51)); 

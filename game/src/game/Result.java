@@ -44,9 +44,11 @@ public class Result extends JFrame implements ActionListener{
 			flame.setIcon(flames);
 			flame.setVisible(true);
 			color = new Color(0, 0, 0);
+			addgif("SANTA4.gif");
 		}else {
 			background.setIcon(final2);
 			color = new Color(255, 255, 255);
+			addgif("SANTA3.gif");
 		}
 		background.setVisible(true);	
 		textfield.setBounds(0, 45, 620, 50);
@@ -83,6 +85,14 @@ public class Result extends JFrame implements ActionListener{
 		panel.add(flame, Integer.valueOf(1));
 		frame.add(panel);
 		frame.setVisible(true);	
+	}
+	
+	private void addgif(String s) {
+		JLabel pic1 = new JLabel();
+		pic1.setBounds(0, 450, 320, 320);
+		pic1.setVisible(true);
+    	pic1.setIcon(new javax.swing.ImageIcon(getClass().getResource("./" + s)));	
+    	panel.add(pic1, Integer.valueOf(2));
 	}
 	
 	public void buttons() {

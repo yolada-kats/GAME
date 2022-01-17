@@ -56,7 +56,7 @@ public class Findthewords implements ActionListener {
 			list1.add("LEONIDAS");   //add the words in list1
 			list1.add("LYCURGUS");
 			list1.add("BRAVENESS");
-			list1.add("LABE");
+			list1.add("LAVE");
 			question1.add("He was the king of Sparta");   //add the questions in list question1
 			question1.add("He invented the laws in Sparta");
 			question1.add("The Spartans became known for their");
