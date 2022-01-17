@@ -17,13 +17,14 @@ public class PesVresScore {
     int score;
     JLabel score1 = new JLabel();
     JLayeredPane score_panel = new JLayeredPane();
-    JButton map = new JButton();
+    JButton map;
     JLabel pic = new JLabel();
     JLabel scroll = new JLabel();
 	private String filename;
 	private String data;
     static int count = 0;
     Color color;
+    boolean flag = false;
 	public PesVresScore(JFrame frame, int score) {
 		this.frame = frame;
 		this.score = score;
@@ -47,10 +48,18 @@ public class PesVresScore {
 	    score_panel.setBounds(0, 0, 608, 800);
 	    score_panel.add(score1, Integer.valueOf(1)); 	
 		ActionListener b1 = new ActionListener() {
-			public void actionPerformed(ActionEvent e) {	  
-			    frame.remove(score_panel);
-				new Map(frame, score);
-			 }
+			public void actionPerformed(ActionEvent e) {
+				if (flag) {
+					frame.remove(score_panel);
+					Map m = new Map();
+					int score1 = m.getresult();
+					score1 = score + score1 ;
+					new Result(frame, score1);
+			    } else {
+			    	frame.remove(score_panel);
+					new Map(frame, score);
+			    }
+			}
 		};	
 		map = new JButton("MAP");
 		map.setFont(new Font("Times New Roman", Font.BOLD, 25));
@@ -114,6 +123,7 @@ public class PesVresScore {
 			color = new Color(215, 234, 208);
 	 		score_panel.add(pic, Integer.valueOf(0));
 			count = 0;
+			flag  = true;
 		}		
 	}
 

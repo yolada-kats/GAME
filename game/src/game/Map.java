@@ -14,7 +14,7 @@ public class Map extends JFrame {
 	JLabel pic;
 	JLayeredPane panel = new JLayeredPane();
 	JLabel totalscore = new JLabel();
-	static int total_score = 0;
+	public static int total_score = 0;
 	static int count = 0;
 	static ArrayList <String> cities = new  ArrayList<String>();
 	
@@ -41,6 +41,10 @@ public class Map extends JFrame {
 	    count = count1;
         total_score = 0;
 		createmapframe();
+	}
+	
+	public Map() {
+		
 	}
 	
 	private void createmapframe() {
@@ -387,4 +391,8 @@ public class Map extends JFrame {
 	 	panel.add(delphi, Integer.valueOf(2));
 	 	panel.add(thermopylae, Integer.valueOf(2));
 	}	
+	
+	public int getresult() {
+		return total_score;	
+	}
 }
