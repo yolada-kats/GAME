@@ -1,14 +1,17 @@
 package game;
-
 import java.awt.event.*;
+import java.io.IOException;
 import java.awt.*;
+
+import javax.imageio.ImageIO;
 import javax.swing.*;
 
-public class Menu  extends JFrame {
+public class Menu extends JFrame {
 	int ind = 0;
 	char answer;
 	JTextField textfield = new JTextField();
 	JFrame frame;
+	Image img;
 	JLabel background2 = new JLabel();
 	JLabel background3 = new JLabel();
 	JButton buttonA = new JButton();
@@ -28,21 +31,27 @@ public class Menu  extends JFrame {
 		createmenu();	
 	}
 	
-	private void createmenu() {
-		ImageIcon logo = new ImageIcon("game/src/game/logo.jpg");
-		frame.setIconImage(logo.getImage());
+	private void createmenu()  {
+	    ImageIcon logo = new ImageIcon("game/src/game/logo.jpg");
+	    frame.setIconImage(logo.getImage());
 		background3.setBounds(0, 0, 600, 800);
-		background3.setIcon(new javax.swing.ImageIcon(getClass().getResource("./menuBackground.jpg")));
+		try {
+			img = ImageIO.read(getClass().getResource("/menuBackground.jpg"));
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		//img = new ImageIcon(this.getClass().getResource("/menuBackground.jpg")).getImage();
 		background3.setVisible(true);
-		
+		background3.setIcon(new ImageIcon(img));
+		frame.getContentPane().add(background3);	
 		textfield.setBounds(0, 45, 620, 70);
 		textfield.setBackground(new Color(135, 206, 250));
 		textfield.setForeground(new Color(45, 45, 50));
 		textfield.setFont(new Font("Times New Roman", Font.BOLD, 60));
 		textfield.setBorder(BorderFactory.createBevelBorder(-1));
 		textfield.setHorizontalAlignment(JTextField.CENTER);
-		textfield.setEditable(false);
-		
+		textfield.setEditable(false);	
 		frame.add(textfield);
 		frame.setVisible(true);
 		ActionListener b1 = new ActionListener() {
