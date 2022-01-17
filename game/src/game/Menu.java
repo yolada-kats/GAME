@@ -16,7 +16,6 @@ public class Menu  extends JFrame {
 	JButton buttonC = new JButton();
 	JLabel answer_IconB = new JLabel();
 	JLabel answer_IconC = new JLabel();
-	ImageIcon sky = new ImageIcon("game/src/game/menuBackground.jpg");
 	public Menu(int ind, JFrame frame) {
 		this.frame = frame;
 		this.ind = ind;		
@@ -33,7 +32,7 @@ public class Menu  extends JFrame {
 		ImageIcon logo = new ImageIcon("game/src/game/logo.jpg");
 		frame.setIconImage(logo.getImage());
 		background3.setBounds(0, 0, 600, 800);
-		background3.setIcon(sky);
+		background3.setIcon(new javax.swing.ImageIcon(getClass().getResource("./menuBackground.jpg")));
 		background3.setVisible(true);
 		
 		textfield.setBounds(0, 45, 620, 70);
