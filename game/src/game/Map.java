@@ -92,7 +92,7 @@ public class Map extends JFrame {
 	
 	private void addgif(String s) {
 		JLabel pic1 = new JLabel();
-		pic1.setBounds(0, 450, 320, 320);
+		pic1.setBounds(0, 450, 350, 350);
 		pic1.setVisible(true);
     	pic1.setIcon(new javax.swing.ImageIcon(getClass().getResource("./" + s)));	
     	panel.add(pic1, Integer.valueOf(2));
