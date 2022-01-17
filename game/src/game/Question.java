@@ -159,37 +159,37 @@ public class Question implements ActionListener {
 		
 		try {
 			img2 = ImageIO.read(getClass().getResource("/crete.jpg"));
-		} catch (IOException e2) {
+		} catch (IOException e1) {
 			// TODO Auto-generated catch block
-			e2.printStackTrace();
+			e1.printStackTrace();
 		}
 		
 		try {
 			img3 = ImageIO.read(getClass().getResource("/mycenae.jpg"));
-		} catch (IOException e3) {
+		} catch (IOException e1) {
 			// TODO Auto-generated catch block
-			e3.printStackTrace();
+			e1.printStackTrace();
 		}
 		
 		try {
 			img4 = ImageIO.read(getClass().getResource("/right-removebg-preview.png"));
-		} catch (IOException e4) {
+		} catch (IOException e1) {
 			// TODO Auto-generated catch block
-			e4.printStackTrace();
+			e1.printStackTrace();
 		}
 		
 		try {
 			img5 = ImageIO.read(getClass().getResource("/wrong-removebg-preview.png"));
-		} catch (IOException e5) {
+		} catch (IOException e1) {
 			// TODO Auto-generated catch block
-			e5.printStackTrace();
+			e1.printStackTrace();
 		}
 		
 		try {
 			img6 = ImageIO.read(getClass().getResource("/scroll.png"));
-		} catch (IOException e6) {
+		} catch (IOException e1) {
 			// TODO Auto-generated catch block
-			e6.printStackTrace();
+			e1.printStackTrace();
 		}
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(608,800);
