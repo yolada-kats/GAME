@@ -38,10 +38,8 @@ public class Menu extends JFrame {
 		try {
 			img = ImageIO.read(getClass().getResource("/menuBackground.jpg"));
 		} catch (IOException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		//img = new ImageIcon(this.getClass().getResource("/menuBackground.jpg")).getImage();
 		background3.setVisible(true);
 		background3.setIcon(new ImageIcon(img));
 		frame.getContentPane().add(background3);	

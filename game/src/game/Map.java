@@ -1,4 +1,5 @@
 package game;
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -7,6 +8,8 @@ import javax.swing.JLayeredPane;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Map extends JFrame {
@@ -14,6 +17,7 @@ public class Map extends JFrame {
 	JLabel pic;
 	JLayeredPane panel = new JLayeredPane();
 	JLabel totalscore = new JLabel();
+	private BufferedImage img;
 	public static int total_score = 0;
 	static int count = 0;
 	static ArrayList <String> cities = new  ArrayList<String>();
@@ -71,7 +75,12 @@ public class Map extends JFrame {
 		pic = new JLabel();
 		pic.setBounds(0, 0, 608, 800);
 		pic.setVisible(true);
-    	pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("./map3.jpg")));
+		try {
+			img = ImageIO.read(getClass().getResource("/map3.jpg"));
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+    	pic.setIcon(new ImageIcon(img));
     	panel.add(pic, Integer.valueOf(0));	
     	totalscore.setText("   Score: "+ total_score);
     	totalscore.setBackground((new java.awt.Color(255, 236, 204)));
@@ -96,7 +105,12 @@ public class Map extends JFrame {
 		JLabel pic1 = new JLabel();
 		pic1.setBounds(0, 450, 350, 350);
 		pic1.setVisible(true);
-    	pic1.setIcon(new javax.swing.ImageIcon(getClass().getResource("./" + s)));	
+		try {
+			img = ImageIO.read(getClass().getResource("/" + s));
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+    	pic1.setIcon(new ImageIcon(img));
     	panel.add(pic1, Integer.valueOf(2));
 	}
 

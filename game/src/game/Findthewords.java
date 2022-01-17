@@ -6,14 +6,19 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
+
+import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -48,6 +53,7 @@ public class Findthewords implements ActionListener {
 	int color2;
 	int color3;
 	String data;
+	BufferedImage pics;
 	
 	public Findthewords(JFrame frame, int position) {
 		this.frame = frame;
@@ -61,7 +67,12 @@ public class Findthewords implements ActionListener {
 			question1.add("He invented the laws in Sparta");
 			question1.add("The Spartans became known for their");
 	        question1.add("The famous phrase Leonidas said was molon");
-	        pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("./sparta.jpeg")));
+	        try {
+				pics = ImageIO.read(getClass().getResource("/sparta.jpeg"));
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
+	        pic.setIcon(new ImageIcon(pics));
 	        color1 = 196;
 	        color2 = 218;
 	        color3 = 241;
@@ -76,7 +87,12 @@ public class Findthewords implements ActionListener {
 		    question1.add("She was Odyssea's wife");
 		    question1.add("He was Odyssea's dog");
 		    question1.add("He was the writter of Odyssey");
-		    pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("./ithaca.jpeg")));
+		    try {
+				pics = ImageIO.read(getClass().getResource("/ithaca.jpeg"));
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
+	        pic.setIcon(new ImageIcon(pics));
 		    color1 = 232;
 		    color2 = 179;
 	        color3 = 179;
@@ -91,7 +107,12 @@ public class Findthewords implements ActionListener {
 		    question1.add("He was the father of Alexander");
 		    question1.add("The country that the Great Alexander arrived");
 		    question1.add("The historical capital of Macedonia");
-		    pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("./vergina.png")));
+		    try {
+				pics = ImageIO.read(getClass().getResource("/vergina.png"));
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
+	        pic.setIcon(new ImageIcon(pics));
 		    color1 = 241;
 	        color2 = 229;
 	        color3 = 108;
@@ -314,7 +335,12 @@ public class Findthewords implements ActionListener {
 		title_panel.setBounds(0, -80, 608, 800);
 		pic.setBounds(0, picposition_y, 610, 800);
 		title_panel.add(pic, Integer.valueOf(0));
-		scrollpic.setIcon(new javax.swing.ImageIcon(getClass().getResource("./scroll.png")));
+		try {
+			pics = ImageIO.read(getClass().getResource("/vergina.png"));
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+        scrollpic.setIcon(new ImageIcon(pics));
 		scrollpic.setBounds(120, -10, 400, 590);
 		title_panel.add(scrollpic, Integer.valueOf(1));
 		readfile();

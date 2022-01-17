@@ -4,7 +4,10 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -21,11 +24,9 @@ public class Result extends JFrame implements ActionListener{
 	JButton buttonE = new JButton();
 	JLabel background = new JLabel();
 	JLabel flame = new JLabel();
-	ImageIcon final1 = new ImageIcon("game/src/game/final.jpg");
-	ImageIcon final2 = new ImageIcon("game/src/game/final2.jpg");
-	ImageIcon flames = new ImageIcon("game/src/game/flame.gif");
 	Color color;
 	int total_score;
+	BufferedImage img;
 	
 	public Result (JFrame frame, int total_score) {
 		this.frame = frame;
@@ -39,14 +40,29 @@ public class Result extends JFrame implements ActionListener{
 		panel.setBounds(0, 0, 608, 800);
 		background.setBounds(0, 0, 608, 800);
 		if (total_score >= 230) {
-			background.setIcon(final1);
+			try {
+				 img = ImageIO.read(getClass().getResource("/final.jpg"));
+		    } catch (IOException e1) {
+				 e1.printStackTrace();
+		    }
+	    	background.setIcon(new ImageIcon(img));
+	    	try {
+				 img = ImageIO.read(getClass().getResource("/flame.gif"));
+		    } catch (IOException e1) {
+				 e1.printStackTrace();
+		    }
+	    	flame.setIcon(new ImageIcon(img));
 			flame.setBounds(165, 62, 400, 600);
-			flame.setIcon(flames);
 			flame.setVisible(true);
 			color = new Color(0, 0, 0);
 			addgif("SANTA4.gif");
 		}else {
-			background.setIcon(final2);
+			try {
+				 img = ImageIO.read(getClass().getResource("/final2.jpg"));
+		    } catch (IOException e1) {
+				 e1.printStackTrace();
+		    }
+	    	background.setIcon(new ImageIcon(img));
 			color = new Color(255, 255, 255);
 			addgif("SANTA3.gif");
 		}
@@ -91,7 +107,12 @@ public class Result extends JFrame implements ActionListener{
 		JLabel pic1 = new JLabel();
 		pic1.setBounds(0, 450, 320, 320);
 		pic1.setVisible(true);
-    	pic1.setIcon(new javax.swing.ImageIcon(getClass().getResource("./" + s)));	
+		try {
+			 img = ImageIO.read(getClass().getResource("./" + s));
+	    } catch (IOException e1) {
+			 e1.printStackTrace();
+	    }
+   	    pic1.setIcon(new ImageIcon(img));
     	panel.add(pic1, Integer.valueOf(2));
 	}
 	

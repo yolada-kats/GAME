@@ -3,19 +3,25 @@ import java.awt.Color;
 import java.awt.Font;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
+
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
 
 public class Instructions implements ActionListener {
 	JFrame frame;
 	String data;
 	JLayeredPane panel = new JLayeredPane();
 	JLabel pic = new JLabel();
+	BufferedImage img;
 	public Instructions(JFrame frame) {
 		this.frame = frame;
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -43,7 +49,12 @@ public class Instructions implements ActionListener {
 	}
 
 	private void getInstructions() {
-		pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("./instructionspic.jpg")));
+		try {
+			 img = ImageIO.read(getClass().getResource("/instructionspic.jpg"));
+	    } catch (IOException e1) {
+			 e1.printStackTrace();
+	    }
+   	    pic.setIcon(new ImageIcon(img));
 		pic.setBounds(0, 0, 608, 800);
 		pic.setVisible(true);
         panel.add(pic, Integer.valueOf(1));

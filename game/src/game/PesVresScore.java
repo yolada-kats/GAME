@@ -4,10 +4,15 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
+
+import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -25,6 +30,7 @@ public class PesVresScore {
     static int count = 0;
     Color color;
     boolean flag = false;
+    BufferedImage img;
 	public PesVresScore(JFrame frame, int score) {
 		this.frame = frame;
 		this.score = score;
@@ -76,7 +82,12 @@ public class PesVresScore {
 	}
 	
 	private void addscroll() {
-		 scroll.setIcon(new javax.swing.ImageIcon(getClass().getResource("./scroll.png")));
+		 try {
+			 img = ImageIO.read(getClass().getResource("/scroll.png"));
+		 } catch (IOException e1) {
+			 e1.printStackTrace();
+		 }
+    	 pic.setIcon(new ImageIcon(img));
 	     scroll.setBounds(120, 90, 400, 590);
 	     score_panel.add(scroll, Integer.valueOf(1));
 	     readfile();
@@ -105,19 +116,34 @@ public class PesVresScore {
 	
 	private void addpics() {
 		if (count == 1) {
-			pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/athens.jpg")));
+			 try {
+				 img = ImageIO.read(getClass().getResource("/athens.jpg"));
+		    } catch (IOException e1) {
+				 e1.printStackTrace();
+		    }
+	    	pic.setIcon(new ImageIcon(img));
 			pic.setBounds(-50, -120, 5000, 1050);
 			filename = "ath.txt";
 			color = new Color(232, 189, 177);
 	 		score_panel.add(pic, Integer.valueOf(0));
 		} else if (count == 2) {
-			pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/thermopiles.jpg")));
+			try {
+				 img = ImageIO.read(getClass().getResource("/thermopiles.jpg"));
+		    } catch (IOException e1) {
+				 e1.printStackTrace();
+		    }
+	    	pic.setIcon(new ImageIcon(img));
 		    pic.setBounds(-50, -120, 5000, 1050);
 			filename = "ther.txt";
 			color = new Color(201, 175, 132);
 	 		score_panel.add(pic, Integer.valueOf(0));
 		} else if (count == 3) {
-			pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/delfi.jpg")));
+			try {
+				 img = ImageIO.read(getClass().getResource("/delfi.jpg"));
+		    } catch (IOException e1) {
+				 e1.printStackTrace();
+		    }
+	    	pic.setIcon(new ImageIcon(img));
 			pic.setBounds(-50, -120, 5000, 1050);
 			filename = "del.txt";
 			color = new Color(215, 234, 208);
