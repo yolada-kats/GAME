@@ -5,10 +5,13 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
@@ -96,7 +99,23 @@ public class PesVresScore {
 	
 	private void readfile() {
 		int y = 0;
-		try {
+		try (FileReader fileReader = new FileReader("game/src/game/\" + filename"); 
+			      BufferedReader reader = new BufferedReader(fileReader)) {
+			      String contents = reader.lines()
+			      .collect(Collectors.joining(System.lineSeparator()));
+			      JLabel info = new JLabel(contents);
+		    	  info.setForeground(Color.black);
+		    	  info.setFont(new Font("Times New Roman", Font.BOLD, 27));
+		    	  info.setBounds(177, -20 + y, 500, 600);
+		    	  score_panel.add(info, Integer.valueOf(2));
+		} catch (FileNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		/*try {
 		      File file = new File("game/src/game/" + filename);
 		      Scanner myReader = new Scanner(file);
 		      while (myReader.hasNextLine()) {
@@ -112,7 +131,7 @@ public class PesVresScore {
 		} catch (FileNotFoundException e) {
 			System.out.println("An error occurred.");
 		    e.printStackTrace();
-		}		
+		}	*/	
 	}
 	
 	private void addpics() {
