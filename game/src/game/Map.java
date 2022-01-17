@@ -37,7 +37,7 @@ public class Map extends JFrame {
 	
 	public Map(JFrame frame, int score, int count1) {
 		this.frame = frame;
-	    this.count = count1;
+	    count = count1;
         total_score = 0;
 		createmapframe();
 	}
@@ -49,6 +49,9 @@ public class Map extends JFrame {
 	    frame.setBackground(new java.awt.Color(153, 204, 255));
 		frame.setLayout(new BorderLayout());
 		frame.setResizable(false);
+		if (count == 0) {
+			addgif("  ");
+		}
 		JLabel title = new JLabel("Prometheus Quest");
 		title.setFont(new java.awt.Font("Times New Roman", Font.BOLD, 40));
 		title.setForeground(new java.awt.Color(51 , 0, 51)); 
@@ -81,6 +84,14 @@ public class Map extends JFrame {
 		frame.setLocationRelativeTo(null);
 	}
 	
+	private void addgif(String s) {
+		JLabel pic1 = new JLabel();
+		pic1.setBounds(0, 690, 320, 320);
+		pic1.setVisible(true);
+    	pic1.setIcon(new javax.swing.ImageIcon(getClass().getResource("./" + s)));	
+    	panel.add(pic1, Integer.valueOf(2));
+	}
+
 	private void writenumbers() {
 		JLabel l1 = new JLabel("1");
 		l1.setFont(new java.awt.Font("Times New Roman", Font.BOLD, 17));

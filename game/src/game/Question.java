@@ -8,8 +8,6 @@ import java.util.Scanner;
 import java.awt.*;
 import javax.swing.*;
 
-
-
 public class Question implements ActionListener {
 	static ArrayList <String>  question1 = new ArrayList<String>();  
 	static {

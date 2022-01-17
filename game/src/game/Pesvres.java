@@ -16,7 +16,6 @@ import javax.swing.SwingConstants;
 
 public class Pesvres  implements ActionListener{
 
-
 	JFrame frame;
 	private String place;
 	static ArrayList <String> solutions = new ArrayList<String>();
@@ -37,17 +36,14 @@ public class Pesvres  implements ActionListener{
 		this.place = place;
 		this.score = 0;
 		this.flag = false;
-		this.frame = frame;
-		
+		this.frame = frame;	
 		img2 = new ImageIcon(this.getClass().getResource("/right.png")).getImage();
-		img3 = new ImageIcon(this.getClass().getResource("/wrong.png")).getImage();
-		
+		img3 = new ImageIcon(this.getClass().getResource("/wrong.png")).getImage();	
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(608,800);
 		frame.getContentPane().setBackground(new Color(238, 236, 194));
 		frame.getContentPane().setLayout(null);
-		frame.setResizable(false);
-		
+		frame.setResizable(false);	
 		if(place.equals("ATHENS")) {
 			img = new ImageIcon(this.getClass().getResource("/athens.jpg")).getImage();
 			color = new Color(232, 189, 177);
@@ -57,8 +53,7 @@ public class Pesvres  implements ActionListener{
 		} else {
 			img = new ImageIcon(this.getClass().getResource("/delfi.jpg")).getImage();
 			 color = new Color(215, 234, 208);
-		}
-		
+		}	
 		Font textField_Font = new Font("Times New Roman", Font.BOLD, 22);
 		for(int i = 0; i < 5; i++) {
 			textFields.add(i, new JTextField());
@@ -66,16 +61,13 @@ public class Pesvres  implements ActionListener{
 			(textFields.get(i)).setFont(textField_Font);
 			frame.getContentPane().add(textFields.get(i));
 			(textFields.get(i)).setColumns(10);
-		}
-		
+		}	
 		textField_5 = new JTextField();
 		textField_5.setBounds(230, 50, 160, 61);
 		textField_5.setFont(textField_Font);
 		textField_5.setOpaque(false);
 		textField_5.setVisible(false);
 		frame.getContentPane().add(textField_5);
-		
-		
 		for(int i = 0; i < 5; i++) {
 			results.add(i, new JLabel());
 			(results.get(i)).setIcon(new ImageIcon(img3));
@@ -121,16 +113,14 @@ public class Pesvres  implements ActionListener{
 		scoreb.setBounds(180, 640, 250, 45);
 		scoreb.addActionListener(b1);	
 		frame.getContentPane().add(scoreb);
-		scoreb.setVisible(false);
-		
+		scoreb.setVisible(false);	
 		lblNewLabel = new JLabel("Write 5 words related to the destination of: "+ place );
 		lblNewLabel.setForeground(Color.BLACK);
 		lblNewLabel.setFont(new Font("Times New Roman", Font.BOLD, 21));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setBounds(3, 35, 620, 35);
 		frame.getContentPane().add(lblNewLabel);
-		lblNewLabel.setVisible(true);
-		
+		lblNewLabel.setVisible(true);	
 		city_img.setIcon(new ImageIcon(img));
 		city_img.setBounds(-50, -120, 5000, 1050);
 		frame.getContentPane().add(city_img);
@@ -138,9 +128,8 @@ public class Pesvres  implements ActionListener{
 	}
 	
 	public void setValues() {
-	   	if("ATHENS".equals(place)) {
-	   		solutions.clear();
-		  		
+	   	if ("ATHENS".equals(place)) {
+	   		solutions.clear(); 		
 		   	solutions.add("ACROPOLIS");
 		  	solutions.add("PERICLES");
 	 		solutions.add("GOLDEN AGE");
@@ -152,9 +141,8 @@ public class Pesvres  implements ActionListener{
 	   		solutions.add("PLATO");	
 	   		solutions.add("ATHENA");
 	 
-	   	} else if("THERMOPYLES".equals(place)) {
-	   		solutions.clear();
-	    		
+	   	} else if ("THERMOPYLES".equals(place)) {
+	   		solutions.clear(); 		
 	    	solutions.add("LEONIDAS");
 	   	 	solutions.add("XERXES");
 		 	solutions.add("BATTLE");
@@ -187,19 +175,19 @@ public class Pesvres  implements ActionListener{
 			
 			answers.clear();
 			
-			for(int i = 0; i < 5; i++) {
+			for (int i = 0; i < 5; i++) {
 				answers.add((textFields.get(i)).getText());
 			}
-			for(int i = 0; i < 5; i++) {
-				for(int j = 0; j < solutions.size(); j ++) {
-					if(answers.get(i).equalsIgnoreCase(solutions.get(j))) {
+			for (int i = 0; i < 5; i++) {
+				for (int j = 0; j < solutions.size(); j ++) {
+					if (answers.get(i).equalsIgnoreCase(solutions.get(j))) {
 					 	flag = true;
 					 	solutions.remove(j);
 					 	score++;
 					 	break;
 				 	}
 			 	}
-			 	if(flag == true) {
+			 	if (flag == true) {
 			 		answers.remove(i);
 			 		answers.add(i, "C");
 			 		flag = false;
@@ -215,11 +203,10 @@ public class Pesvres  implements ActionListener{
 	public void displayAnswers(ActionEvent e) {
 		btnNewButton.setVisible(false);
 		textField_5.setVisible(true);
-		scoreb.setVisible(true);
-		
-		for(int i = 0; i < 5; i++) {
+		scoreb.setVisible(true);	
+		for (int i = 0; i < 5; i++) {
 			System.out.println(answers.get(i));
-			if((answers.get(i)).equals("C")) {
+			if ((answers.get(i)).equals("C")) {
 				(results.get(i)).setIcon(new ImageIcon(img2));
 			}
 			(results.get(i)).setVisible(true);
