@@ -336,7 +336,7 @@ public class Findthewords implements ActionListener {
 		pic.setBounds(0, picposition_y, 610, 800);
 		title_panel.add(pic, Integer.valueOf(0));
 		try {
-			pics = ImageIO.read(getClass().getResource("/vergina.png"));
+			pics = ImageIO.read(getClass().getResource("/scroll.png"));
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}

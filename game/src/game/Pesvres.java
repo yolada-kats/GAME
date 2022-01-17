@@ -39,21 +39,41 @@ public class Pesvres  implements ActionListener{
 		this.score = 0;
 		this.flag = false;
 		this.frame = frame;	
-		img2 = new ImageIcon(this.getClass().getResource("/right.png")).getImage();
-		img3 = new ImageIcon(this.getClass().getResource("/wrong.png")).getImage();	
+		try {
+			img2 = ImageIO.read(getClass().getResource("/right.png"));
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		try {
+			img3 = ImageIO.read(getClass().getResource("/wrong.png"));
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(608,800);
 		frame.getContentPane().setBackground(new Color(238, 236, 194));
 		frame.getContentPane().setLayout(null);
 		frame.setResizable(false);	
 		if(place.equals("ATHENS")) {
-			img = new ImageIcon(this.getClass().getResource("/athens.jpg")).getImage();
-			color = new Color(232, 189, 177);
+			 try {
+				 img = ImageIO.read(getClass().getResource("/athens.jpg"));
+			 } catch (IOException e1) {
+			     e1.printStackTrace();
+			 }
+			 color = new Color(232, 189, 177);
 		} else if(place.equals("THERMOPYLES")) {
-			img = new ImageIcon(this.getClass().getResource("/thermopiles.jpg")).getImage();
+			 try {
+				 img = ImageIO.read(getClass().getResource("/thermopiles.jpg"));
+			 } catch (IOException e1) {
+				 e1.printStackTrace();
+			 }
 			 color = new Color(201, 175, 132);
 		} else {
-			img = new ImageIcon(this.getClass().getResource("/delfi.jpg")).getImage();
+			try {
+				 img = ImageIO.read(getClass().getResource("/delfi.jpg"));
+			 } catch (IOException e1) {
+				 e1.printStackTrace();
+			 }
 			 color = new Color(215, 234, 208);
 		}	
 		Font textField_Font = new Font("Times New Roman", Font.BOLD, 22);
