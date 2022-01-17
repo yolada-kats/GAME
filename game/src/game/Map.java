@@ -1,4 +1,5 @@
 package game;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -49,6 +50,8 @@ public class Map extends JFrame {
 	    frame.setBackground(new java.awt.Color(153, 204, 255));
 		frame.setLayout(new BorderLayout());
 		frame.setResizable(false);
+		ImageIcon logo = new ImageIcon(getClass().getClassLoader().getResource("logo.png"));
+		frame.setIconImage(logo.getImage());
 		if (count == 0) {
 			addgif("SANTA1.gif");
 		}
