@@ -117,7 +117,7 @@ public class Pesvres  implements ActionListener{
 		lblNewLabel = new JLabel("Write 5 words related to the destination of: "+ place );
 		lblNewLabel.setForeground(Color.BLACK);
 		lblNewLabel.setFont(new Font("Times New Roman", Font.BOLD, 21));
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setHorizontalAlignment(JLabel.CENTER);
 		lblNewLabel.setBounds(3, 35, 620, 35);
 		frame.getContentPane().add(lblNewLabel);
 		lblNewLabel.setVisible(true);	

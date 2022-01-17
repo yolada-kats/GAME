@@ -30,6 +30,8 @@ public class Menu  extends JFrame {
 	}
 	
 	private void createmenu() {
+		ImageIcon logo = new ImageIcon("game/src/game/logo.jpg");
+		frame.setIconImage(logo.getImage());
 		background3.setBounds(0, 0, 600, 800);
 		background3.setIcon(sky);
 		background3.setVisible(true);
