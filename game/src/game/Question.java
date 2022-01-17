@@ -3,9 +3,13 @@ package game;
 import java.awt.event.*;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
+
 import java.awt.*;
+
+import javax.imageio.ImageIO;
 import javax.swing.*;
 
 public class Question implements ActionListener {
@@ -118,6 +122,7 @@ public class Question implements ActionListener {
 	int x;
 	int tt = 0;
 	JFrame frame;
+	Image img1,img2,img3,img4,img5,img6;
 	JTextField textfield = new JTextField();
 	JTextArea textarea = new JTextArea();
 	//background label
@@ -134,25 +139,65 @@ public class Question implements ActionListener {
 	JLabel answer_IconB = new JLabel();
 	JLabel answer_IconC = new JLabel();
 	JLabel answer_IconD = new JLabel();
-	ImageIcon delos = new ImageIcon("game/src/game/dilos.jpg");
-	ImageIcon crete = new ImageIcon("game/src/game/crete.jpg");
-	ImageIcon mycenae = new ImageIcon("game/src/game/mycenae.jpg");
-	ImageIcon right = new ImageIcon("game/src/game/right-removebg-preview.png");
-	ImageIcon wrong = new ImageIcon("game/src/game/wrong-removebg-preview.png");
-	ImageIcon scroll = new ImageIcon("game/src/game/scroll.png");
+
+	
+	
+	
+	
 	//color that changes, for buttons and text areas 
 	Color color;
 	public Question(int x, JFrame frame) {
 		this.x = x;
 		this.frame = frame;
 		//the background settings
+		try {
+			img1 = ImageIO.read(getClass().getResource("/dilos.jpg"));
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		try {
+			img2 = ImageIO.read(getClass().getResource("/crete.jpg"));
+		} catch (IOException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
+		
+		try {
+			img3 = ImageIO.read(getClass().getResource("/mycenae.jpg"));
+		} catch (IOException e3) {
+			// TODO Auto-generated catch block
+			e3.printStackTrace();
+		}
+		
+		try {
+			img4 = ImageIO.read(getClass().getResource("/right-removebg-preview.png"));
+		} catch (IOException e4) {
+			// TODO Auto-generated catch block
+			e4.printStackTrace();
+		}
+		
+		try {
+			img5 = ImageIO.read(getClass().getResource("/wrong-removebg-preview.png"));
+		} catch (IOException e5) {
+			// TODO Auto-generated catch block
+			e5.printStackTrace();
+		}
+		
+		try {
+			img6 = ImageIO.read(getClass().getResource("/scroll.png"));
+		} catch (IOException e6) {
+			// TODO Auto-generated catch block
+			e6.printStackTrace();
+		}
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(608,800);
 		frame.getContentPane().setBackground(new Color(238, 236, 194));
 		frame.setLayout(null);
 		frame.setResizable(false);
 		scrollLabel.setBounds(122, 150, 350, 495);
-		scrollLabel.setIcon(scroll);
+		scrollLabel.setIcon(new ImageIcon(img6));
 		scrollLabel.setForeground(Color.BLACK);
 		scrollLabel.setFont(new Font("Ink Free", Font.BOLD, 30));
 		scrollLabel.setIconTextGap(-100);
@@ -161,15 +206,15 @@ public class Question implements ActionListener {
 		scrollLabel.setVisible(true);
 		background.setSize(608, 800);
 		if (x == 1) {
-			background.setIcon(mycenae);
+			background.setIcon(new ImageIcon(img1));
 			color = new Color(255, 225, 185);
 			filename = "myk.txt";
 		} else if (x == 2) {
-			background.setIcon(delos);
+			background.setIcon(new ImageIcon(img2));
 			color = new Color(229, 254, 255);
 			filename = "dil.txt";
 		} else if (x == 3) {
-			background.setIcon(crete);
+			background.setIcon(new ImageIcon(img3));
 			color = new Color(212, 241, 255);
 			filename = "cret.txt";
 		}
@@ -453,40 +498,40 @@ public class Question implements ActionListener {
 		buttonC.setEnabled(false);
 		buttonD.setEnabled(false);
 		
-		answer_IconA.setIcon(wrong);
-		answer_IconB.setIcon(wrong);
-		answer_IconC.setIcon(wrong);
-		answer_IconD.setIcon(wrong);
+		answer_IconA.setIcon(new ImageIcon(img5));
+		answer_IconB.setIcon(new ImageIcon(img5));
+		answer_IconC.setIcon(new ImageIcon(img5));
+		answer_IconD.setIcon(new ImageIcon(img5));
 
 		if (x == 1) {
 			if (answers[xi - 1] == 'A') {
-				answer_IconA.setIcon(right);
+				answer_IconA.setIcon(new ImageIcon(img4));
 			} else if (answers[xi - 1] == 'B') {
-				answer_IconB.setIcon(right);
+				answer_IconB.setIcon(new ImageIcon(img4));
 			} else if (answers[xi - 1] == 'C') {
-				answer_IconC.setIcon(right);
+				answer_IconC.setIcon(new ImageIcon(img4));
 			} else if (answers[xi - 1] == 'D') {
-				answer_IconD.setIcon(right);
+				answer_IconD.setIcon(new ImageIcon(img4));
 			}
 		}else if (x == 2) {
 			if (answers[xi + 3] == 'A') {
-				answer_IconA.setIcon(right);
+				answer_IconA.setIcon(new ImageIcon(img4));
 			}else if (answers[xi + 3] == 'B') {
-				answer_IconB.setIcon(right);
+				answer_IconB.setIcon(new ImageIcon(img4));
 			}else if (answers[xi + 3] == 'C') {
-				answer_IconC.setIcon(right);
+				answer_IconC.setIcon(new ImageIcon(img4));
 			}else if (answers[xi + 3] == 'D') {
-				answer_IconD.setIcon(right);
+				answer_IconD.setIcon(new ImageIcon(img4));
 			}
 		} else if (x == 3) {
 			if (answers[xi + 7] == 'A') {
-				answer_IconA.setIcon(right);
+				answer_IconA.setIcon(new ImageIcon(img4));
 			} else if (answers[xi + 7] == 'B') {
-				answer_IconB.setIcon(right);
+				answer_IconB.setIcon(new ImageIcon(img4));
 			} else if (answers[xi + 7] == 'C') {
-				answer_IconC.setIcon(right);
+				answer_IconC.setIcon(new ImageIcon(img4));
 			} else if (answers[xi + 7] == 'D') {
-				answer_IconD.setIcon(right);
+				answer_IconD.setIcon(new ImageIcon(img4));
 			}
 		}
 	}
