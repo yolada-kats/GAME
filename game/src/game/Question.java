@@ -206,15 +206,15 @@ public class Question implements ActionListener {
 		scrollLabel.setVisible(true);
 		background.setSize(608, 800);
 		if (x == 1) {
-			background.setIcon(new ImageIcon(img1));
+			background.setIcon(new ImageIcon(img3));
 			color = new Color(255, 225, 185);
 			filename = "myk.txt";
 		} else if (x == 2) {
-			background.setIcon(new ImageIcon(img2));
+			background.setIcon(new ImageIcon(img1));
 			color = new Color(229, 254, 255);
 			filename = "dil.txt";
 		} else if (x == 3) {
-			background.setIcon(new ImageIcon(img3));
+			background.setIcon(new ImageIcon(img2));
 			color = new Color(212, 241, 255);
 			filename = "cret.txt";
 		}
