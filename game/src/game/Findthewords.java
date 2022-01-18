@@ -365,7 +365,7 @@ public class Findthewords implements ActionListener {
 		    	  JLabel info = new JLabel(contents);
 		    	  info.setForeground(Color.black);
 		    	  info.setFont(new Font("Times New Roman", Font.BOLD, 27));
-		    	  info.setBounds(177, -130 + y, 500, 600);
+		    	  info.setBounds(177, -150 + y, 500, 600);
 		    	  title_panel.add(info, Integer.valueOf(2));
 		    	  y += 27;
 			    }
