@@ -366,7 +366,7 @@ public class Findthewords implements ActionListener {
 		    	  info.setForeground(Color.black);
 		    	  info.setFont(new Font("Times New Roman", Font.BOLD, 27));
 		    	  info.setBounds(177, -20 + y, 500, 600);
-		    	  score_panel.add(info, Integer.valueOf(2));
+		    	  title_panel.add(info, Integer.valueOf(2));
 		    	  y += 27;
 			} catch (IOException e1) {
 				// TODO Auto-generated catch block
