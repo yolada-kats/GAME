@@ -1,9 +1,12 @@
 package game;
 
 import java.awt.event.*;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -562,23 +565,20 @@ public class Question implements ActionListener {
 			y1 =- 204;
 		}
 		int y = 0;
-		try {
-			File file = new File("game/src/game/" + filename);
-			Scanner myReader = new Scanner(file);
-			while (myReader.hasNextLine()) {
-				data = myReader.nextLine();
-			    JLabel info = new JLabel(data);
-			    info.setForeground(Color.black);
-			    info.setFont(new Font("Times New Roman", Font.BOLD, 27));
-		        info.setBounds(60, y1 + y, 500, 600);
-	            scrollLabel.add(info);
-	            y += 27;
-			}
-			myReader.close();
-		} catch (FileNotFoundException e) {
-			System.out.println("An error occurred.");
-			e.printStackTrace();
-		}
+		try (InputStream inputStream = getClass().getResourceAsStream("/"+filename);
+			    BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
+					    while (reader.readLine()!=null) {
+					      String contents = reader.readLine();
+				    	  JLabel info = new JLabel(contents);
+				    	  info.setForeground(Color.black);
+				    	  info.setFont(new Font("Times New Roman", Font.BOLD, 27));
+				    	  info.setBounds(60, y1 + y, 500, 600);
+				    	  scrollLabel.add(info, Integer.valueOf(2));
+				    	  y += 27;
+					    }
+					} catch (IOException e1) {
+						e1.printStackTrace();
+				}
 		background.add(scrollLabel);
 	}
 }

@@ -359,36 +359,19 @@ public class Findthewords implements ActionListener {
 	private void readfile() {
 		int y = 0;
 		try (InputStream inputStream = getClass().getResourceAsStream("/"+filename);
-			    BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
-			    String contents = reader.lines()
-			      .collect(Collectors.joining(System.lineSeparator()));
+	    BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
+			    while (reader.readLine()!=null) {
+			      String contents = reader.readLine();
 		    	  JLabel info = new JLabel(contents);
 		    	  info.setForeground(Color.black);
 		    	  info.setFont(new Font("Times New Roman", Font.BOLD, 27));
-		    	  info.setBounds(177, -20 + y, 500, 600);
+		    	  info.setBounds(177, -130 + y, 500, 600);
 		    	  title_panel.add(info, Integer.valueOf(2));
 		    	  y += 27;
+			    }
 			} catch (IOException e1) {
-				// TODO Auto-generated catch block
 				e1.printStackTrace();
 		}
-		/*try {
-			File file = new File("game/src/game/"+filename);
-			Scanner myReader = new Scanner(file);
-			while (myReader.hasNextLine()) {
-				data = myReader.nextLine();
-				JLabel info = new JLabel(data);
-				info.setForeground(Color.black);
-			    info.setFont(new Font("Times New Roman", Font.BOLD, 27));
-			    info.setBounds(177, -165 + y, 500, 600);
-		        title_panel.add(info, Integer.valueOf(2));
-                y += 27;
-			}
-			myReader.close();
-		} catch (FileNotFoundException e) {
-			System.out.println("An error occurred.");
-			e.printStackTrace();
-		}*/
 	}
 	public void createlists() {
 		/*
