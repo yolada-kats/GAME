@@ -1,1 +1,7 @@
-Στο αποθετηριο υπάρχει ο φάκελοσ game/src ενας υποφάκελος game και εκεί υπάρχουν όλες οι κλάσεις . Έξω από το φάκελο game υπάρχει ο φάκελος img που περιέχει όλες τις φωτογραφίες . 
+DOMH APOTHETHRIOY
+STO FILE game/src/game YPARXOYN OI KLASEIS TOY PAIXNIIDIOY
+STO img YPARXOYN OI EIKONES KAI TA txt ARXEIA
+
+ODEIGIES XRHSEIS 
+APAITEITAI YPOLOGISTHS KAI LEITOYRGIKO SYSTMA WINDOWS KAI NA EINAI EGKATESTHMENH H JAVA 
+
