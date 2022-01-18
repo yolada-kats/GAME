@@ -73,13 +73,19 @@ public class PesVresScore {
 			    }
 			}
 		};	
-		map = new JButton("MAP");
-		map.setFont(new Font("Times New Roman", Font.BOLD, 25));
+		if(count == 0) {
+			map = new JButton("RESULTS");
+			map.setFont(new Font("Times New Roman", Font.BOLD, 18));
+			map.setBounds(10, 160, 110, 80);
+		} else {
+			map = new JButton("MAP");
+			map.setFont(new Font("Times New Roman", Font.BOLD, 25));
+			map.setBounds(10, 160, 100, 80);
+		}
 		map.setForeground(Color.black);
 		map.setBackground(color);
 		map.setFocusable(false);
 		map.setBorder(BorderFactory.createBevelBorder(1));
-		map.setBounds(10, 160, 100, 80);
 		map.addActionListener(b1);
 		map.setVisible(true);
 		score_panel.add(map, Integer.valueOf(2));  
